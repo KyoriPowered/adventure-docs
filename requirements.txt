@@ -1,1 +1,4 @@
 sphinx
+guzzle_sphinx_theme # theme
+sphinx-autobuild # for live reload in development
+rstcheck # format checks

@@ -1,20 +1,32 @@
-.. Adventure documentation master file, created by
-   sphinx-quickstart on Sun Jun 28 17:14:38 2020.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
+=========
+Adventure
+=========
 
-Welcome to Adventure's documentation!
-=====================================
+.. only:: draft
+
+   .. warning:: This documentation is for an **unreleased** version of 
+      Adventure. Some information may not be up to date, and API is subject to change.
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
 
+   audiences
+   text
+   serializer/index
+
+   bossbar
+   sound
+   title
+   book
+
+   platform/index
+
+
+Adventure |version|!
 
 
 Indices and tables
 ==================
 
 * :ref:`genindex`
-* :ref:`modindex`
 * :ref:`search`
