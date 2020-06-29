@@ -1,7 +1,5 @@
 sphinx
-guzzle_sphinx_theme # theme
 sphinx-autobuild # for live reload in development
-rstcheck # format checks
-
-# rst extensions
+sphinx-rtd-theme
 sphinx-tabs
+rstcheck # format checks

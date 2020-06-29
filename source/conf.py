@@ -4,6 +4,8 @@
 # list see the documentation:
 # https://www.sphinx-doc.org/en/master/usage/configuration.html
 
+import sphinx_rtd_theme
+
 # -- Path setup --------------------------------------------------------------
 
 # If extensions (or modules to document with autodoc) are in another directory,
@@ -13,7 +15,6 @@
 # import os
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
-import guzzle_sphinx_theme
 
 
 # -- Project information -----------------------------------------------------
@@ -28,8 +29,8 @@ version = '4.0.0-SNAPSHOT'
 # The full version, including alpha/beta/rc tags
 release = version
 
-if release.endswith("SNAPSHOT"):
-    tags.add("draft")
+if release.endswith('-SNAPSHOT'):
+    tags.add('draft')
 
 
 # -- General configuration ---------------------------------------------------
@@ -38,8 +39,8 @@ if release.endswith("SNAPSHOT"):
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-    'guzzle_sphinx_theme',
-    'sphinx_tabs.tabs'
+  'sphinx_rtd_theme',
+  'sphinx_tabs.tabs'
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -62,17 +63,12 @@ language='en'
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme_path = guzzle_sphinx_theme.html_theme_path()
-html_theme = 'guzzle_sphinx_theme'
+html_theme = 'sphinx_rtd_theme'
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
-
-html_theme_options = {
-    "project_nav_name": "Adventure",
-}
 
 html_show_sourcelink = False
 html_copy_source = False
