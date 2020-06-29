@@ -24,6 +24,83 @@ Adventure
 
 Adventure |version|!
 
+Importing Adventure into your project
+-------------------------------------
+
+Adding the repository
+
+.. tabs::
+   
+   .. group-tab:: Maven
+
+      .. code:: xml
+
+         <repositories>
+             <!-- ... -->
+             <repository> <!-- for development builds -->
+               <id>sonatype-oss</id>
+               <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+             </repository>
+             <!-- ... -->
+         </repositories>
+   
+   .. group-tab:: Gradle (Groovy)
+
+      .. code:: groovy
+
+         repositories {
+            // for development builds
+            maven {
+                name = 'sonatype-oss'
+                url = 'https://oss.sonatype.org/content/repositories/snapshots/'
+            }
+            // for releases
+            mavenCentral()
+         }
+
+   .. group-tab:: Gradle (Kotlin)
+
+      .. code:: kotlin
+
+         repositories {
+            // for development builds
+            maven(url = "https://oss.sonatype.org/content/repositories/snapshots/") {
+                name = "sonatype-oss"
+            }
+            // for releases
+            mavenCentral()
+         }
+
+   Declaring the dependency:
+
+.. tabs::
+   
+   .. group-tab:: Maven
+
+      .. code:: xml
+
+         <dependency>
+         <groupId>net.kyori</groupId>
+         <artifactId>adventure-api</artifactId>
+         <version>4.0.0-SNAPSHOT</version>
+         </dependency>
+   
+   .. group-tab:: Gradle (Groovy)
+
+      .. code:: groovy
+
+         dependencies {
+            implementation 'net.kyori:adventure-api:4.0.0-SNAPSHOT'
+         }
+
+
+   .. group-tab:: Gradle (Kotlin)
+
+      .. code:: kotlin
+
+         dependencies {
+            implementation("net.kyori:adventure-api:4.0.0-SNAPSHOT")
+         }
 
 Indices and tables
 ==================
