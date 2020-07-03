@@ -18,6 +18,7 @@ Adventure
    sound
    title
    book
+   minimessage
 
    platform/index
 
