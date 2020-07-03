@@ -87,7 +87,7 @@ API
 
 MiniMessage exposes a simple API via the, suprise, ``MiniMessage`` class.
 
-There are two different instances of that interface, ``instance()`` and ``withMarkDown()``, the latter one provides simple markdown support, ontop of the MiniMessage format. More about that in the Markdown_ section.
+There are two different instances of that interface, ``get()`` and ``markdown()``, the latter one provides simple markdown support, ontop of the MiniMessage format. More about that in the Markdown_ section.
 
 MiniMessage allows you to both serialize components into MiniMessage strings and to parse/deserialize MiniMessage strings into components.
 
@@ -314,7 +314,7 @@ Examples
 Markdown
 ^^^^^^^^^^^^^^^^^^^
 
-MiniMessage also comes with a very simple markdown addon. You can enable it by calling ``MiniMessage.withMarkDown()``.
+MiniMessage also comes with a very simple markdown addon. You can enable it by calling ``MiniMessage.markdown()``.
 
 Note: Markdown will not be escaped when you call ``escapeTokens``, ``stripTokens`` however will work.
 
