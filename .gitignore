@@ -2,11 +2,11 @@
 
 # IDE
 
-.vscode/
-*.iml
-*.ipr
+/.vscode/
+/*.iml
+/*.ipr
 
 # Virtualenv
-ENV/
-env/
+/ENV/
+/env/
 
