@@ -1,0 +1,19 @@
+# Making changes? https://github.com/nektos/act may help you test locally
+
+name: Build to artifact
+
+on: [push, pull_request] # TODO: Only build for branches that aren't master, publish on master
+
+jobs:
+  docs:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - uses: ammaraskar/sphinx-action@master
+      with:
+        docs-folder: "."
+    - uses: actions/upload-artifact@v1
+      with:
+        name: docs-html
+        path: _build/html/
+
