@@ -1,5 +1,12 @@
 /build/
+
+# IDE
+
 .vscode/
+*.iml
+*.ipr
+
 # Virtualenv
 ENV/
 env/
+

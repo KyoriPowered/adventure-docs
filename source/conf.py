@@ -33,6 +33,7 @@ if release.endswith('-SNAPSHOT'):
     tags.add('draft')
 
 
+
 # -- General configuration ---------------------------------------------------
 
 # Add any Sphinx extension module names here, as strings. They can be
@@ -64,6 +65,7 @@ language='en'
 # a list of builtin themes.
 #
 html_theme = 'sphinx_rtd_theme'
+html_style = 'css/kyori.css'
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
