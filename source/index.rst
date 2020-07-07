@@ -23,12 +23,13 @@ Adventure
    platform/index
 
 
-Adventure |version|!
+Adventure is a library for server-controllable user interface elements in *Minecraft: Java Edition*.
+
 
 Importing Adventure into your project
 -------------------------------------
 
-Adding the repository
+First, add the repository:
 
 .. tabs::
    

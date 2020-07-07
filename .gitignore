@@ -1,6 +1,11 @@
 /build/
-.vscode/
+
+# IDE
+
+/.vscode/
 /*.iml
+/*.ipr
+
 # Virtualenv
-ENV/
-env/
+/ENV/
+/env/
