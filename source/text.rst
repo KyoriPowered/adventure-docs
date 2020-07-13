@@ -11,12 +11,12 @@ Creating components
 
    // Creates a line of text saying "You're a Bunny! Press <key> to jump!", with some colouring and styling.
    final TextComponent textComponent = TextComponent.of("You're a ")
-     .color(TextColor.GRAY)
-     .append(TextComponent.of("Bunny").color(TextColor.LIGHT_PURPLE))
+     .color(TextColor.of(0x443344))
+     .append(TextComponent.of("Bunny").color(NamedTextColor.LIGHT_PURPLE))
      .append(TextComponent.of("! Press "))
      .append(
        KeybindComponent.of("key.jump")
-         .color(TextColor.LIGHT_PURPLE)
+         .color(NamedTextColor.LIGHT_PURPLE)
          .decoration(TextDecoration.BOLD, true)
      )
      .append(TextComponent.of(" to jump!"));
@@ -29,12 +29,12 @@ component with the children.
 
    // Creates a line of text saying "You're a Bunny! Press <key> to jump!", with some colouring and styling.
    final TextComponent textComponent2 = TextComponent.builder().content("You're a ")
-     .color(TextColor.GRAY)
-     .append(TextComponent.builder("Bunny").color(TextColor.LIGHT_PURPLE).build())
+     .color(TextColor.of(0x443344))
+     .append(TextComponent.builder("Bunny").color(NamedTextColor.LIGHT_PURPLE).build())
      .append(TextComponent.of("! Press "))
      .append(
        KeybindComponent.builder("key.jump")
-         .color(TextColor.LIGHT_PURPLE)
+         .color(NamedTextColor.LIGHT_PURPLE)
          .decoration(TextDecoration.BOLD, true)
          .build()
      )

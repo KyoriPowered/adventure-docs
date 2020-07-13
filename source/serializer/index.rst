@@ -20,13 +20,13 @@ Components can be converted using any of these serializers:
 
    // Creates a text component
    final TextComponent textComponent = TextComponent.of("Hello ")
-     .color(TextColor.GOLD)
+     .color(NamedTextColor.GOLD)
      .append(
        TextComponent.of("world")
-         .color(TextColor.AQUA).
+         .color(NamedTextColor.AQUA).
          decoration(TextDecoration.BOLD, true)
      )
-     .append(TextComponent.of("!").color(TextColor.RED));
+     .append(TextComponent.of("!").color(NamedTextColor.RED));
 
    // Converts textComponent to the JSON form used for serialization by Minecraft.
    String json = GsonComponentSerializer.gson().serialize(textComponent);
