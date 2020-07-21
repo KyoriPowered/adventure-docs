@@ -1,33 +1,14 @@
-=========
-Adventure
-=========
+======
+Bukkit
+======
 
-.. only:: draft
-
-   .. warning:: This documentation is for an **unreleased** version of 
-      Adventure. Some information may not be up to date, and API is subject to change.
-
-.. toctree::
-   :maxdepth: 2
-
-   audiences
-   text
-   serializer/index
-
-   bossbar
-   sound
-   title
-   book
-   minimessage
-
-   platform/index
+Adventure targets Paper, Spigot, and Bukkit 1.7.10 through 1.16.1.
 
 
-Adventure is a library for server-controllable user interface elements in *Minecraft: Java Edition*.
+Usage
+-----
 
-
-Importing Adventure into your project
--------------------------------------
+Add the artifact to your build file:
 
 First, add the repository:
 
@@ -83,7 +64,7 @@ First, add the repository:
 
          <dependency>
          <groupId>net.kyori</groupId>
-         <artifactId>adventure-api</artifactId>
+         <artifactId>adventure-platform-bukkit</artifactId>
          <version>4.0.0-SNAPSHOT</version>
          </dependency>
    
@@ -92,7 +73,7 @@ First, add the repository:
       .. code:: groovy
 
          dependencies {
-            implementation 'net.kyori:adventure-api:4.0.0-SNAPSHOT'
+            implementation 'net.kyori:adventure-platform-bukkit:4.0.0-SNAPSHOT'
          }
 
 
@@ -101,11 +82,11 @@ First, add the repository:
       .. code:: kotlin
 
          dependencies {
-            implementation("net.kyori:adventure-api:4.0.0-SNAPSHOT")
+            implementation("net.kyori:adventure-platform-bukkit:4.0.0-SNAPSHOT")
          }
 
-Indices and tables
-==================
 
-* :ref:`genindex`
-* :ref:`search`
+Component serializers
+---------------------
+
+The Bukkit platform provides the ``MinecraftComponentSerializer`` (available on Craftbukkit-based servers), and the ``BungeeCordComponentSerializer`` (available on Spigot and Paper servers) to convert directly between Adventure :doc:`Components </text>`

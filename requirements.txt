@@ -1,1 +1,5 @@
 sphinx
+sphinx-autobuild # for live reload in development
+sphinx-rtd-theme
+sphinx-tabs
+rstcheck # format checks

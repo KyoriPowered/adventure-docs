@@ -1,3 +1,11 @@
+# IDE
+
 /.idea/
 /.vscode/
 /build/
+/*.iml
+/*.ipr
+
+# Virtualenv
+/ENV/
+/env/
