@@ -2,7 +2,8 @@
 BungeeCord 
 ==========
 
-Adventure targets the latest version of Waterfall or BungeeCord.
+Adventure targets the latest version of BungeeCord and BungeeCord-compatible
+forks, such as Waterfall.
 
 Add the artifact to your build file:
 
@@ -86,6 +87,9 @@ Usage
 
 You should first obtain an ``BungeeAudiences`` object by using ``BungeeAudiences.create(plugin)``. This object is thread-safe
 and can be reused from different threads if needed.
+
+Note that not all functionality is available on the proxy. Sending chat messages, action bar messages, titles and boss bars
+are supported, but all other requests will fail silently.
 
 Component serializers
 ---------------------
