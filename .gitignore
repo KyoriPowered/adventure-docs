@@ -1,8 +1,8 @@
-/build/
-
 # IDE
 
+/.idea/
 /.vscode/
+/build/
 /*.iml
 /*.ipr
 
