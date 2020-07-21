@@ -2,11 +2,8 @@
 Bukkit
 ======
 
-Adventure targets Paper, Spigot, and Bukkit 1.7.10 through 1.16.1.
-
-
-Usage
------
+The Adventure platform implementation for Bukkit targets Paper, Spigot, and Bukkit for
+Minecraft 1.7.10 through 1.16.1.
 
 Add the artifact to your build file:
 
@@ -85,6 +82,12 @@ First, add the repository:
             implementation("net.kyori:adventure-platform-bukkit:4.0.0-SNAPSHOT")
          }
 
+Usage
+-----
+
+You should first obtain an ``BukkitAudiences`` object by using ``BukkitAudiences.create(plugin)``. This object is thread-safe
+and can be reused from different threads if needed. From here, Bukkit ``CommandSender`` s and ``Player`` s may be converted into
+``Audience`` s using the appropriate methods on ``BukkitAudiences`` .
 
 Component serializers
 ---------------------

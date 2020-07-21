@@ -1,8 +1,9 @@
-============================================
-MiniMessage (Textual format for components)
-============================================
+===========
+MiniMessage
+===========
 
-String based format to represent components easily, focusing on the ability to be easily editable.
+MiniMessage is a string based format to represent Minecraft chat components in a human-readable
+format that is easy to edit.
 
 Usage
 ^^^^^^^^^^^^^^^^^^^
@@ -85,9 +86,9 @@ Adding the repository
 API
 ^^^^^^^^^^^^^^^^^^^
 
-MiniMessage exposes a simple API via the, suprise, ``MiniMessage`` class.
+MiniMessage exposes a simple API via the ``MiniMessage`` class.
 
-There are two different instances of that interface, ``get()`` and ``markdown()``, the latter one provides simple markdown support, ontop of the MiniMessage format. More about that in the Markdown_ section.
+There are two different instances of that interface, ``get()`` and ``markdown()``, the latter one provides basic Markdown support, in addition to the MiniMessage support. More information can be found in the Markdown_ section.
 
 MiniMessage allows you to both serialize components into MiniMessage strings and to parse/deserialize MiniMessage strings into components.
 
