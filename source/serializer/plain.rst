@@ -9,7 +9,8 @@ originates from external source, and provides a small, self-contained example of
 text serializer.
 
 The plain text serializer, by its nature, does not support any advanced features, including
-color, hover and click events, URL linking, or insertions.
+color, hover and click events, URL linking, or insertions. If advanced features are desired,
+consider using :doc:`/minimessage`.
 
 Usage
 -----
