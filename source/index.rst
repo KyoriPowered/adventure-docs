@@ -22,6 +22,8 @@ Adventure
 
    platform/index
 
+   migration/index
+
 
 Adventure is a library for server-controllable user interface elements in *Minecraft: Java Edition*.
 
