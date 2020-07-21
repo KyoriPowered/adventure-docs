@@ -14,7 +14,7 @@ color, hover and click events, URL linking, or insertions.
 Usage
 -----
 
-The plain serializer is accessed using the ``PlainComponentSerializer`` class. You can
+The plain serializer is accessed using the ``PlainComponentSerializer``. You can
 use ``PlainComponentSerializer.plain()`` for a default instance that silently ignores
 keybind and translatable components, or construct your own ``PlainComponentSerializer``
 that maps the components to some plain-text representation.
