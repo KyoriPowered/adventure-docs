@@ -46,7 +46,11 @@ being created that is a copy of the original component with the change you reque
 Decoration and Styling
 ----------------------
 
-The BungeeCord Chat API stores all decorations in the ``BaseComponent``.
+The BungeeCord Chat API stores all decorations in the ``BaseComponent``. Adventure separates
+out styles into their own ``Style`` class.
+
+BungeeCord allows you to merge the styles from one component into another. Adventure provides
+equivalent methods that merges styles together into a component.
 
 Serializers
 -----------
