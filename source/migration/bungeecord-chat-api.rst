@@ -66,7 +66,7 @@ recommended replacement is to convert all legacy messages to components.
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 ``ChatColor.stripColor()`` does not exist in Adventure. An equivalent would be to use
-``PlainComponentSerializer.plain().serialize(LegacyComponentSerializer.legacy().deserialize(input))``.
+``PlainComponentSerializer.plain().serialize(LegacyComponentSerializer.legacySection().deserialize(input))``.
 
 ``ChatColor.translateAlternateColorCodes()``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

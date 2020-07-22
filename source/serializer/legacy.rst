@@ -16,7 +16,10 @@ using :doc:`/minimessage`.
 Usage
 -----
 
-The legacy text serializer is accessed using the ``LegacyComponentSerializer``.
+The legacy text serializer is accessed using the ``LegacyComponentSerializer``. The default
+pre-provided serializers include one that uses the section symbol (§) (for display in
+old clients) and another that uses an ampersand (&) typically used in configuration and
+commands to specify color codes.
 
 The default configuration for the legacy text serializer will deserialize all three of
 the RGB formats supported by Adventure but will only serialize legacy Mojang colors
