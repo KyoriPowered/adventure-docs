@@ -149,3 +149,10 @@ The BungeeCord Chat API includes three serializers. All three have equivalents i
     created from a plain-text string using ``TextComponent.of(string)``.
   * The Adventure equivalent of ``ComponentSerializer`` is the :doc:`/serializer/gson` text
     serializer.
+
+Backwards compatibility
+-----------------------
+
+The ``BungeeCordComponentSerializer`` allows you to convert between Adventure :doc:`Components </text>`
+and the native BungeeCord chat component API and back. This is available in the ``adventure-platform-text-serializer-bungeecord``
+artifact.
