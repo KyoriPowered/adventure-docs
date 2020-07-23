@@ -33,7 +33,7 @@ In Adventure, the API to use is ``LegacyComponentSerializer.legacy(altChar).dese
 
 In order to accomodate the new RGB colors introduced in 1.16, all the named text colors
 were moved to the ``NamedTextColor`` class. References to the old ``TextColor`` class
-should be updated to refer to ``TextColor``.
+should be updated to refer to ``NamedTextColor``.
 
 Serializer
 ----------

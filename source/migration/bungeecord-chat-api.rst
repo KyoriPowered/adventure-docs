@@ -40,7 +40,8 @@ Adventure's equivalents for ``ChatColor`` are split over three types:
     setting from its parent component).
   * Named colors (also called the legacy Mojang color codes) now exist in the ``NamedTextColor``
     class.
-  * RGB colors are constructed using the ``TextColor.of()`` method.
+  * RGB colors are constructed using the ``TextColor.of()`` methods (this is equivalent to the
+    ``ChatColor.of()`` method in the BungeeCord ``ChatColor`` 1.16 API.
 
 Legacy strings can't be constructed
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -103,7 +104,7 @@ becomes this Adventure equivalent:
 
 .. code:: java
 
-  TextComponent.builder("")
+  TextComponent.builder()
     .append(TextComponent.of("hello", NamedTextColor.GOLD)
     .append(TextComponent.of(" world"))
     .build()
@@ -122,8 +123,8 @@ becomes
 
 .. code:: java
 
-  Style style = Style.of(NamedTextColor.GOLD).decoration(TextDecoration.BOLD, TextDecoration.State.TRUE);
-  TextComponent.builder("")
+  Style style = Style.of(NamedTextColor.GOLD, TextDecoration.BOLD);
+  TextComponent.builder()
     .append(TextComponent.of("hello", style)
     .append(TextComponent.of(" world", style))
     .build()
