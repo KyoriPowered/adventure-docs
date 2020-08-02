@@ -2,7 +2,8 @@
 Sound
 =====
 
-Adventure can play any built-in or resource pack-provided sound.
+Adventure contains an API to play any built-in or resource pack-provided sound. Note that
+not all platforms implement playing sound.
 
 Sending a Sound
 ---------------

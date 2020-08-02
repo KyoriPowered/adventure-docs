@@ -2,13 +2,18 @@
 Platforms
 =========
 
-In order to integrate with the many Minecraft platforms, Adventure provides a collection of 
-adapters to allow getting ``Audience`` instances from native user types.
+Adventure integrates with many of the Minecraft platforms out there. Some platforms support
+Adventure natively, but other platforms do not natively support Adventure. To enable you to use
+Adventure with these platforms, Adventure provides a number of platform-specific adapters to
+allow you to obtain ``Audience`` instances from native user types.
 
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
 
+   native
    bukkit
    bungeecord
    spongeapi
+   fabric
+   viaversion
