@@ -42,8 +42,8 @@ First, add the repository:
          <repositories>
              <!-- ... -->
              <repository> <!-- for development builds -->
-               <id>sonatype-oss</id>
-               <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+                <id>sonatype-oss</id>
+                <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
              </repository>
              <!-- ... -->
          </repositories>
@@ -84,9 +84,9 @@ First, add the repository:
       .. code:: xml
 
          <dependency>
-         <groupId>net.kyori</groupId>
-         <artifactId>adventure-api</artifactId>
-         <version>4.0.0-SNAPSHOT</version>
+            <groupId>net.kyori</groupId>
+            <artifactId>adventure-api</artifactId>
+            <version>4.0.0-SNAPSHOT</version>
          </dependency>
    
    .. group-tab:: Gradle (Groovy)
