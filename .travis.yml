@@ -7,7 +7,7 @@ script:
   - 'touch build/html/.nojekyll'
 
 deploy:
-  fqdn: 'adventure.docs.kyori.net'
+  fqdn: 'docs.adventure.kyori.net'
   github_token: '$GITHUB_TOKEN'
   keep-history: false
   local_dir: 'build/html/'
