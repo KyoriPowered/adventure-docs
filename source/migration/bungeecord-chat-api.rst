@@ -40,7 +40,7 @@ Adventure's equivalents for ``ChatColor`` are split over three types:
     setting from its parent component).
   * Named colors (also called the legacy Mojang color codes) now exist in the ``NamedTextColor``
     class.
-  * RGB colors are constructed using the ``TextColor.of()`` methods (this is equivalent to the
+  * RGB colors are constructed using the ``TextColor.color()`` methods (this is equivalent to the
     ``ChatColor.of()`` method in the BungeeCord ``ChatColor`` 1.16 API.
 
 Legacy strings can't be constructed
@@ -82,7 +82,7 @@ Differences in ``ComponentBuilder``
 The BungeeCord ``ComponentBuilder`` treats each component independently and allows you
 to manually carry over styles from a prior component. In Adventure, there are multiple
 component builders. The closest equivalent for a BungeeCord ``ComponentBuilder`` is
-to append components to a top-level empty component using ``TextComponent.builder("")``
+to append components to a top-level empty component using ``Component.text()``
 as a base. To replicate the behavior of ``ComponentBuilder``, consider doing the
 following:
 
@@ -104,9 +104,9 @@ becomes this Adventure equivalent:
 
 .. code:: java
 
-  TextComponent.builder()
-    .append(TextComponent.of("hello", NamedTextColor.GOLD)
-    .append(TextComponent.of(" world"))
+  Component.text()
+    .append(Component.text("hello", NamedTextColor.GOLD)
+    .append(Component.text(" world"))
     .build()
 
 Likewise,
@@ -123,10 +123,10 @@ becomes
 
 .. code:: java
 
-  Style style = Style.of(NamedTextColor.GOLD, TextDecoration.BOLD);
-  TextComponent.builder()
-    .append(TextComponent.of("hello", style)
-    .append(TextComponent.of(" world", style))
+  Style style = Style.style(NamedTextColor.GOLD, TextDecoration.BOLD);
+  Component.text()
+    .append(Component.text("hello", style)
+    .append(Component.text(" world", style))
     .build()
 
 Immutability
@@ -147,7 +147,7 @@ The BungeeCord Chat API includes three serializers. All three have equivalents i
     method on the legacy text serializer.
   * The ``TextComponent.toPlainText()`` serialization method is equivalent to the
     ``serialize`` method of the :doc:`/serializer/plain` text serializer. A component can be
-    created from a plain-text string using ``TextComponent.of(string)``.
+    created from a plain-text string using ``Component.text(string)``.
   * The Adventure equivalent of ``ComponentSerializer`` is the :doc:`/serializer/gson` text
     serializer.
 
@@ -155,5 +155,5 @@ Backwards compatibility
 -----------------------
 
 The ``BungeeCordComponentSerializer`` allows you to convert between Adventure :doc:`Components </text>`
-and the native BungeeCord chat component API and back. This is available in the ``adventure-platform-text-serializer-bungeecord``
-artifact.
+and the native BungeeCord chat component API and back. This can be used when native platform support is 
+unavailable. The serializer is available in the ``adventure-platform-text-serializer-bungeecord`` artifact.

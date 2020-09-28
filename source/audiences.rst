@@ -19,7 +19,7 @@ send titles to Minecraft 1.7 clients.
 You will normally get audience instances from one of the :doc:`/platform/index`.
 The Adventure API includes two audience implementations itself: one that does not
 support any action (and thus does nothing). ``Audience.empty()``, and one that
-forwards an action to each member in the audience, ``Audience.of()`` and related
+forwards an action to each member in the audience, ``Audience.audience()`` and related
 methods, along with the ``ForwardingAudience`` that implements the forwarding logic
 for you.
 

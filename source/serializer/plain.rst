@@ -20,6 +20,6 @@ use ``PlainComponentSerializer.plain()`` for a default instance that silently ig
 keybind and translatable components, or construct your own ``PlainComponentSerializer``
 that maps the components to some plain-text representation.
 
-The deserialization of plain text is equivalent to ``TextComponent.of(string)``. No
+The deserialization of plain text is equivalent to ``Component.text(string)``. No
 preprocessing is done on the input. The deserialization is implemented in order to provide
 API consistency.

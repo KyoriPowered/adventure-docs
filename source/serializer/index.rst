@@ -19,33 +19,34 @@ Components can be converted using any of these serializers:
 .. code:: java
 
    // Creates a text component
-   final TextComponent textComponent = TextComponent.of("Hello ")
+   final TextComponent textComponent = Component.text("Hello ")
      .color(NamedTextColor.GOLD)
      .append(
-       TextComponent.of("world")
+       Component.text("world")
          .color(NamedTextColor.AQUA).
          decoration(TextDecoration.BOLD, true)
      )
-     .append(TextComponent.of("!").color(NamedTextColor.RED));
+     .append(Component.text("!").color(NamedTextColor.RED))
+     .build();
 
    // Converts textComponent to the JSON form used for serialization by Minecraft.
-   String json = GsonComponentSerializer.gson().serialize(textComponent);
+   final String json = GsonComponentSerializer.gson().serialize(textComponent);
 
    // Converts textComponent to a legacy string - "&6Hello &b&lworld&c!"
-   String legacy = LegacyComponentSerializer.legacyAmpersand().serialize(textComponent);
+   final String legacy = LegacyComponentSerializer.legacyAmpersand().serialize(textComponent);
 
    // Converts textComponent to a plain string - "Hello world!"
-   String plain = PlainComponentSerializer.INSTANCE.serialize(textComponent);
+   final String plain = PlainComponentSerializer.plain().serialize(textComponent);
 
 The same is of course also possible in reverse for deserialization.
 
 .. code:: java
 
    // Converts JSON in the form used for serialization by Minecraft to a Component
-   Component component = GsonComponentSerializer.gson().deserialize(json);
+   final Component component = GsonComponentSerializer.gson().deserialize(json);
 
    // Converts a legacy string (using formatting codes) to a TextComponent
-   TextComponent component = LegacyComponentSerializer.legacyAmpersand().deserialize("&6Hello &b&lworld&c!");
+   final Component component = LegacyComponentSerializer.legacyAmpersand().deserialize("&6Hello &b&lworld&c!");
 
    // Converts a plain string to a TextComponent
-   TextComponent component = PlainComponentSerializer.INSTANCE.deserialize("Hello world!");
+   final Component component = PlainComponentSerializer.plain().deserialize("Hello world!");

@@ -3,8 +3,8 @@ Migrating from text 3.x
 =======================
 
 Adventure is an evolution of the text 3.x API. If you've worked with
-the text API before, the switch to Adventure should be quick and relatively
-painless. For the most part, you'll just need to depend on the Adventure API
+the text API before, the switch to Adventure should be relatively quick. 
+For the most part, you'll just need to depend on the Adventure API
 and the relevant :doc:`/platform/index` you support and replace references
 to classes in ``net.kyori.text`` to ``next.kyori.adventure.text``, though see
 below for major breaking changes.
@@ -20,6 +20,12 @@ to players.
 
 Breaking changes from text 3.x
 ------------------------------
+
+Factory methods renamed
+^^^^^^^^^^^^^^^^^^^^^^^
+In text 3.x, components could be constructed using the ``<type>Component.of()`` methods. 
+In Adventure, we've changed to using ``Component.<type>(/*.../*)`` style methods to allow 
+for easier static imports.
 
 ``LegacyComponentSerializer``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

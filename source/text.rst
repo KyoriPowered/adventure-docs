@@ -10,16 +10,16 @@ Creating components
 .. code:: java
 
    // Creates a line of text saying "You're a Bunny! Press <key> to jump!", with some colouring and styling.
-   final TextComponent textComponent = TextComponent.of("You're a ")
-     .color(TextColor.of(0x443344))
-     .append(TextComponent.of("Bunny").color(NamedTextColor.LIGHT_PURPLE))
-     .append(TextComponent.of("! Press "))
+   final TextComponent textComponent = Component.text("You're a ")
+     .color(TextColor.color(0x443344))
+     .append(Component.text("Bunny", NamedTextColor.LIGHT_PURPLE))
+     .append(Component.text("! Press "))
      .append(
-       KeybindComponent.of("key.jump")
+       Component.keybind("key.jump")
          .color(NamedTextColor.LIGHT_PURPLE)
          .decoration(TextDecoration.BOLD, true)
      )
-     .append(TextComponent.of(" to jump!"));
+     .append(Component.text(" to jump!"));
    // now you can send `textComponent` to something, such as a client
 
 You can also use a builder, which is mutable, and creates one final
@@ -28,17 +28,18 @@ component with the children.
 .. code:: java
 
    // Creates a line of text saying "You're a Bunny! Press <key> to jump!", with some colouring and styling.
-   final TextComponent textComponent2 = TextComponent.builder().content("You're a ")
-     .color(TextColor.of(0x443344))
-     .append(TextComponent.builder("Bunny").color(NamedTextColor.LIGHT_PURPLE).build())
-     .append(TextComponent.of("! Press "))
+   final TextComponent textComponent2 = Component.text()
+     .content("You're a ")
+     .color(TextColor.color(0x443344))
+     .append(Component.text().content("Bunny").color(NamedTextColor.LIGHT_PURPLE).build())
+     .append(Component.text("! Press "))
      .append(
-       KeybindComponent.builder("key.jump")
+       Component.keybind().keybind("key.jump")
          .color(NamedTextColor.LIGHT_PURPLE)
          .decoration(TextDecoration.BOLD, true)
          .build()
      )
-     .append(TextComponent.of(" to jump!"))
+     .append(Component.text(" to jump!"))
      .build();
    // now you can send `textComponent2` to something, such as a client
 
