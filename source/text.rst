@@ -46,7 +46,7 @@ component with the children.
 Serializing and deserializing components
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Serialization to JSON, legacy and plain representations is also
+Serialization to JSON, legacy, and plain representations is also
 supported.
 
 Components can be serialized with :doc:`/serializer/index`.

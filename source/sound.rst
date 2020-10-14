@@ -14,9 +14,9 @@ Sounds are referred to using Minecraft's Keys (also known as ``Identifier`` or `
 
   public void playMySound(final @NonNull Audience target) {
     // Play a built-in sound at the target's location with standard volume and pitch
-    target.playSound(Key.key("music_disc.13"), Sound.Source.MUSIC, 1f, 1f);
+    target.playSound(Sound.sound(Key.key("music_disc.13"), Sound.Source.MUSIC, 1f, 1f));
     // Play a sound from our resource pack, with a higher pitch
-    target.playSound(Key.key("adventure", "rawr"), Sound.Source.AMBIENT, 1f, 1.1f);
+    target.playSound(Sound.sound(Key.key("adventure", "rawr"), Sound.Source.AMBIENT, 1f, 1.1f));
   }
 
 .. sidebar:: Limitations
