@@ -43,6 +43,32 @@ component with the children.
      .build();
    // now you can send `textComponent2` to something, such as a client
 
+Styling components
+^^^^^^^^^^^^^^^^^^^^
+
+Styles are a superset of TextColor and TextDecoration and can be applied to text components.
+TextColor represents any color in the RGB spectrum.
+You can also use NamedTextColor to choose from the default color palette.
+The following TextDecorations are available:
+  * *Italic*
+  * **Bold**
+  * Strikethrough
+  * Underlined
+  * Obfuscated
+
+Events
+^^^^^^^
+
+There are currently two types of events available for text components.
+Hover events allow you to show another component, item or entity when a user hovers their mouse over the text.
+When a user clicks on the text component, a click event is fired which can perform one of the following actions:
+  * Open a url
+  * Open a file
+  * Run a command
+  * Suggest a command
+  * Change a book's page
+  * Copy a string to clipboard
+
 Serializing and deserializing components
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 

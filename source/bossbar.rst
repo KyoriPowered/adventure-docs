@@ -6,10 +6,10 @@ Constructing a Boss Bar
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 Boss Bars are composed of:
-* A component which represents the text shown
-* A percentage, how full the bar should be from 0 (empty) to 1 (full)
-* A color, the main color of the boss bar
-* A style/overlay graphic that allows you to select the amount notches on the boss bar
+  * A component which represents the text shown
+  * A percentage, how full the bar should be from 0 (empty) to 1 (full)
+  * A color, the main color of the boss bar
+  * A style/overlay graphic that allows you to select the amount of notches on the boss bar
 
 .. code:: java
 
