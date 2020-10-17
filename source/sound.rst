@@ -28,6 +28,16 @@ Stopping Sounds
 
 A sound stop will stop the chosen sounds -- ranging from every sound the client is playing, to specific named sounds.
 
+.. code:: java
+
+   public void stopMySound(final @NonNull Audience target) {
+    // Stop a sound for the target
+    target.stopSound(SoundStop.named(Key.key("music_disc.13"));
+    // Stop all weather sounds for the target
+    target.stopSound(SoundStop.source(Sound.Source.WEATHER));
+    // Stop all sounds for the target
+    target.stopSound(SoundStop.all());
+  }
 
 Creating a custom sound
 -----------------------
