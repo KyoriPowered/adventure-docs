@@ -24,7 +24,7 @@ copyright = '2020, KyoriPowered'
 author = 'KyoriPowered'
 
 # The short X.Y version
-version = '4.0.0-SNAPSHOT'
+version = '4.2.0-SNAPSHOT'
 
 # The full version, including alpha/beta/rc tags
 release = version
