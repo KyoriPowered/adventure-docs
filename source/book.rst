@@ -11,7 +11,7 @@ Creating a Book
 ---------------
 
 Any component that surpasses the game limit for text per page will be truncated client side, the same applies
-to the amount of components(pages). Further reading about these limits can be done at the `minecraft wiki <https://minecraft.gamepedia.com/Book_and_Quill#Writing>`_
+to the amount of components (pages). Further reading about these limits can be done at `Minecraft Wiki <https://minecraft.gamepedia.com/Book_and_Quill#Writing>`_
 
 .. code:: java
 
