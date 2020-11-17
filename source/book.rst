@@ -21,6 +21,6 @@ to the amount of components(pages). Further reading about these limits can be do
         Component bookAuthor = TextComponent.text("kashike");
         Collection<Component> bookPages = Cats.getCatKnowledge();
 
-        Book myBook = Book.book(bookTitle, bookAuthor, bookAuthor);
+        Book myBook = Book.book(bookTitle, bookAuthor, bookPages);
         target.openBook(myBook);
     }
