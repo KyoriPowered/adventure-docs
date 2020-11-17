@@ -24,8 +24,22 @@ Breaking changes from text 3.x
 Factory methods renamed
 ^^^^^^^^^^^^^^^^^^^^^^^
 In text 3.x, components could be constructed using the ``<type>Component.of()`` methods. 
-In Adventure, we've changed to using ``Component.<type>(/*.../*)`` style methods to allow 
+In Adventure, we've changed to using ``Component.<type>(/*...*/)`` style methods to allow 
 for easier static imports.
+
+Similarly, ``Style.of(/*...*/)`` is changed to ``Style.style(/*...*/)``.
+
+``.builder()``
+^^^^^^^^^^^^^^
+Builders are now created by calling the aforementioned factory methods with no parameters.
+For example, ``TextComponent.builder()`` becomes ``Component.text()``.
+
+Note that the equivalent of ``TextComponent.builder("hello")`` is ``Component.text().content("hello")``.
+
+``.append()`` with a String argument
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Component builders in 3.x had a shorthand for appending a new text component: ``builder.append("wow")``.
+In Adventure you have to write it in full, ``builder.append(Component.text("wow"))`` in this case.
 
 ``LegacyComponentSerializer``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -33,6 +47,10 @@ for easier static imports.
 In text 3.x, you would deserialize a component that used a color code prefix that
 differed from the section symbol normally used by using ``LegacyComponentSerializer.legacy().deserialize(string, altChar)``.
 In Adventure, the API to use is ``LegacyComponentSerializer.legacy(altChar).deserialize(string)``.
+
+To make a linking serializer you have to use the builder.
+Change ``LegacyComponentSerializer.legacyLinking(style)``
+to ``LegacyComponentSerializer.builder().extractUrl(style).build()``.
 
 ``TextColor`` renamed to ``NamedTextColor``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
