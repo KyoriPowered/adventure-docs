@@ -11,7 +11,7 @@ Constructing a Title
   final Component mainTitle = Component.text("This is the main title", NamedTextColor.WHITE);
   final Component subtitle = Component.text("This is the subtitle", NamedTextColor.GRAY);
   final Title title = Title.title(mainTitle, subtitle);
-  // You can now send `title` to an audience using `Audience#sendTitle`
+  // You can now send `title` to an audience using `Audience#showTitle`
 
 Additionally, you can clear any title that is currently being shown to an audience using `Audience#clearTitle`
 
