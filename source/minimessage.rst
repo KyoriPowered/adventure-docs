@@ -134,9 +134,11 @@ Color (2, hex/rgb)
 
 A different, more flexible way (supports hex colors!) for colors looks like this
 
-Tag:
+Tag
    ``<color:_colorNameOrHex_>``
-Arguments:
+Aliases
+   ``colour``, ``c``
+Arguments
    * ``_colorNameOrHex_``, can be all the values from above, or hex colors (in 1.16)
 Examples
    * ``<color:yellow>Hello <color:blue>World</color:blue>!``
@@ -154,6 +156,7 @@ Tag
    ``<_decorationname_>``
 Arguments:
    * ``_decorationname_`` , all minecraft decorations (`check here <https://github.com/KyoriPowered/adventure/blob/master/api/src/main/java/net/kyori/adventure/text/format/TextDecoration.java>`_)
+   Aliases for ``strikethrough`` -> ``st``, ``obfuscated`` -> ``obf``, ``italic`` -> ``em`` or ``i`` and ``bold`` -> ``b`` exist
 Examples:
    * ``<underlined>This is <bold>important</bold>!``
 
@@ -166,6 +169,8 @@ Reset all colors, decorations, hovers etc. Doesn't have a close tag
 
 Tag
    ``<reset>``
+Aliases
+   ``r``
 Arguments
    non
 Examples
