@@ -82,16 +82,17 @@ First, add the repository:
    .. group-tab:: Maven
 
       .. code:: xml
+      
          <dependencyManagement>
-             <dependencies>
-                 <dependency>
-                     <groupId>net.kyori</groupId>
-                     <artifactId>adventure-bom</artifactId>
-                     <version>4.2.0</version>
-                     <type>pom</type>
-                     <scope>import</scope>
-                 </dependency>
-             </dependencies>
+            <dependencies>
+               <dependency>
+                  <groupId>net.kyori</groupId>
+                  <artifactId>adventure-bom</artifactId>
+                  <version>4.2.0</version>
+                  <type>pom</type>
+                  <scope>import</scope>
+               </dependency>
+            </dependencies>
          </dependencyManagement>
          <dependency>
             <groupId>net.kyori</groupId>
