@@ -155,8 +155,8 @@ Decorate the next parts
 Tag
    ``<_decorationname_>``
 Arguments:
-   * ``_decorationname_`` , all minecraft decorations (`check here <https://github.com/KyoriPowered/adventure/blob/master/api/src/main/java/net/kyori/adventure/text/format/TextDecoration.java>`_)
-   Aliases for ``strikethrough`` -> ``st``, ``obfuscated`` -> ``obf``, ``italic`` -> ``em`` or ``i`` and ``bold`` -> ``b`` exist
+   * | ``_decorationname_`` , all minecraft decorations (`check here <https://github.com/KyoriPowered/adventure/blob/master/api/src/main/java/net/kyori/adventure/text/format/TextDecoration.java>`_)
+     | Aliases for ``strikethrough`` -> ``st``, ``obfuscated`` -> ``obf``, ``italic`` -> ``em`` or ``i`` and ``bold`` -> ``b`` exist
 Examples:
    * ``<underlined>This is <bold>important</bold>!``
 
@@ -366,7 +366,8 @@ These placeholders are resolved before any other tags in the message. This means
 
     String name = "MiniDigger";
     String rank = "<red>[ADMIN]</red>"
-    Map<String, String> placeholders = Map.of("name", rank + name);
+    Map<String, String> placeholders = new HashMap<>();
+    placeholders.put("name", rank + name);
     MiniMessage.get().parse("<gray>Hello <name>", "name", placeholders)
 
 Template
