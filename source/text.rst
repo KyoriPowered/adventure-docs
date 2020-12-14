@@ -50,11 +50,12 @@ Styles are a superset of TextColor and TextDecoration and can be applied to text
 TextColor represents any color in the RGB spectrum.
 You can also use NamedTextColor to choose from the default color palette.
 The following TextDecorations are available:
-  * *Italic*
-  * **Bold**
-  * Strikethrough
-  * Underlined
-  * Obfuscated
+
+* *Italic*
+* **Bold**
+* Strikethrough
+* Underlined
+* Obfuscated
 
 Events
 ^^^^^^^
@@ -62,12 +63,13 @@ Events
 There are currently two types of events available for text components.
 Hover events allow you to show another component, item or entity when a user hovers their mouse over the text.
 When a user clicks on the text component, a click event is fired which can perform one of the following actions:
-  * Open a url
-  * Open a file
-  * Run a command
-  * Suggest a command
-  * Change a book's page
-  * Copy a string to clipboard
+
+* Open a url
+* Open a file
+* Run a command
+* Suggest a command
+* Change a book's page
+* Copy a string to clipboard
 
 Serializing and deserializing components
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -90,7 +92,5 @@ serializing the component to Minecraft’s JSON format, and then sending
 the JSON through another method provided by the platform.
 
 The text library is platform agnostic and therefore doesn’t provide any
-way to send components to clients. However, some platform adapters
-(which make this easy!) can be found in the
-`adventure-platform <https://github.com/KyoriPowered/adventure-platform>`__
-project.
+way to send components to clients. Some platforms implement :ref:`Adventure natively <native-support>`, so ``Components``
+can be directly used with their API. For other platforms (Spigot/Bukkit, BungeeCord, and SpongeAPI 7), we provide compatibility bridges as :ref:`platforms` which can be distributed with your own plugins.
