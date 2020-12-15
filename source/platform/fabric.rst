@@ -2,7 +2,7 @@
 Fabric
 ======
 
-Adventure supports Fabric on *Minecraft: Java Edition* 1.16.4 and up, for both serverside and clientside use.
+Adventure supports Fabric on *Minecraft: Java Edition* 1.16 and up, for both serverside and clientside use.
 
 The platform supports all features, including localization and custom renderers.
 
@@ -39,7 +39,9 @@ Server
 
 The logical-server side of the Fabric platform can be accessed any time a server is available, through a ``FabricServerAudiences`` instance. By default, translatable components will be rendered with the global translator, but a custom renderer can be passed when initializing the platform. 
 
-To get started with adventure, set up an audience provider like this:
+All ``AudienceProvider`` interface methods are supported, except for the ``permission`` method. This will become supported as soon as Fabric gets a suitable permissions API.
+
+To get started with Adventure, set up an audience provider like this:
 
 .. code:: java
 
@@ -102,7 +104,7 @@ As an example, here's a simple command that will echo whatever is provided as in
 Client
 ------
 
-Special for the Fabric platform, purely clientside operations are supported. The setup is less involved than it is for the server, since the client is a singleton, and there is only one subject that can be acted on: the client's one player.
+Special for the Fabric platform, purely clientside operations are supported. The setup is less involved than it is for the server, since the client is a singleton, and there is only one subject that can be acted on: the client's player.
 
 This means that for most users the ``FabricClientAudiences`` object can be treated as a singleton. The only exception is users using a custom renderer. This makes using Adventure audiences fairly simple, as this code example shows:
 
