@@ -1,3 +1,5 @@
+.. _native-support:
+
 ==============
 Native Support
 ==============
