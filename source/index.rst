@@ -88,7 +88,7 @@ First, add the repository:
          <dependency>
             <groupId>net.kyori</groupId>
             <artifactId>adventure-api</artifactId>
-            <version>4.3.0</version>
+            <version>4.4.0</version>
          </dependency>
    
    .. group-tab:: Gradle (Groovy)
@@ -96,7 +96,7 @@ First, add the repository:
       .. code:: groovy
 
          dependencies {
-            implementation "net.kyori:adventure-api:4.3.0"
+            implementation "net.kyori:adventure-api:4.4.0"
          }
 
 
@@ -105,7 +105,7 @@ First, add the repository:
       .. code:: kotlin
 
          dependencies {
-            implementation("net.kyori:adventure-api:4.3.0")
+            implementation("net.kyori:adventure-api:4.4.0")
          }
 
 Indices and tables
