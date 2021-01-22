@@ -3,7 +3,7 @@ Bukkit
 ======
 
 The Adventure platform implementation for Bukkit targets Paper, Spigot, and Bukkit for
-Minecraft 1.7.10 through 1.16.1.
+Minecraft 1.7.10 through 1.16.5.
 
 Add the artifact to your build file:
 
