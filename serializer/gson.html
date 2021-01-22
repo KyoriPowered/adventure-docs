@@ -1,0 +1,272 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Gson &mdash; Adventure 4.4.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/kyori.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/sphinx_tabs/semantic-ui-2.4.1/segment.min.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/sphinx_tabs/semantic-ui-2.4.1/menu.min.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/sphinx_tabs/semantic-ui-2.4.1/tab.min.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/sphinx_tabs/tabs.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Legacy" href="legacy.html" />
+    <link rel="prev" title="Text Serializers" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Adventure
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                4.4.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../audiences.html">Audiences</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../text.html">Text (Chat Components)</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Text Serializers</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Gson</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#usage">Usage</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#which-serializer-should-i-use">Which serializer should I use?</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="legacy.html">Legacy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plain.html">Plain</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../bossbar.html">Boss Bars</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sound.html">Sound</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../title.html">Titles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../book.html">Books</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../minimessage.html">MiniMessage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../platform/index.html">Platforms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../migration/index.html">Migrating to Adventure from other APIs</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Adventure</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="index.html">Text Serializers</a> &raquo;</li>
+        
+      <li>Gson</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>The Adventure docs are currently a <strong>work in progress</strong>. Some areas may have limited coverage or may not be entirely up to date.
+Feel free to join our discord at <a class="reference external" href="https://discord.gg/MMfhJ8F">https://discord.gg/MMfhJ8F</a> if you have any questions.</p>
+</div>
+<div class="section" id="gson">
+<h1>Gson<a class="headerlink" href="#gson" title="Permalink to this headline">¶</a></h1>
+<p>The Gson text serializer converts chat components to their JSON representation
+and back using the Gson library. If you are interested in sending a chat component
+for display in a Minecraft client, or want to support advanced chat component features,
+you should use the Gson text serializer.</p>
+<p>An average user of this text serializer will typically want to only deserialize a
+component from an external source - serialization is done automatically by the
+<a class="reference internal" href="../platform/index.html"><span class="doc">Platforms</span></a> when the component is sent to the user.</p>
+<div class="section" id="usage">
+<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
+<p>The Gson serializer is accessed using the <code class="docutils literal notranslate"><span class="pre">GsonComponentSerializer</span></code>.</p>
+<p>In Minecraft 1.16, Mojang made several major changes to the JSON chat format, adding
+RGB chat colors and changing how hover events are serialized. Components generated for
+older versions of Minecraft will still be able to be displayed in a 1.16 client,
+however components serialized for a 1.16 client will not be able to be displayed in
+a Minecraft 1.15.2 client or lower.</p>
+<p>To get a serializer that works with 1.16 clients and above, use
+<code class="docutils literal notranslate"><span class="pre">GsonComponentSerializer.gson()</span></code>. To get a serializer that works with all versions
+of Minecraft that support text components, use <code class="docutils literal notranslate"><span class="pre">GsonComponentSerializer.colorDownsamplingGson()</span></code>.
+This serializer downsamples RGB colors to the closest Mojang legacy color and serializes
+hover events in a way that is backwards compatible with older clients.</p>
+<div class="section" id="which-serializer-should-i-use">
+<h3>Which serializer should I use?<a class="headerlink" href="#which-serializer-should-i-use" title="Permalink to this headline">¶</a></h3>
+<p>If all you’re doing is loading and saving components to a configuration file or a database,
+you probably want to use the default 1.16 serializer.</p>
+<p>If you’re looking to send a component to a client, first consider whether you can one of the
+provided platforms. If you can’t use a platform, generally you should prefer the default
+serializer for deserializing components (as it is backwards-compatible), and make a decision
+on whether to use the default or the color downsampling serializer based on the version the
+client is on.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="legacy.html" class="btn btn-neutral float-right" title="Legacy" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="index.html" class="btn btn-neutral float-left" title="Text Serializers" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2020-2021, KyoriPowered.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

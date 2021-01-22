@@ -1,0 +1,358 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Fabric &mdash; Adventure 4.4.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/kyori.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/sphinx_tabs/semantic-ui-2.4.1/segment.min.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/sphinx_tabs/semantic-ui-2.4.1/menu.min.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/sphinx_tabs/semantic-ui-2.4.1/tab.min.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/sphinx_tabs/tabs.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_tabs/semantic-ui-2.4.1/tab.min.js"></script>
+        <script src="../_static/sphinx_tabs/tabs.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="ViaVersion" href="viaversion.html" />
+    <link rel="prev" title="SpongeAPI" href="spongeapi.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Adventure
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                4.4.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../audiences.html">Audiences</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../text.html">Text (Chat Components)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../serializer/index.html">Text Serializers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bossbar.html">Boss Bars</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sound.html">Sound</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../title.html">Titles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../book.html">Books</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../minimessage.html">MiniMessage</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Platforms</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="native.html">Native Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bukkit.html">Bukkit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bungeecord.html">BungeeCord</a></li>
+<li class="toctree-l2"><a class="reference internal" href="spongeapi.html">SpongeAPI</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Fabric</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#dependency">Dependency</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#server">Server</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#localization">Localization</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#commands">Commands</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#client">Client</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#working-with-native-types">Working with native types</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="viaversion.html">ViaVersion</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../migration/index.html">Migrating to Adventure from other APIs</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Adventure</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="index.html">Platforms</a> &raquo;</li>
+        
+      <li>Fabric</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>The Adventure docs are currently a <strong>work in progress</strong>. Some areas may have limited coverage or may not be entirely up to date.
+Feel free to join our discord at <a class="reference external" href="https://discord.gg/MMfhJ8F">https://discord.gg/MMfhJ8F</a> if you have any questions.</p>
+</div>
+<div class="section" id="fabric">
+<h1>Fabric<a class="headerlink" href="#fabric" title="Permalink to this headline">¶</a></h1>
+<p>Adventure supports Fabric on <em>Minecraft: Java Edition</em> 1.16 and up, for both serverside and clientside use.</p>
+<p>The platform supports all features, including localization and custom renderers.</p>
+<div class="section" id="dependency">
+<h2>Dependency<a class="headerlink" href="#dependency" title="Permalink to this headline">¶</a></h2>
+<p>The fabric platform is packaged as a mod, designed to be included in mods via jar-in-jar packaging. As with the rest of the adventure projects, releases are distributed on Maven Central, and snapshots on Sonatype OSS.</p>
+<div class="sphinx-tabs docutils container">
+<div class="ui top attached tabular menu sphinx-menu docutils container">
+<div class="active item sphinx-data-tab-R3JhZGxlIChHcm9vdnkp docutils container">
+<div class="docutils container">
+<p>Gradle (Groovy)</p>
+</div>
+</div>
+<div class="item sphinx-data-tab-R3JhZGxlIChLb3RsaW4p docutils container">
+<div class="docutils container">
+<p>Gradle (Kotlin)</p>
+</div>
+</div>
+</div>
+<div class="ui bottom attached sphinx-tab tab segment sphinx-data-tab-R3JhZGxlIChHcm9vdnkp active docutils container">
+<div class="highlight-groovy notranslate"><div class="highlight"><pre><span></span><span class="n">dependencies</span> <span class="o">{</span>
+   <span class="n">modImplementation</span> <span class="nf">include</span><span class="o">(</span><span class="s2">&quot;net.kyori:adventure-platfrom-fabric:4.0.0-SNAPSHOT&quot;</span><span class="o">)</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</div>
+<div class="ui bottom attached sphinx-tab tab segment sphinx-data-tab-R3JhZGxlIChLb3RsaW4p docutils container">
+<div class="highlight-kotlin notranslate"><div class="highlight"><pre><span></span><span class="n">dependencies</span> <span class="p">{</span>
+   <span class="n">modImplementation</span><span class="p">(</span><span class="n">include</span><span class="p">(</span><span class="s">&quot;net.kyori:adventure-platform-fabric:4.0.0-SNAPSHOT&quot;</span><span class="p">)</span><span class="o">!!</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The fabric platform requires <em>fabric-api-base</em> in order to provide the locale change event, and can optionally use <a class="reference external" href="https://gitlab.com/stellardrift/colonel">Colonel</a> to allow the <code class="docutils literal notranslate"><span class="pre">Component</span></code> and <code class="docutils literal notranslate"><span class="pre">Key</span></code> argument types to be used on clients without the mod installed. There are no other dependencies.</p>
+</div>
+<div class="section" id="server">
+<h2>Server<a class="headerlink" href="#server" title="Permalink to this headline">¶</a></h2>
+<p>The logical-server side of the Fabric platform can be accessed any time a server is available, through a <code class="docutils literal notranslate"><span class="pre">FabricServerAudiences</span></code> instance. By default, translatable components will be rendered with the global translator, but a custom renderer can be passed when initializing the platform.</p>
+<p>All <code class="docutils literal notranslate"><span class="pre">AudienceProvider</span></code> interface methods are supported, except for the <code class="docutils literal notranslate"><span class="pre">permission</span></code> method. This will become supported as soon as Fabric gets a suitable permissions API.</p>
+<p>To get started with Adventure, set up an audience provider like this:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">MyMod</span> <span class="kd">implements</span> <span class="n">ModInitializer</span> <span class="p">{</span>
+  <span class="kd">private</span> <span class="n">FabricServerAudiences</span> <span class="n">adventure</span><span class="p">;</span>
+
+  <span class="kd">public</span> <span class="n">FabricServerAudiences</span> <span class="nf">adventure</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">if</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">adventure</span> <span class="o">==</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">throw</span> <span class="k">new</span> <span class="n">IllegalStateException</span><span class="p">(</span><span class="s">&quot;Tried to access Adventure without a running server!&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="nd">@Override</span>
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onInitialize</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// Register with the server lifecycle callbacks</span>
+    <span class="c1">// This will ensure any platform data is cleared between game instances</span>
+    <span class="c1">// This is important on the integrated server, where multiple server instances</span>
+    <span class="c1">// can exist for one mod initialization.</span>
+    <span class="n">ServerLifecycleEvents</span><span class="p">.</span><span class="na">SERVER_STARTING</span><span class="p">.</span><span class="na">register</span><span class="p">(</span><span class="n">server</span> <span class="o">-&gt;</span> <span class="k">this</span><span class="p">.</span><span class="na">platform</span> <span class="o">=</span> <span class="n">FabricServerAudiences</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="n">server</span><span class="p">));</span>
+    <span class="n">ServerLifecycleEvents</span><span class="p">.</span><span class="na">SERVER_STOPPED</span><span class="p">.</span><span class="na">register</span><span class="p">(</span><span class="n">server</span> <span class="o">-&gt;</span> <span class="k">this</span><span class="p">.</span><span class="na">platform</span> <span class="o">=</span> <span class="kc">null</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>From here, audiences can be aquired for players and any other <code class="docutils literal notranslate"><span class="pre">CommandSource</span></code>. Specialized serializer instances are also available, to allow using game information in component serialization.</p>
+<div class="section" id="localization">
+<h3>Localization<a class="headerlink" href="#localization" title="Permalink to this headline">¶</a></h3>
+<p>As part of the platform’s translation support, the <code class="docutils literal notranslate"><span class="pre">PlayerLocales.CHANGED_EVENT</span></code> callback will be called any time a player on the server receives an updated language from their client, and allows accessing the current locale for a player.</p>
+</div>
+<div class="section" id="commands">
+<h3>Commands<a class="headerlink" href="#commands" title="Permalink to this headline">¶</a></h3>
+<p>The Fabric platform provides custom argument types to specify <code class="docutils literal notranslate"><span class="pre">Key</span></code> and <code class="docutils literal notranslate"><span class="pre">Component</span></code> parameters in Brigadier commands, and has helpers to easily get an <code class="docutils literal notranslate"><span class="pre">Audience</span></code> from a <code class="docutils literal notranslate"><span class="pre">CommandSourceStack</span></code> (yarn: <code class="docutils literal notranslate"><span class="pre">ServerCommandSource</span></code>) instance.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If these custom argument types are used, Vanilla clients will not be able to join unless the <a class="reference external" href="https://gitlab.com/stellardrift/colonel">Colonel</a> mod is installed on the server. Like the platform, it is small and easily included in your mod jar.</p>
+</div>
+<p>As an example, here’s a simple command that will echo whatever is provided as input:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">// A potential method to be in the mod initializer class above</span>
+<span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">ARG_MESSAGE</span> <span class="o">=</span> <span class="s">&quot;message&quot;</span><span class="p">;</span>
+
+<span class="kt">void</span> <span class="nf">registerCommands</span><span class="p">(</span><span class="kd">final</span> <span class="n">CommandDispatcher</span> <span class="n">dispatcher</span><span class="p">,</span> <span class="kd">final</span> <span class="kt">boolean</span> <span class="n">isDedicated</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">dispatcher</span><span class="p">.</span><span class="na">register</span><span class="p">(</span><span class="n">literal</span><span class="p">(</span><span class="s">&quot;echo&quot;</span><span class="p">).</span><span class="na">then</span><span class="p">(</span><span class="n">argument</span><span class="p">(</span><span class="n">ARG_MESSAGE</span><span class="p">,</span> <span class="n">component</span><span class="p">()).</span><span class="na">executes</span><span class="p">(</span><span class="n">ctx</span> <span class="o">-&gt;</span> <span class="p">{</span>
+    <span class="kd">final</span> <span class="n">AdventureCommandSourceStack</span> <span class="n">source</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="na">adventure</span><span class="p">().</span><span class="na">audience</span><span class="p">(</span><span class="n">ctx</span><span class="p">.</span><span class="na">getSource</span><span class="p">());</span>
+    <span class="kd">final</span> <span class="n">Component</span> <span class="n">message</span> <span class="o">=</span> <span class="n">component</span><span class="p">(</span><span class="n">ctx</span><span class="p">,</span> <span class="n">ARG_MESSAGE</span><span class="p">);</span>
+
+    <span class="n">source</span><span class="p">.</span><span class="na">sendMessage</span><span class="p">(</span><span class="n">Component</span><span class="p">.</span><span class="na">text</span><span class="p">(</span><span class="s">&quot;You said: &quot;</span><span class="p">).</span><span class="na">append</span><span class="p">(</span><span class="n">message</span><span class="p">));</span>
+  <span class="p">}));</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="client">
+<h2>Client<a class="headerlink" href="#client" title="Permalink to this headline">¶</a></h2>
+<p>Special for the Fabric platform, purely clientside operations are supported. The setup is less involved than it is for the server, since the client is a singleton, and there is only one subject that can be acted on: the client’s player.</p>
+<p>This means that for most users the <code class="docutils literal notranslate"><span class="pre">FabricClientAudiences</span></code> object can be treated as a singleton. The only exception is users using a custom renderer. This makes using Adventure audiences fairly simple, as this code example shows:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">doThing</span><span class="p">()</span> <span class="p">{</span>
+  <span class="c1">// Get the audience</span>
+  <span class="kd">final</span> <span class="n">Audience</span> <span class="n">client</span> <span class="o">=</span> <span class="n">FabricClientAudiences</span><span class="p">.</span><span class="na">of</span><span class="p">().</span><span class="na">audience</span><span class="p">();</span>
+
+  <span class="c1">// Do something. This will only work when the player is ingame.</span>
+  <span class="n">client</span><span class="p">.</span><span class="na">sendMessage</span><span class="p">(</span><span class="n">Component</span><span class="p">.</span><span class="na">text</span><span class="p">(</span><span class="s">&quot;meow&quot;</span><span class="p">,</span> <span class="n">NamedTextColor</span><span class="p">.</span><span class="na">DARK_PURPLE</span><span class="p">));</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The full functionality of the <code class="docutils literal notranslate"><span class="pre">Audience</span></code> interface is available, including localization!</p>
+</div>
+<div class="section" id="working-with-native-types">
+<h2>Working with native types<a class="headerlink" href="#working-with-native-types" title="Permalink to this headline">¶</a></h2>
+<p>Sadly, Adventure can’t provide API for every place chat components are used in the game. However, for areas not covered by the API in <code class="docutils literal notranslate"><span class="pre">Audience</span></code>, it’s possible to convert components between native and Adventure types. See the methods on <code class="docutils literal notranslate"><span class="pre">FabricAudiences</span></code> for an idea of what’s available.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="viaversion.html" class="btn btn-neutral float-right" title="ViaVersion" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="spongeapi.html" class="btn btn-neutral float-left" title="SpongeAPI" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2020-2021, KyoriPowered.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,279 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Legacy &mdash; Adventure 4.4.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/kyori.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/sphinx_tabs/semantic-ui-2.4.1/segment.min.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/sphinx_tabs/semantic-ui-2.4.1/menu.min.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/sphinx_tabs/semantic-ui-2.4.1/tab.min.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/sphinx_tabs/tabs.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Plain" href="plain.html" />
+    <link rel="prev" title="Gson" href="gson.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Adventure
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                4.4.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../audiences.html">Audiences</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../text.html">Text (Chat Components)</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Text Serializers</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="gson.html">Gson</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Legacy</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#usage">Usage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#rgb-support">RGB support</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="plain.html">Plain</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../bossbar.html">Boss Bars</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sound.html">Sound</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../title.html">Titles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../book.html">Books</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../minimessage.html">MiniMessage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../platform/index.html">Platforms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../migration/index.html">Migrating to Adventure from other APIs</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Adventure</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="index.html">Text Serializers</a> &raquo;</li>
+        
+      <li>Legacy</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>The Adventure docs are currently a <strong>work in progress</strong>. Some areas may have limited coverage or may not be entirely up to date.
+Feel free to join our discord at <a class="reference external" href="https://discord.gg/MMfhJ8F">https://discord.gg/MMfhJ8F</a> if you have any questions.</p>
+</div>
+<div class="section" id="legacy">
+<h1>Legacy<a class="headerlink" href="#legacy" title="Permalink to this headline">¶</a></h1>
+<p>The legacy text serializer converts text to and from the traditional chat format used
+in Minecraft prior to Minecraft 1.7, and continues to be used to this day for its
+familiarity to server owners.</p>
+<p>The legacy text serializer does not support most advanced features, including hover
+and click events, components besides text components, and insertions. RGB colors
+are supported (see more in the <a class="reference internal" href="#rgb-support">RGB support</a> section) and URLs can be transformed
+into clickable components if explicitly requested (note, however, that click events
+containing a URL will <em>not</em> be serialized). If advanced features are desired, consider
+using <a class="reference internal" href="../minimessage.html"><span class="doc">MiniMessage</span></a>.</p>
+<div class="section" id="usage">
+<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
+<p>The legacy text serializer is accessed using the <code class="docutils literal notranslate"><span class="pre">LegacyComponentSerializer</span></code>. The default
+pre-provided serializers include one that uses the section symbol (§) (for display in
+old clients) and another that uses an ampersand (&amp;) typically used in configuration and
+commands to specify color codes.</p>
+<p>The default configuration for the legacy text serializer will deserialize all three of
+the RGB formats supported by Adventure but will only serialize legacy Mojang colors
+(downsampling to the nearest color as needed) and does not transform URLs in text to
+links. You can configure an instance to automatically add click events to URLs in
+components and allow the serializer to serialize RGB colors in either the Adventure
+RGB format or the BungeeCord RGB format using the builder.</p>
+</div>
+<div class="section" id="rgb-support">
+<h2>RGB support<a class="headerlink" href="#rgb-support" title="Permalink to this headline">¶</a></h2>
+<p>The legacy serializer supports deserializing three different formats:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Legacy Mojang color and formatting codes (such as <code class="docutils literal notranslate"><span class="pre">§a</span></code> or <code class="docutils literal notranslate"><span class="pre">§l</span></code>).</p></li>
+<li><p>An Adventure-specific RGB format that is intended to be easy to edit
+(such as <code class="docutils literal notranslate"><span class="pre">§#a25981</span></code>).</p></li>
+<li><p>A BungeeCord RGB color code format that is backwards compatible with
+older deserialization routines but is difficult to manipulate and makes
+it the user’s responsibility to assign a fallback for non-RGB clients (such
+as <code class="docutils literal notranslate"><span class="pre">§x§a§2§5§9§8§1</span></code>).</p></li>
+</ul>
+</div></blockquote>
+<p>The legacy serializer downsamples RGB colors by default, but you can create a serializer
+that serializes RGB colors in either the Adventure or BungeeCord RGB formats using the
+builder.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="plain.html" class="btn btn-neutral float-right" title="Plain" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="gson.html" class="btn btn-neutral float-left" title="Gson" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2020-2021, KyoriPowered.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
