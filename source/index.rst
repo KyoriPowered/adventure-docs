@@ -22,8 +22,6 @@ Adventure
 
    platform/index
 
-   nbt
-
    migration/index
 
 

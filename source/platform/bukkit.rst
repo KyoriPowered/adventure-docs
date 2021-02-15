@@ -98,7 +98,7 @@ The audiences object should also be closed when a plugin is disabled in order to
      private BukkitAudiences adventure;
 
      public @NonNull BukkitAudiences adventure() {
-       if(this.adventure) == null {
+       if(this.adventure == null) {
          throw new IllegalStateException("Tried to access Adventure when the plugin was disabled!");
        }
        return this.adventure;
