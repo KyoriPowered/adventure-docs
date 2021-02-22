@@ -21,4 +21,4 @@ using the Adventure API.
 Paper
 --------
 
-As of build 473 (1.16.5), Paper now natively supports all Adventure functionality.
+As of Paper 1.16.5 build 473, Paper now natively supports all Adventure functionality.
