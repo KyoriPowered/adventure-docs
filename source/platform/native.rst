@@ -17,3 +17,8 @@ Velocity
 
 Velocity 1.1.0, from build 158, supports sending messages, action bars, boss bars, and titles
 using the Adventure API.
+
+Paper
+--------
+
+As of 1.16.5, Paper now natively supports all Adventure functionality.
