@@ -104,7 +104,7 @@ Start tags are mandatory (obviously), end tags aren't.
 Some tags have inner tags. Those look like this: ``<tag:inner>stuff</tag>``. For example: ``<hover:show_text:"<red>test:TEST">TEST`` or ``<click:run_command:test>TEST``
 As you can see, those sometimes contain components, sometimes just strings. Refer to the detailed docs below.
 
-Single (``'``) and double (``"``) quotes can be used interchangeably, but please stay consistent.
+Single (``'``) and double (``"``) quotes can be used interchangeably, but for your own sanity, please stay consistent, choose one for all your messages. MiniMessage *should* handle mismatched quotes nicely tho.
 
 The components try to represent vanilla as closely as possible.
 It might to helpful to use `the minecraft wiki <https://minecraft.gamepedia.com/Raw_JSON_text_format>`_ as a reference, especially for stuff like the actions and values of click and hover events.
@@ -129,17 +129,17 @@ Examples
 .. image:: https://i.imgur.com/wB32YpZ.png
 .. image:: https://i.imgur.com/vsN3OHa.png
 
-Color (2, hex/rgb)
+Color (verbose)
 ******************
 
-A different, more flexible way (supports hex colors!) for colors looks like this
+A more verbose way of defining colors
 
 Tag
    ``<color:_colorNameOrHex_>``
 Aliases
    ``colour``, ``c``
 Arguments
-   * ``_colorNameOrHex_``, can be all the values from above, or hex colors (in 1.16)
+   * ``_colorNameOrHex_``, can be all the values from above (so named colors or hex colors)
 Examples
    * ``<color:yellow>Hello <color:blue>World</color:blue>!``
    * ``<color:#FF5555>This is a <color:#55FF55>test!``
@@ -217,7 +217,7 @@ Allows displaying the configured key for actions
 Tag
    ``<key:_key_>``
 Arguments
-   * ``_key_``, the minecraft key of the action
+   * ``_key_``, the keybind identifier of the action
 Examples
    * ``Press <red><key:key.jump> to jump!``
 
