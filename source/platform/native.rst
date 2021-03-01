@@ -4,7 +4,7 @@
 Native Support
 ==============
 
-As of this writing, Velocity 1.1.0+, Sponge 8+ and Paper 1.16.5+ support Adventure
+As of this writing, Velocity 1.1.0+, Sponge 8+, and Paper 1.16.5+ support Adventure
 natively.
 
 Sponge 8
