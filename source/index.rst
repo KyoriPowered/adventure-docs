@@ -82,11 +82,21 @@ First, add the repository:
    .. group-tab:: Maven
 
       .. code:: xml
-
+      
+         <dependencyManagement>
+            <dependencies>
+               <dependency>
+                  <groupId>net.kyori</groupId>
+                  <artifactId>adventure-bom</artifactId>
+                  <version>4.5.1</version>
+                  <type>pom</type>
+                  <scope>import</scope>
+               </dependency>
+            </dependencies>
+         </dependencyManagement>
          <dependency>
             <groupId>net.kyori</groupId>
             <artifactId>adventure-api</artifactId>
-            <version>4.4.0</version>
          </dependency>
    
    .. group-tab:: Gradle (Groovy)
@@ -94,7 +104,12 @@ First, add the repository:
       .. code:: groovy
 
          dependencies {
-            implementation "net.kyori:adventure-api:4.4.0"
+            implementation(platform("net.kyori:adventure-bom:4.5.1"))
+             // Use dependency defined in BOM.
+             // Version is not needed, because the version
+             // defined in the BOM is a dependency constraint
+             // that is used.
+            implementation("net.kyori:adventure-api")
          }
 
 
@@ -103,7 +118,8 @@ First, add the repository:
       .. code:: kotlin
 
          dependencies {
-            implementation("net.kyori:adventure-api:4.4.0")
+            implementation(platform("net.kyori:adventure-bom:4.5.1"))
+            implementation("net.kyori:adventure-api")
          }
 
 Indices and tables
