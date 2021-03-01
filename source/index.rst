@@ -88,7 +88,7 @@ First, add the repository:
                <dependency>
                   <groupId>net.kyori</groupId>
                   <artifactId>adventure-bom</artifactId>
-                  <version>4.2.0</version>
+                  <version>4.5.1</version>
                   <type>pom</type>
                   <scope>import</scope>
                </dependency>
@@ -104,12 +104,12 @@ First, add the repository:
       .. code:: groovy
 
          dependencies {
-            implementation platform('net.kyori:adventure-bom:4.2.0')
+            implementation(platform("net.kyori:adventure-bom:4.5.1"))
              // Use dependency defined in BOM.
              // Version is not needed, because the version
              // defined in the BOM is a dependency constraint
              // that is used.
-            implementation 'net.kyori:adventure-api'
+            implementation("net.kyori:adventure-api")
          }
 
 
@@ -118,7 +118,7 @@ First, add the repository:
       .. code:: kotlin
 
          dependencies {
-            implementation(platform("net.kyori:adventure-bom:4.2.0"))
+            implementation(platform("net.kyori:adventure-bom:4.5.1"))
             implementation("net.kyori:adventure-api")
          }
 
