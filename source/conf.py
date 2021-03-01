@@ -20,11 +20,11 @@ import sphinx_rtd_theme
 # -- Project information -----------------------------------------------------
 
 project = 'Adventure'
-copyright = '2020, KyoriPowered'
+copyright = '2020-2021, KyoriPowered'
 author = 'KyoriPowered'
 
 # The short X.Y version
-version = '4.2.0-SNAPSHOT'
+version = '4.4.0'
 
 # The full version, including alpha/beta/rc tags
 release = version
