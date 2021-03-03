@@ -19,7 +19,7 @@ The fabric platform is packaged as a mod, designed to be included in mods via ja
       .. code:: groovy
 
          dependencies {
-            modImplementation include("net.kyori:adventure-platfrom-fabric:4.0.0-SNAPSHOT")
+            modImplementation include("net.kyori:adventure-platform-fabric:4.0.0-SNAPSHOT")
          }
 
 
