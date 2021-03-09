@@ -446,4 +446,4 @@ To make customizing MiniMessage easier, we provide a Builder. Use is pretty self
         .build();
 
 Hint: its a good idea to initialize such a MiniMessage instance once, in a central location, and then use it for all your messages.
-Exception being if you want to customize MiniMessage based on permissions of a user (for example, admins should be allowed to use color and deocration in the message, normal users not)
+Exception being if you want to customize MiniMessage based on permissions of a user (for example, admins should be allowed to use color and decoration in the message, normal users not)
