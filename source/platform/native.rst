@@ -4,7 +4,7 @@
 Native Support
 ==============
 
-As of this writing, Velocity 1.1.0+, Sponge 8+, and Paper 1.16.5+ support Adventure
+As of this writing, Velocity 1.1.0+, Sponge 8+, Paper 1.16.5+ and Minestom support Adventure
 natively.
 
 Sponge 8
@@ -22,3 +22,9 @@ Paper
 --------
 
 As of Paper 1.16.5 build 473, Paper now natively supports all Adventure functionality.
+
+Minestom
+--------
+
+Minestom supports all Adventure functionality. For more information on how to use Adventure
+in Minestom, see the `Minestom Wiki <https://wiki.minestom.com/feature/adventure>`_.
