@@ -5,25 +5,32 @@ Titles
 Constructing a Title
 ^^^^^^^^^^^^^^^^^^^^
 
-.. code:: java
+Titles are composed of:
+  * A component used for the main title
+  * A component used for the subtitle
+  * Optionally, a ``Title.Times`` object can be used to determine the fade-in, stay on screen and fade-out durations
 
-  // Titles are composed of 2 components, a main title and a subtitle
-  final Component mainTitle = Component.text("This is the main title", NamedTextColor.WHITE);
-  final Component subtitle = Component.text("This is the subtitle", NamedTextColor.GRAY);
-  final Title title = Title.title(mainTitle, subtitle);
-  // You can now send `title` to an audience using `Audience#showTitle`
 
-Additionally, you can clear any title that is currently being shown to an audience using `Audience#clearTitle`
-
-Title Animations
-^^^^^^^^^^^^^^^^
-
-By default, titles fade-in, stay on screen for a period of time and then fade-out.
+**Examples:**
 
 .. code:: java
 
-  // You can control the duration (in game ticks) of those animations by supplying a Times object
-  // In this example: The fade-in will take 15 ticks which correspond to 750ms
-  // After that, the title will remain for 3000ms and the finally fade-out within 20 ticks (1000ms)
-  final Title.Times times = Title.Times.of(Ticks.duration(15), Duration.ofMillis(3000), Ticks.duration(20));
-  final Title title2 = Title.title(Component.text("Hello!"), Component.empty(), times);
+  public void showMyTitle(final @NonNull Audience target) {
+    final Component mainTitle = Component.text("This is the main title", NamedTextColor.WHITE);
+    final Component subtitle = Component.text("This is the subtitle", NamedTextColor.GRAY);
+
+    //Creates a simple title with the default values for fade-in, stay on screen and fade-out durations
+    final Title title = Title.title(mainTitle, subtitle);
+
+    //Send the title to your audience
+    target.showTitle(title);
+  }
+
+  public void showMyTitleWithDurations(final @NonNull Audience target) {
+    final Title.Times times = Title.Times.of(Duration.ofMillis(500), Duration.ofMillis(3000), Duration.ofMillis(1000));
+    //Using the times object this title will use 500ms to fade in, stay on screen for 3000ms and then fade out for 1000ms
+    final Title title = Title.title(Component.text("Hello!"), Component.empty(), times);
+
+    //Send the title, you can also use Audience#clearTitle() to remove the title at any time
+    target.showTitle(title);
+  }
