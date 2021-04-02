@@ -11,6 +11,38 @@ An average user of this text serializer will typically want to only deserialize 
 component from an external source - serialization is done automatically by the
 :doc:`/platform/index` when the component is sent to the user.
 
+**Importing this serializer into your project**
+
+.. tabs::
+
+   .. group-tab:: Maven
+
+      .. code:: xml
+
+         <dependency>
+            <groupId>net.kyori</groupId>
+            <artifactId>adventure-text-serializer-gson</artifactId>
+            <version>4.7.0</version>
+         </dependency>
+
+   .. group-tab:: Gradle (Groovy)
+
+      .. code:: groovy
+
+         dependencies {
+            implementation "net.kyori:adventure-text-serializer-gson:4.7.0"
+         }
+
+
+   .. group-tab:: Gradle (Kotlin)
+
+      .. code:: kotlin
+
+         dependencies {
+            implementation("net.kyori:adventure-text-serializer-gson:4.7.0")
+         }
+
+
 Usage
 -----
 
