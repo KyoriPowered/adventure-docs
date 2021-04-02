@@ -7,31 +7,20 @@ Adventure
    .. warning:: This documentation is for an **unreleased** version of 
       Adventure. Some information may not be up to date, and API is subject to change.
 
-.. toctree::
-   :maxdepth: 2
 
-   audiences
-   text
-   serializer/index
+Adventure is a library for server-controllable user interface elements in *Minecraft: Java Edition*. The different
+elements covered by this library can be found in the index on the left, or on the bottom of this page.
 
-   bossbar
-   sound
-   title
-   book
-   minimessage
+Check out the :doc:`quickstart` section for a little introduction to the most basic functionality in adventure
 
-   platform/index
-
-   migration/index
-
-
-Adventure is a library for server-controllable user interface elements in *Minecraft: Java Edition*.
+If you are here to troubleshoot an error commonly addressed errors can be found with answers over at the :doc:`troubleshooting`
+page.
 
 
 Importing Adventure into your project
 -------------------------------------
 
-First, add the repository:
+First, add the repository(if necessary):
 
 .. tabs::
    
@@ -41,7 +30,7 @@ First, add the repository:
 
          <repositories>
              <!-- ... -->
-             <repository> <!-- for development builds -->
+             <repository> <!-- only necessary for development builds -->
                 <id>sonatype-oss-snapshots</id>
                 <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
              </repository>
@@ -53,12 +42,12 @@ First, add the repository:
       .. code:: groovy
 
          repositories {
-            // for development builds
+            // necessary for development builds
             maven {
                 name = "sonatype-oss-snapshots"
                 url = "https://oss.sonatype.org/content/repositories/snapshots/"
             }
-            // for releases
+            // necessary for releases
             mavenCentral()
          }
 
@@ -105,6 +94,27 @@ First, add the repository:
          dependencies {
             implementation("net.kyori:adventure-api:4.7.0")
          }
+
+.. toctree::
+   :maxdepth: 2
+
+   quickstart
+   troubleshooting
+
+   audiences
+   text
+   serializer/index
+
+   bossbar
+   sound
+   title
+   book
+   tablist
+   minimessage
+
+   platform/index
+
+   migration/index
 
 Indices and tables
 ==================
