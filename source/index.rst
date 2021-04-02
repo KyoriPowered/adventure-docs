@@ -32,6 +32,7 @@ There are many community-supported libraries that extend the capabilities of Adv
    sound
    title
    book
+   tablist
    minimessage/index
 
    platform/index
