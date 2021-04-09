@@ -13,14 +13,14 @@ elements covered by this library can be found in the index on the left, or on th
 
 Check out the :doc:`quickstart` section for a little introduction to the most basic functionality in adventure
 
-If you are here to troubleshoot an error commonly addressed errors can be found with answers over at the :doc:`troubleshooting`
+If you are here to troubleshoot an error commonly addressed errors can be found with answers over at the :doc:`faq`
 page.
 
 
 Importing Adventure into your project
 -------------------------------------
 
-First, add the repository(if necessary):
+First, add the repository (if necessary):
 
 .. tabs::
    
@@ -99,7 +99,7 @@ First, add the repository(if necessary):
    :maxdepth: 2
 
    quickstart
-   troubleshooting
+   faq
 
    audiences
    text

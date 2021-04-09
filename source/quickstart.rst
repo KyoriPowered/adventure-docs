@@ -6,7 +6,7 @@ Welcome to the quickstart section! This page will quickly go through how to make
 sent to someone.
 
 
-For platforms without native support
+For platforms without :doc:`platform/native`
 ------------------------------------
 
 After importing the library into your project as specified on the starting page, find your appropriate
@@ -27,7 +27,7 @@ Create some messages, optionally with some styling:
    //TextColor.color() takes three integers representing a RGB value, which will be downsampeled
    //for clients <1.16. Adventure also provides the NamedTextColor class which holds values for
    //the old minecraft colors
-   final Component cats = Component.text("I love cats!", TextColor.of(239, 78, 108), TextDecoration.BOLD);
+   final Component cats = Component.text("I love cats!", TextColor.color(239, 78, 108), TextDecoration.BOLD);
    final Component secret = Component.text("Secret text!", TextDecoration.ITALIC);
 
    //Since all Components are immutable, any modifications will return a **new** component
@@ -45,7 +45,7 @@ The messages can be sent to your audience through different mediums:
 
 
 
-For platforms with native support
+For platforms with :doc:`platform/native`
 ---------------------------------
 
 Create some messages to send to your players:

@@ -1,6 +1,6 @@
-===============
-Troubleshooting/FAQ
-===============
+===
+FAQ
+===
 
 
 This page covers some errors and problems you might encounter while using this library.
@@ -9,12 +9,16 @@ This page covers some errors and problems you might encounter while using this l
 
 Use the serializer located here: :doc:`/serializer/legacy`
 
+**Name on item is always italic**
+
+Item names are italic by default in Minecraft, to counter this you can explicitly set the item name component
+to not have italic by using ``#decoration(TextDecoration.ITALIC, false)``
 
 **Method/Class not found on platforms with native support**
 
-Make sure the version of adventure provided by your native platform is equal or higher than the version you are
-developing in. If your code uses a method from adventure 4.5.0 while the server running the code has adventure 4.4.0
-you might get errors. All code in adventure should have a @since tag in its javadoc snippet, which you can use to check
+Make sure the version of Adventure provided by your native platform is equal or higher than the version you are
+developing in. If your code uses a method from Adventure 4.5.0 while the server running the code has Adventure 4.4.0
+you might get errors. All code in Adventure should have a @since tag in its javadoc snippet, which you can use to check
 for this error.
 
 **Players can not hear a sound/some sounds**
