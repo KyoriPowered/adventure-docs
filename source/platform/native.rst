@@ -17,3 +17,5 @@ The following software provide native support for Adventure.
 +----------+------------------+-----------------------------------------------------------------------------------------------+
 | Minestom | Build 7494725    | For more information, see the `Minestom Wiki <https://wiki.minestom.com/feature/adventure>`_. |
 +----------+------------------+-----------------------------------------------------------------------------------------------+
+| Krypton  | 0.9 (build 13)   | Messages, titles, action bars and player list supported.                                      |
++----------+------------------+-----------------------------------------------------------------------------------------------+
