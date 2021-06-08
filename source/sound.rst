@@ -18,16 +18,35 @@ Sounds are composed of:
 
 .. code:: java
 
-  public void playMySound(final @NonNull Audience target) {
-    // Play a built-in sound at the target's location with standard volume and pitch
-    target.playSound(Sound.sound(Key.key("music_disc.13"), Sound.Source.MUSIC, 1f, 1f));
-    // Play a sound from our resource pack, with a higher pitch
-    target.playSound(Sound.sound(Key.key("adventure", "rawr"), Sound.Source.AMBIENT, 1f, 1.1f));
-  }
+  // Create a built-in sound using standard volume and pitch
+  Sound musicDisc = Sound.sound(Key.key("music_disc.13"), Sound.Source.MUSIC, 1f, 1f);
 
-.. sidebar:: Limitations
+  // Create a sound from our resource pack with a higher pitch
+  Sound myCustomSound = Sound.sound(Key.key("adventure", "rawr"), Sound.Source.AMBIENT, 1f, 1.1f);
 
-  The client can play multiple sounds at once, but as of version 1.16 is limited to 8 sounds playing at once.
+Playing a Sound
+^^^^^^^^^^^^^^^
+
+.. warning::
+
+  - The client can play multiple sounds at once, but as of version 1.16 is limited to 8 sounds playing at once.
+  - Due to `MC-138832 <https://bugs.mojang.com/browse/MC-138832>`_, the volume and pitch of sounds played with an emitter may be ignored.
+
+Once you've created a sound, they can be played to an audience using multiple methods:
+
+.. code:: java
+
+  // Play a sound at the location of the audience
+  audience.playSound(sound);
+
+  // Play a sound at a specific location
+  audience.playSound(sound, 100, 0, 150);
+
+  // Play a sound that follows the audience member
+  audience.playSound(sound, Sound.Emitter.self());
+
+  // Play a sound that follows another emitter (usually an entity)
+  audience.playSound(sound, someEntity);
 
 Stopping Sounds
 ^^^^^^^^^^^^^^^
@@ -44,6 +63,17 @@ A sound stop will stop the chosen sounds -- ranging from every sound the client 
     // Stop all sounds for the target
     target.stopSound(SoundStop.all());
   }
+
+Sound stops can be constructed using the methods in the example block above.
+Alternatively, they can be constructed directly from a sound.
+
+.. code:: java
+
+  // Get a sound stop that will stop a specific sound
+  mySound.asStop();
+
+  // Sounds can also be stopped directly using the stopSound method
+  audience.stopSound(mySound);
 
 Creating a custom sound
 ^^^^^^^^^^^^^^^^^^^^^^^^
