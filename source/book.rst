@@ -16,8 +16,8 @@ Books are composed of:
 
     //Create and open a book about cats for the target audience
     public void openMyBook(final @NonNull Audience target){
-        Component bookTitle = TextComponent.text("Encyclopedia of cats");
-        Component bookAuthor = TextComponent.text("kashike");
+        Component bookTitle = Component.text("Encyclopedia of cats");
+        Component bookAuthor = Component.text("kashike");
         Collection<Component> bookPages = Cats.getCatKnowledge();
 
         Book myBook = Book.book(bookTitle, bookAuthor, bookPages);

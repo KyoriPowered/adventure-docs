@@ -24,7 +24,7 @@ copyright = '2020-2021, KyoriPowered'
 author = 'KyoriPowered'
 
 # The short X.Y version
-version = '4.7.0'
+version = '4.8.0'
 
 # The full version, including alpha/beta/rc tags
 release = version
@@ -38,7 +38,9 @@ rst_prolog = """
     The Adventure docs are currently a **work in progress**. Some areas may have limited coverage or may not be entirely up to date.
     Feel free to join our discord at `<https://discord.gg/MMfhJ8F>`_ if you have any questions.
 
-"""
+.. |version| replace:: {version}
+
+""".format(version = version)
 
 
 
@@ -49,7 +51,9 @@ rst_prolog = """
 # ones.
 extensions = [
   'sphinx_rtd_theme',
-  'sphinx_tabs.tabs'
+  'sphinx_tabs.tabs',
+  'sphinx-prompt',
+  'sphinx_substitution_extensions'
 ]
 
 # Add any paths that contain templates here, relative to this directory.
