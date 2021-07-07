@@ -6,7 +6,7 @@ Adventure is an evolution of the text 3.x API. If you've worked with
 the text API before, the switch to Adventure should be relatively quick. 
 For the most part, you'll just need to depend on the Adventure API
 and the relevant :doc:`/platform/index` you support and replace references
-to classes in ``net.kyori.text`` to ``next.kyori.adventure.text``, though see
+to classes in ``net.kyori.text`` to ``net.kyori.adventure.text``, though see
 below for major breaking changes.
 
 A word of caution
