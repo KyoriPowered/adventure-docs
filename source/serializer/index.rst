@@ -36,7 +36,7 @@ Components can be converted using any of these serializers:
    final String legacy = LegacyComponentSerializer.legacyAmpersand().serialize(textComponent);
 
    // Converts textComponent to a plain string - "Hello world!"
-   final String plain = PlainComponentSerializer.plain().serialize(textComponent);
+   final String plain = PlainTextComponentSerializer.plain().serialize(textComponent);
 
 The same is of course also possible in reverse for deserialization.
 
@@ -49,4 +49,4 @@ The same is of course also possible in reverse for deserialization.
    final Component component = LegacyComponentSerializer.legacyAmpersand().deserialize("&6Hello &b&lworld&c!");
 
    // Converts a plain string to a TextComponent
-   final Component component = PlainComponentSerializer.plain().deserialize("Hello world!");
+   final Component component = PlainTextComponentSerializer.plain().deserialize("Hello world!");

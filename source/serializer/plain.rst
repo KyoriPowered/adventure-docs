@@ -15,9 +15,9 @@ consider using :doc:`/minimessage`.
 Usage
 -----
 
-The plain serializer is accessed using the ``PlainComponentSerializer``. You can
-use ``PlainComponentSerializer.plain()`` for a default instance that silently ignores
-keybind and translatable components, or construct your own ``PlainComponentSerializer``
+The plain serializer is accessed using the ``PlainTextComponentSerializer``. You can
+use ``PlainTextComponentSerializer.plain()`` for a default instance that silently ignores
+keybind and translatable components, or construct your own ``PlainTextComponentSerializer``
 that maps the components to some plain-text representation.
 
 The deserialization of plain text is equivalent to ``Component.text(string)``. No
