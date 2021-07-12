@@ -16,7 +16,7 @@ Usage
 -----
 
 The plain serializer is accessed using the ``PlainTextComponentSerializer``. You can
-use ``PlainTextComponentSerializer.plain()`` for a default instance that silently ignores
+use ``PlainTextComponentSerializer.plainText()`` for a default instance that silently ignores
 keybind and translatable components, or construct your own ``PlainTextComponentSerializer``
 that maps the components to some plain-text representation.
 
