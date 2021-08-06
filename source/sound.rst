@@ -29,8 +29,11 @@ Playing a Sound
 
 .. warning::
 
-  - The client can play multiple sounds at once, but as of version 1.16 is limited to 8 sounds playing at once.
-  - Due to `MC-138832 <https://bugs.mojang.com/browse/MC-138832>`_, the volume and pitch of sounds played with an emitter may be ignored.
+  The client can play multiple sounds at once, but as of version 1.16 is limited to 8 sounds playing at once.
+
+  Due to `MC-138832 <https://bugs.mojang.com/browse/MC-138832>`_, the volume and pitch of sounds played with an emitter may be ignored.
+
+  As documented in `MC-146721 <https://bugs.mojang.com/browse/MC-146721>`_, any stereo sounds will not play at a specific position or following an entity, therefore, the location or emitter parameters will be ignored.
 
 Once you've created a sound, they can be played to an audience using multiple methods:
 
