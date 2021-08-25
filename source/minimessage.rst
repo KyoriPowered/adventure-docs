@@ -63,7 +63,7 @@ Adding the repository
          <dependency>
             <groupId>net.kyori</groupId>
             <artifactId>adventure-text-minimessage</artifactId>
-            <version>4.1.0-SNAPSHOT</version>
+            <version>4.2.0-SNAPSHOT</version>
          </dependency>
 
    .. group-tab:: Gradle (Groovy)
@@ -71,7 +71,7 @@ Adding the repository
       .. code:: groovy
 
          dependencies {
-            implementation "net.kyori:adventure-text-minimessage:4.1.0-SNAPSHOT"
+            implementation "net.kyori:adventure-text-minimessage:4.2.0-SNAPSHOT"
          }
 
 
@@ -80,7 +80,7 @@ Adding the repository
       .. code:: kotlin
 
          dependencies {
-            implementation("net.kyori:adventure-text-minimessage:4.1.0-SNAPSHOT")
+            implementation("net.kyori:adventure-text-minimessage:4.2.0-SNAPSHOT")
          }
 
 API
