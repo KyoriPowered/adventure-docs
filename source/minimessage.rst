@@ -347,7 +347,7 @@ To use different markdown flavors, you can use ``MiniMessage.withMarkdownFlavor(
 
 The discord flavor works like this: ``**bold**, *italic*, __underline__, ~~strikethrough~~, ||obfusctated||``
 
-The github flavor works like this: ``**bold**`, *italic*, ~~strikethrough~~``
+The github flavor works like this: ``**bold**, *italic*, ~~strikethrough~~``
 
 Additionally, you can implement your own markdown flavors. Take a look at the inbuild flavors for reference!
 
