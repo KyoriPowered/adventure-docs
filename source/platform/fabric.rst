@@ -12,6 +12,52 @@ Dependency
 
 The fabric platform is packaged as a mod, designed to be included in mods via jar-in-jar packaging. As with the rest of the adventure projects, releases are distributed on Maven Central, and snapshots on Sonatype OSS.
 
+Add the artifact to your build file:
+
+First, add the repository:
+
+.. tabs::
+   
+   .. group-tab:: Maven
+
+      .. code:: xml
+
+         <repositories>
+             <!-- ... -->
+             <repository> <!-- for development builds -->
+               <id>sonatype-oss-snapshots</id>
+               <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+             </repository>
+             <!-- ... -->
+         </repositories>
+   
+   .. group-tab:: Gradle (Groovy)
+
+      .. code:: groovy
+
+         repositories {
+            // for development builds
+            maven {
+                name = "sonatype-oss-snapshots"
+                url = "https://oss.sonatype.org/content/repositories/snapshots/"
+            }
+            // for releases
+            mavenCentral()
+         }
+
+   .. group-tab:: Gradle (Kotlin)
+
+      .. code:: kotlin
+
+         repositories {
+            // for development builds
+            maven(url = "https://oss.sonatype.org/content/repositories/snapshots/") {
+                name = "sonatype-oss-snapshots"
+            }
+            // for releases
+            mavenCentral()
+         }
+
 .. tabs::
    
    .. group-tab:: Gradle (Groovy)
