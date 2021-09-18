@@ -4,7 +4,8 @@
 # list see the documentation:
 # https://www.sphinx-doc.org/en/master/usage/configuration.html
 
-import sphinx_rtd_theme
+import os
+import sys
 
 # -- Path setup --------------------------------------------------------------
 
@@ -40,11 +41,12 @@ rst_prolog = """
 
 .. |version| replace:: {version}
 
-""".format(version = version)
-
-
+""".format(version=version)
 
 # -- General configuration ---------------------------------------------------
+
+# Add local extensions
+sys.path.append(os.path.abspath("./_ext"))
 
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
@@ -62,13 +64,13 @@ templates_path = ['_templates']
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
-exclude_patterns = []
+exclude_patterns = ['_ext']
 
 
 # General style
 
 smartquotes = True
-language='en'
+language = 'en'
 
 
 # -- Options for HTML output -------------------------------------------------
@@ -84,11 +86,15 @@ html_style = 'css/kyori.css'
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
 
+html_theme_options = {
+    'collapse_navigation': False
+}
+
 html_show_sourcelink = False
 html_copy_source = False
 html_sidebars = {
     '**': ['logo-text.html',
-          'globaltoc.html',
-          'localtoc.html',
-          'searchbox.html']
+           'globaltoc.html',
+           'localtoc.html',
+           'searchbox.html']
 }
