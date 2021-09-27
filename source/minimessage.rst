@@ -200,7 +200,7 @@ Hover
 Allows doing multiple things when hovering on the component.
 
 Tag
-   ``<hover:_action_:_value_``
+   ``<hover:_action_:_value_>``
 Arguments
    * ``_action_``, the type of hover event, one of this `list <https://github.com/KyoriPowered/adventure/blob/master/api/src/main/java/net/kyori/adventure/text/event/HoverEvent.java>`_
    * ``_value_``, the argument for that particular event, refer to `the minecraft wiki <https://minecraft.gamepedia.com/Raw_JSON_text_format>`_
@@ -274,14 +274,17 @@ Rainbow
 Rainbow colored text?!
 
 Tag
-   ``<rainbow:[phase]>``
+   ``<rainbow:[!][phase]>``
 Arguments
-   phase, optional
+   * phase, optional
+   * ``!``, literal value which reverses the rainbow, optional
 Examples
    * ``<yellow>Woo: <rainbow>||||||||||||||||||||||||</rainbow>!``
+   * ``<yellow>Woo: <rainbow:!>||||||||||||||||||||||||</rainbow>!``
    * ``<yellow>Woo: <rainbow:2>||||||||||||||||||||||||</rainbow>!``
+   * ``<yellow>Woo: <rainbow:!2>||||||||||||||||||||||||</rainbow>!``
 
-.. image:: https://i.imgur.com/uNbyoYk.png
+.. image:: https://i.imgur.com/Ertlk2G.png
 
 Gradient
 ************
