@@ -125,7 +125,10 @@ Color the next parts
 Tag
    ``<_colorname_>``
 Arguments
-   * ``_colorname_``, all minecraft color constants (check `here <https://github.com/KyoriPowered/adventure/blob/master/api/src/main/java/net/kyori/adventure/text/format/NamedTextColor.java>`_), or hex colors
+   * | ``_colorname_``, any minecraft color constant: ``black``, ``dark_blue``, ``dark_green``, ``dark_aqua``, ``dark_red``, ``dark_purple``, ``gold``, ``gray``, ``dark_gray``, ``blue``, ``green``, ``aqua``, ``red``, ``light_purple``, ``yellow``, or ``white``.
+     | 
+     | ``dark_grey`` can be used in place of ``dark_gray``, and so can ``grey`` in place of ``gray``.
+     | Hex colours are supported as well, with the format ``#RRGGBB``.
 Examples
    * ``<yellow>Hello <blue>World</blue>!``
    * ``<red>This is a <green>test!``
@@ -144,7 +147,7 @@ Tag
 Aliases
    ``colour``, ``c``
 Arguments
-   * ``_colorNameOrHex_``, can be all the values from above (so named colors or hex colors)
+   * ``_colorNameOrHex_``, can be any of the values from above (so named colors or hex colors)
 Examples
    * ``<color:yellow>Hello <color:blue>World</color:blue>!``
    * ``<color:#FF5555>This is a <color:#55FF55>test!``
@@ -160,8 +163,18 @@ Decorate the next parts
 Tag
    ``<_decorationname_>``
 Arguments:
-   * | ``_decorationname_`` , all minecraft decorations (`check here <https://github.com/KyoriPowered/adventure/blob/master/api/src/main/java/net/kyori/adventure/text/format/TextDecoration.java>`_)
-     | Aliases for ``strikethrough`` -> ``st``, ``obfuscated`` -> ``obf``, ``italic`` -> ``em`` or ``i`` and ``bold`` -> ``b`` exist
+   ``_decorationname_``, Any decoration supported in Minecraft:
+   
+   =================   =======
+   Decoration           Aliases
+   =================   =======
+   ``bold``            ``b``
+   ``italic``          ``em`` or ``i``
+   ``underlined``      ``u``
+   ``strikethrough``   ``st``
+   ``obfuscated``      ``obf``
+   =================   =======
+
 Examples:
    * ``<underlined>This is <bold>important</bold>!``
 
@@ -234,7 +247,7 @@ Translatable
 Allows displaying minecraft messages using the player locale
 
 Tag
-   ``<lang:_key_:_value1_:_value2_>``
+   ``<lang:_key_:_value1_:_value2_...>``
 Arguments
    * ``_key_``, the translation key
    * ``_valueX_``, optional values that are used for placeholders in the key (they will end up in the ``with`` tag in the json)
@@ -353,7 +366,7 @@ These are executed in the main parse loop, so the string replacements can not co
     MiniMessage.miniMessage().parse("<gray>Hello <name>", Template.of("name", Component.text("TEST", NamedTextColor.RED)));
     MiniMessage.miniMessage().parse("<gray>Hello <name>", Template.of("name", "TEST"));
     List<Template> templates = List.of(Template.of("name", "TEST"), Template.of("name2", "TEST"));
-    MiniMessage.miniMessage().parse("<gray>Hello <name> and <name2>", Template.of("name", "TEST"));
+    MiniMessage.miniMessage().parse("<gray>Hello <name> and <name2>", templates);
 
 These are pretty powerful and allow you to take components you got from elsewhere (for example an itemstack or a placeholder api) and include them in your messages easily.
 
