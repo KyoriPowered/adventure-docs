@@ -106,6 +106,8 @@ This library uses tags. Everything you do will be defined with tags. Tags have a
 Start tags are mandatory (obviously), end tags aren't.
 ``<yellow>Hello <blue>World<yellow>!`` and ``<yellow>Hello <blue>World</blue>!`` and even ``<yellow>Hello </yellow><blue>World</blue><yellow>!</yellow>`` all do the same.
 
+All tag names are case-insensitive to reduce the possibility for conflict, but we recommend keeping all tag names lowercase (or at the very least, being consistent).
+
 Some tags have inner tags. Those look like this: ``<tag:inner>stuff</tag>``. For example: ``<hover:show_text:"<red>test:TEST">TEST`` or ``<click:run_command:test>TEST``
 As you can see, those sometimes contain components, sometimes just strings. Refer to the detailed docs below.
 
@@ -394,6 +396,8 @@ When the parser encounters a close tag, the transformation for that tag will be 
 
 Transformations are registered into the transformation registry using transformation types.
 A transformation type defines a predicate, to check if the given tag can be parsed by the transformation, and a transformation parser, which handles initialization of transformations.
+
+This predicate will always receive a fully lower-case tag name, to ease comparisons.
 
 MiniMessage allows you to pass your own transformation registry, which allows you to both disable built-in transformation types, only allowing a few transformation types or even passing your own transformation types.
 MiniMessage also provides convenience methods to do that:
