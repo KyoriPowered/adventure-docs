@@ -272,20 +272,6 @@ Examples
 
 .. image:: https://i.imgur.com/Imhom84.png
 
-Pre
-************
-
-Tags within this tag will not be parsed, useful for player input for example
-
-Tag
-   ``<pre>``
-Arguments
-   non
-Examples
-   * ``<gray><<yellow><player><gray>> <reset><pre><message></pre>``
-
-.. image:: https://i.imgur.com/pQqaJnD.png
-
 Rainbow
 ************
 
