@@ -329,7 +329,7 @@ Placeholder
 MiniMessage provides two systems for placeholders. Depending on how you count. Could be 4 too.
 
 The easiest one is simple string replacements:
-``MiniMessage.get().parse("<gray>Hello <name>", "name", "MiniDigger")``
+``MiniMessage.miniMessage().parse("<gray>Hello <name>", "name", "MiniDigger")``
 
 As you can see, placeholders are defined like normal tags in the message, and resolve by a list of key value pairs (you can also pass a ``Map<String, String>`` here).
 
@@ -340,7 +340,7 @@ These placeholders are resolved before any other tags in the message. This means
     String rank = "<red>[ADMIN]</red>"
     Map<String, String> placeholders = new HashMap<>();
     placeholders.put("name", rank + name);
-    MiniMessage.get().parse("<gray>Hello <name>", "name", placeholders)
+    MiniMessage.miniMessage().parse("<gray>Hello <name>", "name", placeholders)
 
 Template
 ----------
@@ -350,10 +350,10 @@ These are executed in the main parse loop, so the string replacements can not co
 
 .. code:: java
 
-    MiniMessage.get().parse("<gray>Hello <name>", Template.of("name", Component.text("TEST").color(NamedTextColor.RED)));
-    MiniMessage.get().parse("<gray>Hello <name>", Template.of("name", "TEST"));
+    MiniMessage.miniMessage().parse("<gray>Hello <name>", Template.of("name", Component.text("TEST", NamedTextColor.RED)));
+    MiniMessage.miniMessage().parse("<gray>Hello <name>", Template.of("name", "TEST"));
     List<Template> templates = List.of(Template.of("name", "TEST"), Template.of("name2", "TEST"));
-    MiniMessage.get().parse("<gray>Hello <name> and <name2>", Template.of("name", "TEST"));
+    MiniMessage.miniMessage().parse("<gray>Hello <name> and <name2>", Template.of("name", "TEST"));
 
 These are pretty powerful and allow you to take components you got from elsewhere (for example an itemstack or a placeholder api) and include them in your messages easily.
 
@@ -362,8 +362,8 @@ Placeholder resolver
 
 To make dealing with (external or internal) placeholder apis even easier, MiniMessage allows you to provide a placeholder resolver.
 
-A placeholder resolver is just a ``Function<String, ComponentLike>``, that allows you to handle tags without having to define them before hand.
-Just return a Component when you resolved the placeholder, else you return null.
+A placeholder resolver is just a ``Function<String, @Nullable ComponentLike>``, that allows you to handle tags without having to define them before hand.
+Just return a Component when you resolved the placeholder, else you return ``null``.
 
 You can define such a resolver using the builder api (for more info, see the Builder_ section below):
 
@@ -376,7 +376,7 @@ You can define such a resolver using the builder api (for more info, see the Bui
         return null;
     };
 
-    Component result = MiniMessage.builder().placeholderResolver(resolver).build().parse("<green><bold><test>");
+    Component result = MiniMessage.builder().placeholderResolver(resolver).build().deserialize("<green><bold><test>");
 
 Customization
 ^^^^^^^^^^^^^
@@ -387,7 +387,7 @@ Transformations
 ---------------
 
 At the core, its build around the concept of transformations. A transformation is a object, that transforms a component, by changing its style or adding events, some even delete the original component and replace it with new ones.
-Explaining all possibilities would be out of scope for this documentation, if you are interested in implementing your own transformations, look at the inbuild ones as a guide.
+Explaining all possibilities would be out of scope for this documentation, if you are interested in implementing your own transformations, look at the built-in ones as a guide.
 
 When the parser encounters a start tag, it will look it up in the transformation registry, and if it finds something, the transformation will be loaded (as in, initialized with the tag name and its parameters) and then added to a list.
 When the parser then encounters a string, it will apply all transformations onto that tag.
@@ -396,9 +396,19 @@ When the parser encounters a close tag, the transformation for that tag will be 
 Transformations are registered into the transformation registry using transformation types.
 A transformation type defines a predicate, to check if the given tag can be parsed by the transformation, and a transformation parser, which handles initialization of transformations.
 
-MiniMessage allows you to pass your own transformation registry, which allows you to both disable inbuild transformation types, only allowing a few transformation types or even passing your own transformation types.
+MiniMessage allows you to pass your own transformation registry, which allows you to both disable built-in transformation types, only allowing a few transformation types or even passing your own transformation types.
 MiniMessage also provides convenience methods to do that:
-``MiniMessage.withTransformations(TransformationType.COLOR).parse("<green><bold>Hai") == Component.text("<bold>Hai", NamedTextColor.GREEN)``
+
+.. code:: java
+
+    var parsed = MiniMessage.builder()
+     .transformations(b -> b.clear().add(TransformationType.COLOR))
+     .build()
+     .parse("<green><bold>Hai");
+
+     // Assertion passes
+     assertEquals(Component.text("<bold>Hai", NamedTextColor.GREEN), parsed);
+
 Bold transformation isn't enabled -> bold tag is not parsed.
 
 Builder
@@ -409,11 +419,14 @@ To make customizing MiniMessage easier, we provide a Builder. Use is pretty self
 .. code :: java
 
     MiniMessage minimessage = MiniMessage.builder()
-        .removeDefaultTransformations()
-        .transformation(TransformationType.COLOR)
-        .transformation(TransformationType.DECORATION)
+        .transformations(builder -> builder.clear()
+          .add(TransformationType.COLOR)
+          .add(TransformationType.DECORATION)
+         )
         .placeholderResolver(this::resolvePlaceholder)
         .build();
 
-Hint: its a good idea to initialize such a MiniMessage instance once, in a central location, and then use it for all your messages.
-Exception being if you want to customize MiniMessage based on permissions of a user (for example, admins should be allowed to use color and decoration in the message, normal users not)
+.. tip::
+   
+   It's a good idea to initialize such a MiniMessage instance once, in a central location, and then use it for all your messages.
+   Exception being if you want to customize MiniMessage based on permissions of a user (for example, admins should be allowed to use color and decoration in the message, normal users not)
