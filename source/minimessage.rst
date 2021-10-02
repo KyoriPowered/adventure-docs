@@ -116,6 +116,9 @@ Single (``'``) and double (``"``) quotes can be used interchangeably, but for yo
 The components try to represent vanilla as closely as possible.
 It might to helpful to use `the minecraft wiki <https://minecraft.gamepedia.com/Raw_JSON_text_format>`_ as a reference, especially for stuff like the actions and values of click and hover events.
 
+The `MiniMessage Web Viewer <https://webui.adventure.kyori.net>`_ allows testing MiniMessage text locally, without having to spin up a Minecraft instance. 
+It can be helpful to put examples from these docs into the viewer while learning.
+
 The Components
 ----------------
 
