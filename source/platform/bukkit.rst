@@ -126,4 +126,4 @@ This audience provider should be used over the serializers directly, since it wi
 Component serializers
 ---------------------
 
-For areas that aren't covered by the ``Audience`` interface, the Bukkit platform provides the ``MinecraftComponentSerializer`` (available on Craftbukkit-based servers), and the ``BungeeCordComponentSerializer`` (available on Spigot and Paper servers) to convert directly between Adventure :doc:`Components </text>` and other component types. For uses that don't integrate directly with native types, JSON and legacy format serializers for the running server version are exposed in ``BukkitComponentSerializer``.
+For areas that aren't covered by the ``Audience`` interface, the Bukkit platform provides the ``MinecraftComponentSerializer`` (available on Craftbukkit-based servers), and the ``BungeeComponentSerializer`` (available on Spigot and Paper servers) to convert directly between Adventure :doc:`Components </text>` and other component types. For uses that don't integrate directly with native types, JSON and legacy format serializers for the running server version are exposed in ``BukkitComponentSerializer``.
