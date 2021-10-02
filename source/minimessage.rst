@@ -88,7 +88,12 @@ API
 
 MiniMessage exposes a simple API via the ``MiniMessage`` class.
 
-There are two different instances of that interface, ``get()`` and ``markdown()``, the latter one provides basic Markdown support, in addition to the MiniMessage support. More information can be found in the Markdown_ section.
+.. note::
+
+   Previously, a Markdown mode was available. This has been temporarily removed due to some issues 
+   with the new 4.2.0 parser backend, but there are plans to re-add it once time permits.
+
+A standard instance of the serializer is available through the ``miniMessage()`` method.
 
 Additional customization of MiniMessage is possible via the Builder_.
 
@@ -318,43 +323,6 @@ Examples
 
 .. image:: https://i.imgur.com/0SjeMQm.png
 
-Markdown
-^^^^^^^^^^^^^^^^^^^
-
-MiniMessage also comes with a very simple markdown addon. You can enable it by calling ``MiniMessage.markdown()`` or by using the Builder_.
-
-Note: Markdown will not be escaped when you call ``escapeTokens``, ``stripTokens`` however will work.
-
-By default, the markdown parser supports the following markup:
-
-* Bold:
-   ``**bold**`` will be transformed into ``<bold>bold</bold>``
-
-   ``__bold__`` will be transformed into ``<bold>bold</bold>`` too
-* Italic:
-   ``*italic*`` will be transformed into ``<italic>italic</italic>``
-
-   ``_italic_`` will be transformed into ``<italic>italic</italic>`` too
-* Underline:
-   ``~~underline~~`` will be transformed into ``<underlined>underline</underlined>``
-* Obfuscated:
-   ``||obfuscated||`` will be transformed into ``<obfuscated>obfuscated</obfuscated>``
-
-However, this markup is a bit strange, but now its a too late to change, thats why we got:
-
-Markdown Flavors
-----------------
-
-What you saw above is the default/legacy favor. It will hopefully eventually be removed.
-
-To use different markdown flavors, you can use ``MiniMessage.withMarkdownFlavor(DiscordFlavor.get())`` or the Builder_.
-
-The discord flavor works like this: ``**bold**, *italic*, __underline__, ~~strikethrough~~, ||obfusctated||``
-
-The github flavor works like this: ``**bold**, *italic*, ~~strikethrough~~``
-
-Additionally, you can implement your own markdown flavors. Take a look at the inbuild flavors for reference!
-
 Placeholder
 ^^^^^^^^^^^^^^^^^^^
 
@@ -444,8 +412,6 @@ To make customizing MiniMessage easier, we provide a Builder. Use is pretty self
         .removeDefaultTransformations()
         .transformation(TransformationType.COLOR)
         .transformation(TransformationType.DECORATION)
-        .markdown()
-        .markdownFlavor(DiscordFlavor.get())
         .placeholderResolver(this::resolvePlaceholder)
         .build();
 
