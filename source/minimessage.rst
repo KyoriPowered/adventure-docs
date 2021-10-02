@@ -311,9 +311,10 @@ Allows to change the font of the text
 Tag
    ``<font:key>``
 Arguments
-   the namespaced key of the font
+   the namespaced key of the font, defaulting to ``minecraft``
 Examples
-   * ``Nothing <font:minecraft:uniform>Uniform <font:minecraft:alt>Alt  </font> Uniform``
+   * ``Nothing <font:uniform>Uniform <font:alt>Alt  </font> Uniform``
+   * ``<font:myfont:custom_font>Uses a custom font from a resource pack</font>``
 
 .. image:: https://i.imgur.com/0SjeMQm.png
 
