@@ -2,7 +2,7 @@
 MiniMessage
 ===========
 
-MiniMessage is a string based format to represent Minecraft chat components in a human-readable
+MiniMessage is a string-based format to represent Minecraft chat components in a human-readable
 format that is easy to edit.
 
 Usage
@@ -52,7 +52,7 @@ Adding the repository
             mavenCentral()
          }
 
-   Declaring the dependency:
+| Declaring the dependency:
 
 .. tabs::
 
@@ -103,18 +103,18 @@ Format
 ^^^^^^^^^^^^^^^^^^^
 
 This library uses tags. Everything you do will be defined with tags. Tags have a start tag and an end tag (the ``<reset>`` tag is an exception here).
-Start tags are mandatory (obviously), end tags aren't.
+Start tags are mandatory, end tags aren't.
 ``<yellow>Hello <blue>World<yellow>!`` and ``<yellow>Hello <blue>World</blue>!`` and even ``<yellow>Hello </yellow><blue>World</blue><yellow>!</yellow>`` all do the same.
 
-All tag names are case-insensitive to reduce the possibility for conflict, but we recommend keeping all tag names lowercase (or at the very least, being consistent).
+All tag names are case-insensitive to reduce the possibility of conflict, but we recommend keeping all tag names lowercase (or at the very least, being consistent).
 
 Some tags have inner tags. Those look like this: ``<tag:inner>stuff</tag>``. For example: ``<hover:show_text:"<red>test:TEST">TEST`` or ``<click:run_command:test>TEST``
-As you can see, those sometimes contain components, sometimes just strings. Refer to the detailed docs below.
+As you can see, they can sometimes contain components or sometimes just strings. Please refer to the detailed docs below for more information on inner tags.
 
-Single (``'``) and double (``"``) quotes can be used interchangeably, but for your own sanity, please stay consistent, choose one for all your messages. MiniMessage *should* handle mismatched quotes nicely tho.
-
-The components try to represent vanilla as closely as possible.
-It might to helpful to use `the minecraft wiki <https://minecraft.gamepedia.com/Raw_JSON_text_format>`_ as a reference, especially for stuff like the actions and values of click and hover events.
+While single (``'``) and double (``"``) quotes can usually be used interchangeably, for your sanity, stick to one or the other for all your messages and stay consistent.
+		
+MiniMessage components try to mimic Vanilla formatting as closely as possible.	
+It might help to use `the Minecraft wiki <https://minecraft.gamepedia.com/Raw_JSON_text_format>`_ as a reference, especially for things like the actions and values of click and hover events.
 
 The `MiniMessage Web Viewer <https://webui.adventure.kyori.net>`_ allows testing MiniMessage text locally, without having to spin up a Minecraft instance. 
 It can be helpful to put examples from these docs into the viewer while learning.
@@ -125,14 +125,15 @@ The Components
 Color
 ******
 
-Color the next parts
+Color the next parts of a string.
 
 Tag
    ``<_colorname_>``
 Arguments
-   * | ``_colorname_``, any minecraft color constant: ``black``, ``dark_blue``, ``dark_green``, ``dark_aqua``, ``dark_red``, ``dark_purple``, ``gold``, ``gray``, ``dark_gray``, ``blue``, ``green``, ``aqua``, ``red``, ``light_purple``, ``yellow``, or ``white``.
+   * | ``_colorname_``, any Minecraft color constant: ``black``, ``dark_blue``, ``dark_green``, ``dark_aqua``, ``dark_red``, ``dark_purple``, ``gold``, ``gray``, ``dark_gray``, ``blue``, ``green``, ``aqua``, ``red``, ``light_purple``, ``yellow``, or ``white``.
      | 
      | ``dark_grey`` can be used in place of ``dark_gray``, and so can ``grey`` in place of ``gray``.
+     |
      | Hex colours are supported as well, with the format ``#RRGGBB``.
 Examples
    * ``<yellow>Hello <blue>World</blue>!``
@@ -145,14 +146,14 @@ Examples
 Color (verbose)
 ******************
 
-A more verbose way of defining colors
+A more verbose way of defining colors.
 
 Tag
    ``<color:_colorNameOrHex_>``
 Aliases
    ``colour``, ``c``
 Arguments
-   * ``_colorNameOrHex_``, can be any of the values from above (so named colors or hex colors)
+   * ``_colorNameOrHex_``, can be any of the values from above (Minecraft colors or hex colors)
 Examples
    * ``<color:yellow>Hello <color:blue>World</color:blue>!``
    * ``<color:#FF5555>This is a <color:#55FF55>test!``
@@ -163,7 +164,7 @@ Examples
 Decoration
 ************
 
-Decorate the next parts
+Decorate the next parts of the string.
 
 Tag
    ``<_decorationname_>``
@@ -188,18 +189,20 @@ Examples:
 Reset
 ************
 
-Reset all colors, decorations, hovers etc. Doesn't have a close tag
+Reset all colors, decorations, hovers, etc. Doesn't have a closing tag.
 
 Tag
    ``<reset>``
 Aliases
    ``r``
 Arguments
-   non
+   None
 Examples
    * ``<yellow><bold>Hello <reset>world!``
 
 .. image:: https://i.imgur.com/bjInUhj.png
+
+.. _Click:
 
 Click
 ************
@@ -209,8 +212,8 @@ Allows doing multiple things when clicking on the component.
 Tag
    ``<click:_action_:_value_>``
 Arguments
-   * ``_action_``, the type of click event, one of `this list <https://github.com/KyoriPowered/adventure/blob/master/api/src/main/java/net/kyori/adventure/text/event/ClickEvent.java>`_
-   * ``_value_``, the argument for that particular event, refer to `the minecraft wiki <https://minecraft.gamepedia.com/Raw_JSON_text_format>`_
+   * ``_action_``, the type of click event, see `this list <https://github.com/KyoriPowered/adventure/blob/master/api/src/main/java/net/kyori/adventure/text/event/ClickEvent.java>`__.
+   * ``_value_``, the argument for that particular event, refer to `the Minecraft wiki <https://minecraft.gamepedia.com/Raw_JSON_text_format>`_.
 Examples
    * ``<click:run_command:/say hello>Click</click> to say hello``
    * ``Click <click:copy_to_clipboard:Haha you suck> this </click>to copy your score!``
@@ -225,8 +228,9 @@ Allows doing multiple things when hovering on the component.
 Tag
    ``<hover:_action_:_value_>``
 Arguments
-   * ``_action_``, the type of hover event, one of this `list <https://github.com/KyoriPowered/adventure/blob/master/api/src/main/java/net/kyori/adventure/text/event/HoverEvent.java>`_
-   * ``_value_``, the argument for that particular event, refer to `the minecraft wiki <https://minecraft.gamepedia.com/Raw_JSON_text_format>`_
+   * ``_action_``, the type of hover event, see `this list <https://github.com/KyoriPowered/adventure/blob/master/api/src/main/java/net/kyori/adventure/text/event/HoverEvent.java>`__.
+   * ``_value_``, the argument for that particular event, refer to `the Minecraft wiki <https://minecraft.gamepedia.com/Raw_JSON_text_format>`_.
+	
 Examples
    * ``<hover:show_text:'<red>test'>TEST``
 
@@ -249,7 +253,7 @@ Examples
 Translatable
 ************
 
-Allows displaying minecraft messages using the player locale
+Allows displaying Minecraft messages using the player locale
 
 Tag
    ``<lang:_key_:_value1_:_value2_...>``
@@ -266,7 +270,7 @@ Examples
 Insertion
 ************
 
-Allow insertion of text into chat via shift click
+Allow insertion of text into the chat bar via a shift-click (if you want to insert text on a normal left click, use the :ref:`Click` tags inner tag ``suggest_command``).
 
 Tag
    ``<insertion:_text_>``
@@ -280,7 +284,7 @@ Examples
 Rainbow
 ************
 
-Rainbow colored text?!
+Rainbow-colored text?!
 
 Tag
    ``<rainbow:[!][phase]>``
@@ -298,12 +302,13 @@ Examples
 Gradient
 ************
 
-Gradient colored text
+Gradient colored text.
 
 Tag
    ``<gradient:[color1]:[color...]:[phase]>``
 Arguments
-   a list of 1 to n colors, either hex or named colors and an optional phase param (range -1 to 1) allows you to shift the gradient around, creating animations.
+   * A list of at least 2 colors, either hex or named colors and an optional phase param (range of -1 to 1) allows you to shift the gradient around, which can be used to create animations.
+   * If no colors are provided, the gradient will be white to black.
 Examples
    * ``<yellow>Woo: <gradient>||||||||||||||||||||||||</gradient>!``
    * ``<yellow>Woo: <gradient:#5e4fa2:#f79459>||||||||||||||||||||||||</gradient>!``
@@ -315,12 +320,12 @@ Examples
 Font
 ***********
 
-Allows to change the font of the text
+Changes the font of the text.
 
 Tag
    ``<font:key>``
 Arguments
-   the namespaced key of the font, defaulting to ``minecraft``
+   * The namespaced key of the font, defaulting to ``minecraft``.
 Examples
    * ``Nothing <font:uniform>Uniform <font:alt>Alt  </font> Uniform``
    * ``<font:myfont:custom_font>Uses a custom font from a resource pack</font>``
@@ -330,12 +335,12 @@ Examples
 Placeholder
 ^^^^^^^^^^^^^^^^^^^
 
-MiniMessage provides two systems for placeholders. Depending on how you count. Could be 4 too.
+MiniMessage provides two systems for placeholders. Depending on how you count, it could be 4 too.
 
 The easiest one is simple string replacements:
 ``MiniMessage.miniMessage().parse("<gray>Hello <name>", "name", "MiniDigger")``
 
-As you can see, placeholders are defined like normal tags in the message, and resolve by a list of key value pairs (you can also pass a ``Map<String, String>`` here).
+As you can see, placeholders are defined like normal tags in the message and resolve by a list of key-value pairs (you can also pass a ``Map<String, String>`` here).
 
 These placeholders are resolved before any other tags in the message. This means, replacements can contain MiniMessage tags:
  .. code:: java
@@ -359,17 +364,17 @@ These are executed in the main parse loop, so the string replacements can not co
     List<Template> templates = List.of(Template.of("name", "TEST"), Template.of("name2", "TEST"));
     MiniMessage.miniMessage().parse("<gray>Hello <name> and <name2>", templates);
 
-These are pretty powerful and allow you to take components you got from elsewhere (for example an itemstack or a placeholder api) and include them in your messages easily.
+These are pretty powerful and allow you to take components you got from elsewhere (for example an itemstack or a placeholder API) and include them in your messages easily.
 
 Placeholder resolver
 --------------------
 
-To make dealing with (external or internal) placeholder apis even easier, MiniMessage allows you to provide a placeholder resolver.
+To make dealing with (external or internal) placeholder APIs even easier, MiniMessage allows you to provide a placeholder resolver.
 
-A placeholder resolver is just a ``Function<String, @Nullable ComponentLike>``, that allows you to handle tags without having to define them before hand.
+A placeholder resolver is just a ``Function<String, @Nullable ComponentLike>``, that allows you to handle tags without having to define them beforehand.
 Just return a Component when you resolved the placeholder, else you return ``null``.
 
-You can define such a resolver using the builder api (for more info, see the Builder_ section below):
+You can define such a resolver using the builder API (for more info, see the Builder_ section below):
 
 .. code :: java
 
@@ -390,7 +395,7 @@ MiniMessage is designed to be extended, configured and adjusted to fit your need
 Transformations
 ---------------
 
-At the core, its build around the concept of transformations. A transformation is a object, that transforms a component, by changing its style or adding events, some even delete the original component and replace it with new ones.
+At its core, MiniMessage is built around the concept of transformations. A transformation is an object that transforms a component by changing its style or adding events. Some even delete the original component and replace it with new ones.	
 Explaining all possibilities would be out of scope for this documentation, if you are interested in implementing your own transformations, look at the built-in ones as a guide.
 
 When the parser encounters a start tag, it will look it up in the transformation registry, and if it finds something, the transformation will be loaded (as in, initialized with the tag name and its parameters) and then added to a list.
@@ -398,7 +403,7 @@ When the parser then encounters a string, it will apply all transformations onto
 When the parser encounters a close tag, the transformation for that tag will be removed from the list again, so that further strings will not be transformed anymore.
 
 Transformations are registered into the transformation registry using transformation types.
-A transformation type defines a predicate, to check if the given tag can be parsed by the transformation, and a transformation parser, which handles initialization of transformations.
+A transformation type defines a predicate, to check if the given tag can be parsed by the transformation, and a transformation parser, which handles the initialization of transformations.
 
 This predicate will always receive a fully lower-case tag name, to ease comparisons.
 
@@ -420,7 +425,7 @@ Bold transformation isn't enabled -> bold tag is not parsed.
 Builder
 -------
 
-To make customizing MiniMessage easier, we provide a Builder. Use is pretty self explanatory:
+To make customizing MiniMessage easier, we provide a Builder. Use is pretty self-explanatory:
 
 .. code :: java
 
@@ -435,4 +440,4 @@ To make customizing MiniMessage easier, we provide a Builder. Use is pretty self
 .. tip::
    
    It's a good idea to initialize such a MiniMessage instance once, in a central location, and then use it for all your messages.
-   Exception being if you want to customize MiniMessage based on permissions of a user (for example, admins should be allowed to use color and decoration in the message, normal users not)
+   The exception being if you want to customize MiniMessage based on the permissions of a user (for example, admins should be allowed to use color and decoration in the message, normal users not)
