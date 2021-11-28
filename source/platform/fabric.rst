@@ -2,7 +2,7 @@
 Fabric
 ======
 
-Adventure supports Fabric on *Minecraft: Java Edition* 1.16 and up, for both serverside and clientside use.
+Adventure supports Fabric on *Minecraft: Java Edition* 1.16 and up, for both serverside and clientside use. Each major version of Minecraft will usually require a new release of the platform.
 
 The platform supports all features, including localization and custom renderers.
 
@@ -65,7 +65,7 @@ First, add the repository:
       .. code:: groovy
 
          dependencies {
-            modImplementation include("net.kyori:adventure-platform-fabric:4.0.0-SNAPSHOT")
+            modImplementation include("net.kyori:adventure-platform-fabric:4.1.0") // for Minecraft 1.17
          }
 
 
@@ -74,10 +74,23 @@ First, add the repository:
       .. code:: kotlin
 
          dependencies {
-            modImplementation(include("net.kyori:adventure-platform-fabric:4.0.0-SNAPSHOT")!!)
+            modImplementation(include("net.kyori:adventure-platform-fabric:4.1.0")!!) // for Minecraft 1.17
          }
 
 The fabric platform requires *fabric-api-base* in order to provide the locale change event, and can optionally use Colonel_ to allow the ``Component`` and ``Key`` argument types to be used on clients without the mod installed. There are no other dependencies.
+
+.. attention::
+
+   Each major Minecraft release will require different platform versions. The following platform versions are the last released version for each Minecraft release. Older releases may not receive any support.
+
+   =================  ======================================
+   Minecraft Version  ``adventure-platform-fabric`` version
+   =================  ======================================
+   1.16.2-1.16.4      4.0.0
+   1.17.x             4.1.0
+   1.18               5.0.0-SNAPSHOT
+   =================  ======================================
+
 
 ------
 Server
