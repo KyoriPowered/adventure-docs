@@ -62,7 +62,7 @@ First, add the repository:
          <dependency>
          <groupId>net.kyori</groupId>
          <artifactId>adventure-platform-bukkit</artifactId>
-         <version>4.0.0</version>
+         <version>4.0.1</version>
          </dependency>
    
    .. group-tab:: Gradle (Groovy)
@@ -70,7 +70,7 @@ First, add the repository:
       .. code:: groovy
 
          dependencies {
-            implementation "net.kyori:adventure-platform-bukkit:4.0.0"
+            implementation "net.kyori:adventure-platform-bukkit:4.0.1"
          }
 
 
@@ -79,7 +79,7 @@ First, add the repository:
       .. code:: kotlin
 
          dependencies {
-            implementation("net.kyori:adventure-platform-bukkit:4.0.0")
+            implementation("net.kyori:adventure-platform-bukkit:4.0.1")
          }
 
 Usage
