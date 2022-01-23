@@ -33,13 +33,13 @@ RGB support
 
 The legacy serializer supports deserializing three different formats:
 
-  * Legacy Mojang color and formatting codes (such as ``§a`` or ``§l``).
-  * An Adventure-specific RGB format that is intended to be easy to edit
-    (such as ``§#a25981``).
-  * A BungeeCord RGB color code format that is backwards compatible with
-    older deserialization routines but is difficult to manipulate and makes
-    it the user's responsibility to assign a fallback for non-RGB clients (such
-    as ``§x§a§2§5§9§8§1``).
+* Legacy Mojang color and formatting codes (such as ``§a`` or ``§l``).
+* An Adventure-specific RGB format that is intended to be easy to edit
+  (such as ``§#a25981``).
+* A BungeeCord RGB color code format that is backwards compatible with
+  older deserialization routines but is difficult to manipulate and makes
+  it the user's responsibility to assign a fallback for non-RGB clients (such
+  as ``§x§a§2§5§9§8§1``).
 
 The legacy serializer downsamples RGB colors by default, but you can create a serializer
 that serializes RGB colors in either the Adventure or BungeeCord RGB formats using the

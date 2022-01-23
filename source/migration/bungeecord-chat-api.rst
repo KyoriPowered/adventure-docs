@@ -34,14 +34,14 @@ Replacement for ``ChatColor``
 
 Adventure's equivalents for ``ChatColor`` are split over three types:
 
-  * Formatting types (such as ``BOLD`` or ``ITALIC``) are in ``TextDecoration``, and can be set
-    on a component or a style with the ``decoration`` method. Decorations also use a tristate to
-    specify if they are enabled, disabled, or not set (in which case the component inherits the
-    setting from its parent component).
-  * Named colors (also called the legacy Mojang color codes) now exist in the ``NamedTextColor``
-    class.
-  * RGB colors are constructed using the ``TextColor.color()`` methods (this is equivalent to the
-    ``ChatColor.of()`` method in the BungeeCord ``ChatColor`` 1.16 API.
+* Formatting types (such as ``BOLD`` or ``ITALIC``) are in ``TextDecoration``, and can be set
+  on a component or a style with the ``decoration`` method. Decorations also use a tristate to
+  specify if they are enabled, disabled, or not set (in which case the component inherits the
+  setting from its parent component).
+* Named colors (also called the legacy Mojang color codes) now exist in the ``NamedTextColor``
+  class.
+* RGB colors are constructed using the ``TextColor.color()`` methods (this is equivalent to the
+  ``ChatColor.of()`` method in the BungeeCord ``ChatColor`` 1.16 API.
 
 Legacy strings can't be constructed
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -86,10 +86,10 @@ to append components to a top-level empty component using ``Component.text()``
 as a base. To replicate the behavior of ``ComponentBuilder``, consider doing the
 following:
 
-  * Use the ``Style`` class to store common styles and the ``mergeStyle`` and ``style``
-    methods to merge and replace styles on a component.
-  * Use the Adventure ``TextComponent`` builder to create one component at a time and
-    then append to a top-level text component builder that is empty.
+* Use the ``Style`` class to store common styles and the ``mergeStyle`` and ``style``
+  methods to merge and replace styles on a component.
+* Use the Adventure ``TextComponent`` builder to create one component at a time and
+  then append to a top-level text component builder that is empty.
 
 As an example, this BungeeCord component:
 
@@ -141,15 +141,15 @@ Serializers
 
 The BungeeCord Chat API includes three serializers. All three have equivalents in Adventure:
 
-  * The ``TextComponent.fromLegacyText()`` deserialization method is equivalent to the
-    ``deserialize`` method of the :doc:`/serializer/legacy` text serializer. Likewise, the
-    ``BaseComponent.toLegacyText()`` serialization method is equivalent to the ``serialize``
-    method on the legacy text serializer.
-  * The ``TextComponent.toPlainText()`` serialization method is equivalent to the
-    ``serialize`` method of the :doc:`/serializer/plain` text serializer. A component can be
-    created from a plain-text string using ``Component.text(string)``.
-  * The Adventure equivalent of ``ComponentSerializer`` is the :doc:`/serializer/gson` text
-    serializer.
+* The ``TextComponent.fromLegacyText()`` deserialization method is equivalent to the
+  ``deserialize`` method of the :doc:`/serializer/legacy` text serializer. Likewise, the
+  ``BaseComponent.toLegacyText()`` serialization method is equivalent to the ``serialize``
+  method on the legacy text serializer.
+* The ``TextComponent.toPlainText()`` serialization method is equivalent to the
+  ``serialize`` method of the :doc:`/serializer/plain` text serializer. A component can be
+  created from a plain-text string using ``Component.text(string)``.
+* The Adventure equivalent of ``ComponentSerializer`` is the :doc:`/serializer/gson` text
+  serializer.
 
 Backwards compatibility
 -----------------------
