@@ -51,6 +51,8 @@ To view the list of platforms that include Adventure, see :doc:`/platform/native
 To use Adventure with other platforms, you may wish to look at the platform-specific adapters.
 A list of platforms with supported adapters can be found at :doc:`/platform/index`.
 
+There are many community-supported libraries that extend the capabilities of Adventure and provide integrations with other software. To see a list of those we've heard of, see :doc:`/community-libraries`
+
 Using Snapshot Builds
 ^^^^^^^^^^^^^^^^^^^^^
 
