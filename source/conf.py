@@ -56,7 +56,8 @@ extensions = [
   'sphinx_rtd_theme',
   'sphinx_tabs.tabs',
   'sphinx-prompt',
-  'sphinx_substitution_extensions'
+  'sphinx_substitution_extensions',
+  'sphinx_github_changelog'
 ]
 
 # Add any paths that contain templates here, relative to this directory.
