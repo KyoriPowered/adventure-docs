@@ -1,6 +1,6 @@
-=============================
-``adventure-platform-fabric``
-=============================
+=========================
+adventure-platform-fabric
+=========================
 
 .. changelog::
     :changelog-url: https://docs.adventure.kyori.net/version-history/adventure-platform-fabric.html

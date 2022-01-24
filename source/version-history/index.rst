@@ -6,7 +6,7 @@ These changelogs for individual projects mirror those posted on the GitHub Relea
 
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: Projects:
 
    adventure
