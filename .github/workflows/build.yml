@@ -10,6 +10,8 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - uses: ammaraskar/sphinx-action@master
+      env:
+        SPHINX_GITHUB_CHANGELOG_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         docs-folder: "."
     - uses: actions/upload-artifact@v1

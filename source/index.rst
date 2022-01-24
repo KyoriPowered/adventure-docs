@@ -31,6 +31,8 @@ Table of Contents
 
    migration/index
 
+   version-history/index
+
 Indices and tables
 ==================
 
