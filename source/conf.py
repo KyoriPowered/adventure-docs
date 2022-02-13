@@ -42,6 +42,10 @@ rst_prolog = """
 
 .. |version| replace:: {version}
 
+.. role:: mm(code)
+    :language: minimessage
+    :class: highlight
+
 """.format(version=version)
 
 # -- General configuration ---------------------------------------------------
@@ -58,7 +62,8 @@ extensions = [
   'sphinx-prompt',
   'sphinx_substitution_extensions',
   'sphinx_github_changelog',
-  'sphinx_reredirects'
+  'sphinx_reredirects',
+  'minimessage_hl'
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -102,6 +107,7 @@ html_sidebars = {
            'searchbox.html']
 }
 
+# sphinx-reredirects
 redirects = {
     'minimessage': 'minimessage/'
 }
