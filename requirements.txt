@@ -5,3 +5,4 @@ sphinx-tabs
 rstcheck # format checks
 Sphinx-Substitution-Extensions # for replacements in code blocks/etc
 sphinx-github-changelog # add a changelog section
+sphinx-reredirects # for changing URLs

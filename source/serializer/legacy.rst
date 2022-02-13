@@ -11,7 +11,7 @@ and click events, components besides text components, and insertions. RGB colors
 are supported (see more in the `RGB support`_ section) and URLs can be transformed
 into clickable components if explicitly requested (note, however, that click events
 containing a URL will *not* be serialized). If advanced features are desired, consider
-using :doc:`/minimessage`.
+using :doc:`/minimessage/index`.
 
 Usage
 -----

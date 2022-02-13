@@ -10,7 +10,7 @@ text serializer.
 
 The plain text serializer, by its nature, does not support any advanced features, including
 color, hover and click events, URL linking, or insertions. If advanced features are desired,
-consider using :doc:`/minimessage`.
+consider using :doc:`/minimessage/index`.
 
 Usage
 -----
