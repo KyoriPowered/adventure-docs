@@ -5,7 +5,7 @@ The MiniMessage format is a simple string representation of chat components, des
 
 .. code:: mm
 
-  Hello <rainbow>world</rainbow>, isn't <blue><underlined><click:open_url:'https://docs.adventure.kyori.net/minimessage'>MiniMessage</click></underlined></blue> fun?
+  Hello <rainbow>world</rainbow>, isn't <blue><u><click:open_url:'https://docs.adventure.kyori.net/minimessage'>MiniMessage</click></u></blue> fun?
 
 If you're looking to write messages with MiniMessage, take a look at the :ref:`minimessage-format`, or if you're looking to develop software that uses MiniMessage, take a look at the :ref:`API overview <minimessage-api>`
 

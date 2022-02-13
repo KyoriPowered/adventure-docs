@@ -3,14 +3,14 @@
 Format
 ======
 
-The Minimessage language uses tags. Everything you do will be defined with tags. Tags have a start tag and an end tag (the ``<reset>`` tag is an exception here).
+The Minimessage language uses tags. Everything you do will be defined with tags. Tags have a start tag and an end tag (the :mm:`<reset>` tag is an exception here).
 Start tags are mandatory (obviously), end tags aren't outside of ``strict`` mode.
 :mm:`<yellow>Hello <blue>World<yellow>!` and :mm:`<yellow>Hello <blue>World</blue>!` and even :mm:`<yellow>Hello </yellow><blue>World</blue><yellow>!</yellow>` all do the same.
 
 All tag names are case-insensitive to reduce the possibility for conflict, but we recommend keeping all tag names lowercase (or at the very least, being consistent).
 
-Some tags have inner tags. Those look like this: :mm:`<tag:inner>stuff</tag>`. For example: :mm:`<hover:show_text:"<red>test:TEST">TEST` or :mm:`<click:run_command:test>TEST`
-As you can see, those sometimes contain components, sometimes just strings. Refer to the detailed docs below.
+Some tags have argument. Those look like this: :mm:`<tag:argument>stuff</tag>`. For example: :mm:`<hover:show_text:"<red>test:TEST">TEST` or :mm:`<click:run_command:test>TEST`
+As you can see, those sometimes contain components, sometimes just numbers, strings, or other types. Refer to the detailed docs below.
 
 Single (``'``) and double (``"``) quotes can be used interchangeably, but for your own sanity, please stay consistent, choose one for all your messages. MiniMessage *should* handle mismatched quotes nicely tho.
 
@@ -30,6 +30,8 @@ using MiniMessage should make it clear to end users which language variant is be
 
 Standard tags
 -------------
+
+These are the tags included and enabled by default in MiniMessage. Specific parses of MiniMessage may add custom tags to this list, or restrict the available tags to a subset of this list. Consult application documentation for details.
 
 Color
 *****
