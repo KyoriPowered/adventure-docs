@@ -12,7 +12,7 @@ All tag names are case-insensitive to reduce the possibility for conflict, but w
 Some tags have argument. Those look like this: :mm:`<tag:argument>stuff</tag>`. For example: :mm:`<hover:show_text:"<red>test:TEST">TEST` or :mm:`<click:run_command:test>TEST`
 As you can see, those sometimes contain components, sometimes just numbers, strings, or other types. Refer to the detailed docs below.
 
-Single (``'``) and double (``"``) quotes can be used interchangeably, but for your own sanity, please stay consistent, choose one for all your messages. MiniMessage *should* handle mismatched quotes nicely tho.
+Single (``'``) and double (``"``) quotes can be used interchangeably, but for your own sanity, please stay consistent, choose one for all your messages.
 
 The default tags try to represent components in a manner compatible with Vanilla, but simplifying some elements.
 It might to helpful to use `the minecraft wiki <https://minecraft.gamepedia.com/Raw_JSON_text_format>`_ as a reference, especially for things like the actions and values of click and hover events.

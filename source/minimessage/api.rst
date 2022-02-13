@@ -154,8 +154,9 @@ Placeholder resolvers are especially useful for simple cases:
 
 .. code:: java
 
-    MiniMessage.miniMessage().deserialize("<gray>Hello <name>", Placeholder.component("name", Component.text("TEST", NamedTextColor.RED)));
-    MiniMessage.miniMessage().deserialize("<gray>Hello <name>", Placeholder.unparsed("name", "TEST"));
+    MiniMessage.miniMessage().deserialize("<gray>Hello <name> :)", Placeholder.component("name", Component.text("TEST", NamedTextColor.RED))); // return Component.text("Hello ", NamedTextColor.GRAY).append(Component.text("TEST", NamedTextColor.RED), Component.text(" :)"))
+    MiniMessage.miniMessage().deserialize("<gray>Hello <name>", Placeholder.unparsed("name", "<red>TEST :)")); // returns Component.text("Hello <red>TEST :)", NamedTextColor.GRAY);
+    MiniMessage.miniMessage().deserialize("<gray>Hello <name> :)", Placeholder.parsed("name", "<red>TEST")); // returns Component.text("Hello ", NamedTextColor.GRAY).append(Component.text("TEST :)", NamedTextColor.RED));
     TagResolver placeholders = TagResolver.resolver(Placeholder.parsed("name", "TEST"), Placeholder.parsed("name2", "TEST"));
     MiniMessage.miniMessage().deserialize("<gray>Hello <name> and <name2>", placeholders);
 
