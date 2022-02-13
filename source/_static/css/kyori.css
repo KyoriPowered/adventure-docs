@@ -10,6 +10,14 @@
     color: #9988aa;
 }
 
+.rst-content code.literal, .rst-content tt {
+    color: #31055c;
+}
+
+.rst-content .highlight {
+    color: #31055c;
+}
+
 /* links (TODO: sidebar links should be a different colour -- but are standardized*/
 
 /*
