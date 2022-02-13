@@ -200,19 +200,16 @@ Pre-process
 
 These tags implement the ``PreProcess`` interface, and have a value of a raw MiniMessage string that is replaced into the user input before parsing continues.
 
-A second system, the template system, allows you to choose between string and full components as replacements.
-These are executed in the main parse loop, so the string replacements can not contain MiniMessage Tags!
-
-These are pretty powerful and allow you to take components you got from elsewhere (for example an itemstack or a placeholder api) and include them in your messages easily.
-
 Inserting
 ---------
 
 These tags are fairly straightforward: they represent a literal ``Component``. The vast majority of Tag implementations will want 
-to be ``Inserting`` tags. Inserting tags may also optionally be self-closing -- by default, this is only true for tags created by resolvers 
+to be ``Inserting`` tags. ``Inserting`` tags may also optionally be self-closing -- by default, this is only true for tags created by resolvers 
 from the ``Placeholder`` class, so that placeholders are self-contained.
 
 Modifying
 ---------
 
-Modifying tags are the most complex, and most specialized of the tag types available. These tags receive the node tree and have an opportunity to analyze it before components are constructed, and then receive every produced child component and can modify those children.
+Modifying tags are the most complex, and most specialized of the tag types available. These tags receive the node tree and have an opportunity to analyze it before 
+components are constructed, and then receive every produced child component and can modify those children. This is used for the built-in :mm:`<rainbow>` and :mm:`<gradient>` tags, 
+but can be applied for similar complex transformations.
