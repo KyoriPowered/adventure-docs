@@ -57,7 +57,8 @@ extensions = [
   'sphinx_tabs.tabs',
   'sphinx-prompt',
   'sphinx_substitution_extensions',
-  'sphinx_github_changelog'
+  'sphinx_github_changelog',
+  'sphinx_reredirects'
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -99,4 +100,8 @@ html_sidebars = {
            'globaltoc.html',
            'localtoc.html',
            'searchbox.html']
+}
+
+redirects = {
+    'minimessage': 'minimessage/'
 }

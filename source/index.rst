@@ -25,7 +25,7 @@ Table of Contents
    sound
    title
    book
-   minimessage
+   minimessage/index
 
    platform/index
 
