@@ -16,6 +16,7 @@ Table of Contents
    :maxdepth: 2
 
    getting-started
+   community-libraries
 
    audiences
    text
