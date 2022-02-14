@@ -16,22 +16,10 @@ Add the artifact to your build file:
 
 First, add the repository:
 
-.. tabs::
+.. tab-set::
    
-   .. group-tab:: Maven
-
-      .. code:: xml
-
-         <repositories>
-             <!-- ... -->
-             <repository> <!-- for development builds -->
-               <id>sonatype-oss-snapshots</id>
-               <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
-             </repository>
-             <!-- ... -->
-         </repositories>
-   
-   .. group-tab:: Gradle (Groovy)
+   .. tab-item:: Gradle (Groovy)
+      :sync: gradle-groovy
 
       .. code:: groovy
 
@@ -45,7 +33,8 @@ First, add the repository:
             mavenCentral()
          }
 
-   .. group-tab:: Gradle (Kotlin)
+   .. tab-item:: Gradle (Kotlin)
+      :sync: gradle-kotlin
 
       .. code:: kotlin
 
@@ -58,9 +47,10 @@ First, add the repository:
             mavenCentral()
          }
 
-.. tabs::
+.. tab-set::
    
-   .. group-tab:: Gradle (Groovy)
+   .. tab-item:: Gradle (Groovy)
+      :sync: gradle-groovy
 
       .. code:: groovy
 
@@ -69,7 +59,8 @@ First, add the repository:
          }
 
 
-   .. group-tab:: Gradle (Kotlin)
+   .. tab-item:: Gradle (Kotlin)
+      :sync: gradle-kotlin
 
       .. code:: kotlin
 

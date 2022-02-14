@@ -4,9 +4,10 @@ Getting Started
 
 To use Adventure in your project, you will need to add the following dependency and repository (if using Gradle):
 
-.. tabs::
+.. tab-set::
 
-   .. group-tab:: Maven
+   .. tab-item:: Maven
+      :sync: maven
 
       .. code-block:: xml
         :substitutions:
@@ -17,7 +18,8 @@ To use Adventure in your project, you will need to add the following dependency 
             <version>|version|</version>
          </dependency>
 
-   .. group-tab:: Gradle (Groovy)
+   .. tab-item:: Gradle (Groovy)
+      :sync: gradle-groovy
 
       .. code-block:: groovy
         :substitutions:
@@ -31,7 +33,8 @@ To use Adventure in your project, you will need to add the following dependency 
          }
 
 
-   .. group-tab:: Gradle (Kotlin)
+   .. tab-item:: Gradle (Kotlin)
+      :sync: gradle-kotlin
 
       .. code-block:: kotlin
         :substitutions:
@@ -58,9 +61,10 @@ Using Snapshot Builds
 
 To use snapshot builds, you will need to add the following repository:
 
-.. tabs::
+.. tab-set::
 
-   .. group-tab:: Maven
+   .. tab-item:: Maven
+      :sync: maven
 
       .. code:: xml
 
@@ -71,7 +75,8 @@ To use snapshot builds, you will need to add the following repository:
              </repository>
          </repositories>
 
-   .. group-tab:: Gradle (Groovy)
+   .. tab-item:: Gradle (Groovy)
+      :sync: gradle-groovy
 
       .. code:: groovy
 
@@ -82,7 +87,8 @@ To use snapshot builds, you will need to add the following repository:
             }
          }
 
-   .. group-tab:: Gradle (Kotlin)
+   .. tab-item:: Gradle (Kotlin)
+      :sync: gradle-kotlin
 
       .. code:: kotlin
 

@@ -8,9 +8,10 @@ To get started using this platform, add the artifact to your build file:
 
 First, add the repository:
 
-.. tabs::
+.. tab-set::
    
-   .. group-tab:: Maven
+   .. tab-item:: Maven
+      :sync: maven
 
       .. code:: xml
 
@@ -23,7 +24,8 @@ First, add the repository:
              <!-- ... -->
          </repositories>
    
-   .. group-tab:: Gradle (Groovy)
+   .. tab-item:: Gradle (Groovy)
+      :sync: gradle-groovy
 
       .. code:: groovy
 
@@ -37,7 +39,8 @@ First, add the repository:
             mavenCentral()
          }
 
-   .. group-tab:: Gradle (Kotlin)
+   .. tab-item:: Gradle (Kotlin)
+      :sync: gradle-kotlin
 
       .. code:: kotlin
 
@@ -50,11 +53,12 @@ First, add the repository:
             mavenCentral()
          }
 
-   Declaring the dependency:
+Declaring the dependency:
 
-.. tabs::
+.. tab-set::
    
-   .. group-tab:: Maven
+   .. tab-item:: Maven
+      :sync: maven
 
       .. code:: xml
 
@@ -64,7 +68,8 @@ First, add the repository:
          <version>4.0.1</version>
          </dependency>
    
-   .. group-tab:: Gradle (Groovy)
+   .. tab-item:: Gradle (Groovy)
+      :sync: gradle-groovy
 
       .. code:: groovy
 
@@ -73,7 +78,8 @@ First, add the repository:
          }
 
 
-   .. group-tab:: Gradle (Kotlin)
+   .. tab-item:: Gradle (Kotlin)
+      :sync: gradle-kotlin
 
       .. code:: kotlin
 
