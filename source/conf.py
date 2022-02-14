@@ -57,7 +57,6 @@ sys.path.append(os.path.abspath("./_ext"))
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-  'sphinx_rtd_theme',
   'sphinx_design',
   'sphinx-prompt',
   'sphinx_substitution_extensions',
@@ -87,7 +86,6 @@ language = 'en'
 # a list of builtin themes.
 #
 html_theme = 'furo'
-# html_style = 'css/kyori.css'
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
@@ -107,12 +105,6 @@ html_theme_options = {
 
 html_show_sourcelink = False
 html_copy_source = False
-#html_sidebars = {
-#    '**': ['logo-text.html',
-#           'globaltoc.html',
-#           'localtoc.html',
-#           'searchbox.html']
-#}
 
 # sphinx-reredirects
 redirects = {
