@@ -58,7 +58,7 @@ sys.path.append(os.path.abspath("./_ext"))
 # ones.
 extensions = [
   'sphinx_rtd_theme',
-  'sphinx_tabs.tabs',
+  'sphinx_design',
   'sphinx-prompt',
   'sphinx_substitution_extensions',
   'sphinx_github_changelog',
@@ -86,8 +86,8 @@ language = 'en'
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = 'sphinx_rtd_theme'
-html_style = 'css/kyori.css'
+html_theme = 'furo'
+# html_style = 'css/kyori.css'
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
@@ -95,17 +95,24 @@ html_style = 'css/kyori.css'
 html_static_path = ['_static']
 
 html_theme_options = {
-    'collapse_navigation': False
+    'light_css_variables': {
+        "color-brand-primary": "#2f2850",
+        "color-brand-content": "#6355aa",
+    },
+    'dark_css_variables': {
+        "color-brand-primary": "#b597d3",
+        "color-brand-content": "#7767c9",
+    }
 }
 
 html_show_sourcelink = False
 html_copy_source = False
-html_sidebars = {
-    '**': ['logo-text.html',
-           'globaltoc.html',
-           'localtoc.html',
-           'searchbox.html']
-}
+#html_sidebars = {
+#    '**': ['logo-text.html',
+#           'globaltoc.html',
+#           'localtoc.html',
+#           'searchbox.html']
+#}
 
 # sphinx-reredirects
 redirects = {
