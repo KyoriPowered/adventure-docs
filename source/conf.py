@@ -79,6 +79,9 @@ exclude_patterns = ['_ext']
 smartquotes = True
 language = 'en'
 
+pygments_style = 'friendly'
+pygments_dark_style = 'dracula'
+
 
 # -- Options for HTML output -------------------------------------------------
 

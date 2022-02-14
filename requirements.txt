@@ -6,3 +6,4 @@ rstcheck==3.3.1 # format checks
 Sphinx-Substitution-Extensions==2020.9.30.0 # for replacements in code blocks/etc
 sphinx-github-changelog==1.2.0 # add a changelog section
 sphinx-reredirects==0.0.1 # for changing URLs
+pygments==2.11.2 # bump version for more themes
