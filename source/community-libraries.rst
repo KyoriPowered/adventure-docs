@@ -38,9 +38,11 @@ These libraries will often depend on one or more specific platforms to support t
 
 .. Elements in this table should be alphabetized
 
-=========== ========================================================= ===================================================
-Name        Description                                               Link
-=========== ========================================================= ===================================================
-Cloud       A general-purpose Java command dispatcher & framework     `Incendo/cloud <https://github.com/Incendo/cloud>`_
-Triumph GUI A library made to simplify the creation of inventory GUIs `Triumph GUI <https://mf.mattstudios.me/triumph-gui/introduction>`_
-=========== ========================================================= ===================================================
+=================== ========================================================= ===================================================
+Name                Description                                               Link
+=================== ========================================================= ===================================================
+Cloud               A general-purpose Java command dispatcher & framework     `Incendo/cloud <https://github.com/Incendo/cloud>`_
+Triumph GUI         A library made to simplify the creation of inventory GUIs `Triumph GUI <https://mf.mattstudios.me/triumph-gui/introduction>`_
+Inventory Framework An inventory framework for managing GUIs                  `Inventory Frabework <https://github.com/stefvanschie/IF>`_
+ScoreboardLibrary   A scoreboard library for Paper/Spigot servers             `MegavexNetwork/scoreboard-library <https://github.com/MegavexNetwork/scoreboard-library>`_
+=================== ========================================================= ===================================================
