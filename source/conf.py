@@ -58,7 +58,6 @@ sys.path.append(os.path.abspath("./_ext"))
 # ones.
 extensions = [
   'sphinx_design',
-  'sphinx-prompt',
   'sphinx_substitution_extensions',
   'sphinx_github_changelog',
   'sphinx_reredirects',
