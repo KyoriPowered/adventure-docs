@@ -46,6 +46,10 @@ rst_prolog = """
     :language: minimessage
     :class: highlight
 
+.. role:: java(code)
+    :language: java
+    :class: highlight
+
 """.format(version=version)
 
 # -- General configuration ---------------------------------------------------
@@ -61,7 +65,8 @@ extensions = [
   'sphinx_substitution_extensions',
   'sphinx_github_changelog',
   'sphinx_reredirects',
-  'minimessage_hl'
+  'minimessage_hl',
+  'adventure_docs_extensions'
 ]
 
 # Add any paths that contain templates here, relative to this directory.

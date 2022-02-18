@@ -9,7 +9,7 @@ Constructing a Sound
 ^^^^^^^^^^^^^^^^^^^^
 
 Sounds are composed of:
-  * A Key (also known as ``Identifier`` or ``ResourceLocation``) that decides which sound to play. Any custom sounds from resource packs can be used. If a client does not know about sounds, it will ignore the sound (though a warning will be printed to the client log).
+  * A Key (also known as :java:`Identifier` or :java:`ResourceLocation`) that decides which sound to play. Any custom sounds from resource packs can be used. If a client does not know about sounds, it will ignore the sound (though a warning will be printed to the client log).
   * A Sound source, used to tell the client what type of sound its hearing. The clients sound settings are also attributed to a source.
   * A number, determining the radius where the sound can be heard
   * A number from 0 to 2 determining the pitch the sound will be played at
@@ -31,9 +31,9 @@ Playing a Sound
 
   The client can play multiple sounds at once, but as of version 1.16 is limited to 8 sounds playing at once.
 
-  Due to `MC-138832 <https://bugs.mojang.com/browse/MC-138832>`_, the volume and pitch of sounds played with an emitter may be ignored.
+  Due to :mojira:`MC-138832`, the volume and pitch of sounds played with an emitter may be ignored.
 
-  As documented in `MC-146721 <https://bugs.mojang.com/browse/MC-146721>`_, any stereo sounds will not play at a specific position or following an entity, therefore, the location or emitter parameters will be ignored.
+  As documented in :mojira:`MC-146721`, any stereo sounds will not play at a specific position or following an entity, therefore, the location or emitter parameters will be ignored.
 
 Once you've created a sound, they can be played to an audience using multiple methods:
 
@@ -81,5 +81,5 @@ Alternatively, they can be constructed directly from a sound.
 Creating a custom sound
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-Use the ``sounds.json`` to define sounds in a resource pack. Further reading about this limits can be done at the `Minecraft Wiki <https://minecraft.gamepedia.com/Sounds.json>`_
+Use the :file:`sounds.json` file to define sounds in a resource pack. Further reading about this limits can be done at the `Minecraft Wiki <https://minecraft.gamepedia.com/Sounds.json>`_
 

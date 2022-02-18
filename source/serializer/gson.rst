@@ -58,8 +58,8 @@ however components serialized for a 1.16 client will not be able to be displayed
 a Minecraft 1.15.2 client or lower. 
 
 To get a serializer that works with 1.16 clients and above, use
-``GsonComponentSerializer.gson()``. To get a serializer that works with all versions
-of Minecraft that support text components, use ``GsonComponentSerializer.colorDownsamplingGson()``.
+:java:`GsonComponentSerializer.gson()`. To get a serializer that works with all versions
+of Minecraft that support text components, use :java:`GsonComponentSerializer.colorDownsamplingGson()`.
 This serializer downsamples RGB colors to the closest Mojang legacy color and serializes
 hover events in a way that is backwards compatible with older clients.
 

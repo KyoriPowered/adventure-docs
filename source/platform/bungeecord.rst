@@ -91,7 +91,7 @@ Declaring the dependency:
 Usage
 -----
 
-You should first obtain an ``BungeeAudiences`` object by using ``BungeeAudiences.create(plugin)``. This object is thread-safe
+You should first obtain an ``BungeeAudiences`` object by using :java:`BungeeAudiences.create(plugin)`. This object is thread-safe
 and can be reused from different threads if needed. This object should also be *closed* when the plugin is disabled.
 
 Note that not all functionality is available on the proxy. Sending chat messages, action bar messages, titles, and boss bars, and tab list header and footer are supported, but all other requests will fail silently.

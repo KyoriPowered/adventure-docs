@@ -52,7 +52,7 @@ Therefore, if this boss bar is currently active
 
    final BossBar bossBar = BossBar.bossBar(Component.text("Cat counter"), 0, BossBar.Color.RED, BossBar.Overlay.PROGRESS);
 
-and ``#name()`` with a component is called
+and :java:`BossBar.name()` with a component is called
 
 .. code:: java
 

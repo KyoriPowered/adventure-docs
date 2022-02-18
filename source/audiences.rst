@@ -6,7 +6,7 @@ An audience, at its core, is a grouping of 0 or more viewers of some content.
 The concept of an audience is where Adventure makes its most clear break from
 other Minecraft platforms.
 
-As an API, ``Audience`` is designed to be a universal interface for any player,
+As an API, :java:`Audience` is designed to be a universal interface for any player,
 command sender, console, or otherwise who can receive text, titles, boss bars,
 and other Minecraft media. This allows extending audiences to cover more than
 one individual receiver - possible "audiences" could include a team, server,
@@ -18,9 +18,9 @@ send titles to Minecraft 1.7 clients.
 
 You will normally get audience instances from one of the :doc:`/platform/index`.
 The Adventure API includes two audience implementations itself: one that does not
-support any action (and thus does nothing). ``Audience.empty()``, and one that
-forwards an action to each member in the audience, ``Audience.audience()`` and related
-methods, along with the ``ForwardingAudience`` that implements the forwarding logic
+support any action (and thus does nothing). :java:`Audience.empty()`, and one that
+forwards an action to each member in the audience, :java:`Audience.audience()` and related
+methods, along with the :java:`ForwardingAudience` that implements the forwarding logic
 for you.
 
 Most users using will primarily use this API to show content created by other parts

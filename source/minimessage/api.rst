@@ -98,7 +98,7 @@ MiniMessage exposes a simple API via the ``MiniMessage`` class.
    Previously, a Markdown mode was available. This has been temporarily removed due to some issues 
    with the new 4.10.0 parser backend, but there are plans to re-add it once time permits.
 
-A standard instance of the serializer is available through the ``miniMessage()`` method. This uses the default set of tags and is not in strict mode.
+A standard instance of the serializer is available through the :java:`miniMessage()` method. This uses the default set of tags and is not in strict mode.
 
 Additional customization of MiniMessage is possible via the Builder_.
 
@@ -154,7 +154,7 @@ All tag resolution goes through tag resolvers. There is one global tag resolver,
 Tag resolvers are the binding between a name and arguments, and the logic to produce a ``Component`` contained in a ``Tag`` instance. They are composable so a ``TagResolver`` can produce any number of actual ``Tag`` instances. The tag name passed to resolvers will always be lower-cased, to ensure case-insensitve searches.
 
 MiniMessage has built-in resolver types that can be used for most use-cases, including custom tags and fixed-value placeholder-style tags. For single-tag resolvers, use the static factory methods in 
-``TagResolver`` and ``Placeholder``. To combine multiple resolvers, take a look at the tag resolver builder, ``TagResolver.builder()``.
+``TagResolver`` and ``Placeholder``. To combine multiple resolvers, take a look at the tag resolver builder, :java:`TagResolver.builder()`.
 
 Placeholder resolvers are especially useful for simple cases:
 
@@ -169,7 +169,7 @@ Placeholder resolvers are especially useful for simple cases:
 
 Where possible, these built-in resolvers should be used, as MiniMessage can flatten combinations of these resolvers into a more efficient format.
 
-The builder for ``MiniMessage`` allows providing a custom tag resolver rather than the default (``StandardTags.all()``), allowing 
+The builder for ``MiniMessage`` allows providing a custom tag resolver rather than the default (:java:`StandardTags.all()`), allowing 
 
 MiniMessage also provides convenience methods to do that:
 
