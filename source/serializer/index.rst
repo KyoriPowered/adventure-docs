@@ -4,8 +4,7 @@ Text Serializers
 
 The lowest-level way to convert between Adventure's data and other formats 
 are serializers. Some serializers convert to standard formats, while others 
-convert to Adventure's own formats. You need to import the serializers you need
-(not included in adventure by default) if your platform/framework does not already include it.
+convert to Adventure's own formats.
 
 .. toctree::
     :maxdepth: 1

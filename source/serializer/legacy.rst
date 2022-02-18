@@ -15,33 +15,36 @@ using :doc:`/minimessage/index`.
 
 **Importing this serializer into your project**
 
-.. tabs::
+.. tab-set::
 
-   .. group-tab:: Maven
+   .. tab-item:: Maven
 
-      .. code:: xml
+      .. code-block:: xml
+        :substitutions:
 
          <dependency>
             <groupId>net.kyori</groupId>
             <artifactId>adventure-text-serializer-legacy</artifactId>
-            <version>4.7.0</version>
+            <version>|version|</version>
          </dependency>
 
-   .. group-tab:: Gradle (Groovy)
+   .. tab-item:: Gradle (Groovy)
 
-      .. code:: groovy
+      .. code-block:: groovy
+        :substitutions:
 
          dependencies {
-            implementation "net.kyori:adventure-text-serializer-legacy:4.7.0"
+            implementation "net.kyori:adventure-text-serializer-legacy:|version|"
          }
 
 
-   .. group-tab:: Gradle (Kotlin)
+   .. tab-item:: Gradle (Kotlin)
 
-      .. code:: kotlin
+      .. code-block:: kotlin
+        :substitutions:
 
          dependencies {
-            implementation("net.kyori:adventure-text-serializer-legacy:4.7.0")
+            implementation("net.kyori:adventure-text-serializer-legacy:|version|")
          }
 
 
