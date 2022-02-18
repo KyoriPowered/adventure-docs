@@ -73,7 +73,7 @@ We take advantage of some of the many Sphinx plugins available to add helpful to
 `Sphinx-Substitution-Extensions <https://pypi.org/project/Sphinx-Substitution-Extensions/>`_
     Allows substitution within code blocks, used for build setup instructions.
 `sphinx-github-changelog <https://sphinx-github-changelog.readthedocs.io/en/latest/>`_
-    This plugin will likely not be interesting to most contributiors, but it powers the :doc:`changelogs <version-history/index>` included for Adventure projects.
+    This plugin will likely not be interesting to most contributors, but it powers the :doc:`changelogs <version-history/index>` included for Adventure projects.
 `sphinx-reredirects <https://documatt.gitlab.io/sphinx-reredirects/>`_
     If it makes sense to change the URL of a documentation page, this plugin allows inserting redirects from the old page to the new one.
 
