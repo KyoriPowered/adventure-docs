@@ -40,10 +40,3 @@ There are many community-supported libraries that extend the capabilities of Adv
 
    contributing
    version-history/index
-
-Indices and tables
-==================
-
-.. * :ref:`genindex` .. this is not very useful, it only has symbols specifically categorized
-
-* :ref:`search`
