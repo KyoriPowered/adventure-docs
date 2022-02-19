@@ -121,7 +121,7 @@ From here, audiences can be aquired for players and any other ``CommandSource``.
 Localization
 ~~~~~~~~~~~~
 
-As part of the platform's translation support, the ``PlayerLocales.CHANGED_EVENT`` callback will be called any time a player on the server receives an updated language from their client, and allows accessing the current locale for a player.
+As part of the platform's translation support, the :java:`PlayerLocales.CHANGED_EVENT` callback will be called any time a player on the server receives an updated language from their client, and allows accessing the current locale for a player.
 
 ~~~~~~~~
 Commands

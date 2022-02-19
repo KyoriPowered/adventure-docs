@@ -91,7 +91,7 @@ Declaring the dependency:
 Usage
 -----
 
-You should first obtain an ``BukkitAudiences`` object by using ``BukkitAudiences.create(plugin)``. This object is thread-safe
+You should first obtain an :java:`BukkitAudiences` object by using :java:`BukkitAudiences.create(plugin)`. This object is thread-safe
 and can be reused from different threads if needed. From here, Bukkit ``CommandSender`` s and ``Player`` s may be converted into
 ``Audience`` s using the appropriate methods on ``BukkitAudiences`` .
 

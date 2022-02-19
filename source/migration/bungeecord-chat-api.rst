@@ -32,21 +32,21 @@ will manifest.
 Replacement for ``ChatColor``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Adventure's equivalents for ``ChatColor`` are split over three types:
+Adventure's equivalents for :java:`ChatColor` are split over three types:
 
-* Formatting types (such as ``BOLD`` or ``ITALIC``) are in ``TextDecoration``, and can be set
+* Formatting types (such as ``BOLD`` or ``ITALIC``) are in :java:`TextDecoration`, and can be set
   on a component or a style with the ``decoration`` method. Decorations also use a tristate to
   specify if they are enabled, disabled, or not set (in which case the component inherits the
   setting from its parent component).
-* Named colors (also called the legacy Mojang color codes) now exist in the ``NamedTextColor``
+* Named colors (also called the legacy Mojang color codes) now exist in the :java:`NamedTextColor`
   class.
-* RGB colors are constructed using the ``TextColor.color()`` methods (this is equivalent to the
-  ``ChatColor.of()`` method in the BungeeCord ``ChatColor`` 1.16 API.
+* RGB colors are constructed using the :java:`TextColor.color()` methods (this is equivalent to the
+  :java:`ChatColor.of()` method in the BungeeCord :java:`ChatColor` 1.16 API.
 
 Legacy strings can't be constructed
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The BungeeCord ``ChatColor`` API's heritage is in the Bukkit API. The Bukkit ``ChatColor`` API in turn
+The BungeeCord :java:`ChatColor` API's heritage is in the Bukkit API. The Bukkit :java:`ChatColor` API in turn
 dates from the early days of Minecraft (Beta 1.0), when the normal and accepted way of sending formatted
 messages to the client was to concatenate magical strings that told the client what to format. A formatted
 chat message would be sent to the client like this:
@@ -57,23 +57,23 @@ chat message would be sent to the client like this:
 
 This style of sending messages has persisted to this day, even as Mojang introduced rich chat components
 into Minecraft 1.7.2. Bukkit preserved this backwards-compatible behavior, and BungeeCord introduced the
-change as a result of being compatible with the Bukkit ``ChatColor`` class.
+change as a result of being compatible with the Bukkit :java:`ChatColor` class.
 
-In Adventure, you can't concatenate magical formatting codes. The equivalent of ``ChatColor`` in Adventure,
-``TextColor``, instead returns descriptive text describing the color when its ``toString()`` is called. The
+In Adventure, you can't concatenate magical formatting codes. The equivalent of :java:`ChatColor` in Adventure,
+:java:`TextColor`, instead returns descriptive text describing the color when its :java:`toString()` is called. The
 recommended replacement is to convert all legacy messages to components.
 
 ``ChatColor.stripColor()``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-``ChatColor.stripColor()`` does not exist in Adventure. An equivalent would be to use
-``PlainComponentSerializer.plain().serialize(LegacyComponentSerializer.legacySection().deserialize(input))``.
+:java:`ChatColor.stripColor()` does not exist in Adventure. An equivalent would be to use
+:java:`PlainTextComponentSerializer.plainText().serialize(LegacyComponentSerializer.legacySection().deserialize(input))`.
 
 ``ChatColor.translateAlternateColorCodes()``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-``ChatColor.translateAlternateColorCodes()`` does not exist in Adventure. Instead you should use
-``LegacyComponentSerializer.legacy(altChar).deserialize(input)`` when deserializing a legacy
+:java:`ChatColor.translateAlternateColorCodes()` does not exist in Adventure. Instead you should use
+:java:`LegacyComponentSerializer.legacy(altChar).deserialize(input)` when deserializing a legacy
 string.
 
 Differences in ``ComponentBuilder``
@@ -82,7 +82,7 @@ Differences in ``ComponentBuilder``
 The BungeeCord ``ComponentBuilder`` treats each component independently and allows you
 to manually carry over styles from a prior component. In Adventure, there are multiple
 component builders. The closest equivalent for a BungeeCord ``ComponentBuilder`` is
-to append components to a top-level empty component using ``Component.text()``
+to append components to a top-level empty component using :java:`Component.text()`
 as a base. To replicate the behavior of ``ComponentBuilder``, consider doing the
 following:
 
@@ -141,13 +141,13 @@ Serializers
 
 The BungeeCord Chat API includes three serializers. All three have equivalents in Adventure:
 
-* The ``TextComponent.fromLegacyText()`` deserialization method is equivalent to the
+* The :java:`TextComponent.fromLegacyText()` deserialization method is equivalent to the
   ``deserialize`` method of the :doc:`/serializer/legacy` text serializer. Likewise, the
-  ``BaseComponent.toLegacyText()`` serialization method is equivalent to the ``serialize``
+  :java:`BaseComponent.toLegacyText()` serialization method is equivalent to the ``serialize``
   method on the legacy text serializer.
-* The ``TextComponent.toPlainText()`` serialization method is equivalent to the
+* The :java:`TextComponent.toPlainText()` serialization method is equivalent to the
   ``serialize`` method of the :doc:`/serializer/plain` text serializer. A component can be
-  created from a plain-text string using ``Component.text(string)``.
+  created from a plain-text string using :java:`Component.text(string)`
 * The Adventure equivalent of ``ComponentSerializer`` is the :doc:`/serializer/gson` text
   serializer.
 

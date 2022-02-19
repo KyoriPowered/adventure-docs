@@ -50,10 +50,10 @@ Usage
 -----
 
 The plain serializer is accessed using the ``PlainTextComponentSerializer``. You can
-use ``PlainTextComponentSerializer.plainText()`` for a default instance that silently ignores
+use :java:`PlainTextComponentSerializer.plainText()` for a default instance that silently ignores
 keybind and translatable components, or construct your own ``PlainTextComponentSerializer``
 that maps the components to some plain-text representation.
 
-The deserialization of plain text is equivalent to ``Component.text(string)``. No
+The deserialization of plain text is equivalent to :java:`Component.text(string)`. No
 preprocessing is done on the input. The deserialization is implemented in order to provide
 API consistency.
