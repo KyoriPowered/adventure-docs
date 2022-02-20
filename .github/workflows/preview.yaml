@@ -7,6 +7,8 @@ on:
   workflow_run:
     workflows:
       - "Build PR to Artifact"
+    types:
+      - "completed"
 
 jobs:
   docs:
@@ -17,7 +19,9 @@ jobs:
       uses: "dawidd6/action-download-artifact@v2"
       with:
         workflow: "${{ github.event.workflow_run.workflow_id }}"
+        run_id: "${{ github.event.workflow_run.id }}"
         name: "pr-num"
+        path: "."
     - name: "store PR number"
       id: "pr"
       run: |
@@ -26,8 +30,9 @@ jobs:
       uses: "dawidd6/action-download-artifact@v2"
       with:
         workflow: "${{ github.event.workflow_run.workflow_id }}"
-        workflow_conclusion: "success"
+        run_id: "${{ github.event.workflow_run.id }}"
         name: "docs-html"
+        path: "build/html"
     - name: "TODO: actually publish this"
       run: |
         ls -l build/html
