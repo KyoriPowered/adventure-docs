@@ -11,7 +11,7 @@ concurrency:
 
 jobs:
   build:
-    uses: ./.github/workflows/build_artifact.yaml
+    uses: ./.github/workflows/build-artifact.yaml
   publish-pr-number:
     runs-on: "ubuntu-latest"
     steps:

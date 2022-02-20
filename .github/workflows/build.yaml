@@ -15,7 +15,7 @@ concurrency:
 
 jobs:
   build:
-    uses: ./.github/workflows/build_artifact.yaml
+    uses: ./.github/workflows/build-artifact.yaml
   publish:
     needs: build
     runs-on: ubuntu-latest
