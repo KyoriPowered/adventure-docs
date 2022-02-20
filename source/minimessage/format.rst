@@ -114,7 +114,7 @@ Tag
 Aliases
    ``r``
 Arguments
-   non
+   none
 Examples
    * :mm:`<yellow><bold>Hello <reset>world!`
 
@@ -270,3 +270,19 @@ Examples
 
 .. image:: /minimessage/images/font_1.png
    :alt: The result of parsing ``Nothing <font:uniform>Uniform <font:alt>Alt  </font> Uniform``, shown in-game in the Minecraft client's chat window
+
+New Line
+********
+
+Allows you to insert a new line
+
+Tag
+   :mm:`<br>`
+Arguments
+   none
+Examples
+   * :mm:`Let me insert a <br>line break here.`
+   * :mm:`<hover:show_text:'<red>Hover with a<br><green>line break'>Text with<br>line break</hover>`
+
+.. image:: /minimessage/images/newline_1.png
+   :alt: The result of parsing ``<hover:show_text:'<red>Hover with a<br><green>line break'>Text with<br>line break</hover>``, shown in-game in the Minecraft client's chat window
