@@ -1,0 +1,33 @@
+# Making changes? https://github.com/nektos/act may help you test locally
+# The logic for working with GH Actions is mostly based on https://github.com/ant-design/ant-design-pro/blob/master/.github/workflows/preview-deploy.yml
+
+name: "Publish PR Preview"
+
+on:
+  workflow_run:
+    workflows:
+      - "Build PR to Artifact"
+
+jobs:
+  docs:
+    runs-on: "ubuntu-latest"
+    if: "github.event.workflow_run.event == 'pull_request' && github.event.workflow_run.conclusion == 'success'"
+    steps:
+    - name: "download PR"
+      uses: "dawidd6/action-download-artifact@v2"
+      with:
+        workflow: "${{ github.event.workflow_run.workflow_id }}"
+        name: "pr-num"
+    - name: "store PR number"
+      id: "pr"
+      run: |
+        echo "::set-output name=id::$(<pr-num.txt)"
+    - name: "download dist artifact"
+      uses: "dawidd6/action-download-artifact@v2"
+      with:
+        workflow: "${{ github.event.workflow_run.workflow_id }}"
+        workflow_conclusion: "success"
+        name: "docs-html"
+    - name: "TODO: actually publish this"
+      run: |
+        ls -l build/html

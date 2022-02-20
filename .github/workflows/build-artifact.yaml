@@ -1,0 +1,33 @@
+name: "Build project to artifact"
+
+on:
+ workflow_call:
+
+env:
+  PYTHON_VERSION: "3.10"
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: "setup python ${{ env.PYTHON_VERSION }}"
+      uses: actions/setup-python@v2
+      with: 
+        python-version: "${{ env.PYTHON_VERSION }}"
+        cache: "pip"
+    - name: "setup python / dependencies"
+      run: "pip install -r requirements.txt"
+    - uses: "ammaraskar/sphinx-problem-matcher@master"
+    - name: "build docs"
+      env:
+        SPHINX_GITHUB_CHANGELOG_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        make html
+    - name: "store output"
+      uses: actions/upload-artifact@v2
+      with:
+        name: docs-html
+        path: build/html/
+
+   
