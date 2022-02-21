@@ -220,3 +220,28 @@ Modifying
 Modifying tags are the most complex, and most specialized of the tag types available. These tags receive the node tree and have an opportunity to analyze it before 
 components are constructed, and then receive every produced child component and can modify those children. This is used for the built-in :mm:`<rainbow>` and :mm:`<gradient>` tags, 
 but can be applied for similar complex transformations.
+
+Parser Directives
+-----------------
+
+Parser directives are a special kind of tag, as they are instructions for the parser, and therefore cannot be implemented by end users.
+
+There is currently only one, but more may be added at any time.
+
+``RESET``
+  This indicates to the parser that this tag should close all currently open tags.
+
+
+This can be used to provide the functionality of a :mm:`<reset>` tag under a different name. For example:
+
+.. code:: java
+
+   final var clearTag = TagResolver.resolver("clear", ParserDirective.RESET);
+
+   final var parser = MiniMessage.builder()
+     .editTags(t -> t.resolver(clearTag))
+     .build();
+
+   final Component parsed = parser.deserialize("<red>hello <bold>world<clear>, how are you?");
+
+would add a :mm:`<clear>` tag, behaving identically to the :mm:`<reset>` tag available by default -- ", how are you?" would not be bold or colored red.
