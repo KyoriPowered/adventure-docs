@@ -3,7 +3,7 @@ Boss Bars
 =========
 
 Constructing a Boss Bar
-^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^
 
 Boss Bars are composed of:
   * A component used for the title of the boss bar
