@@ -4,6 +4,8 @@ name: "Publish main branch"
 
 # TODO: Support multiple versions in parallel
 on: 
+  repository_dispatch:
+    types: [rebuild-docs]
   push:
     branches:
     - "master"
