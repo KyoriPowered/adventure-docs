@@ -83,8 +83,8 @@ jobs:
           `
 
           // Check for existing comment
-          const repo = context.repo
-          await comments = octokit.rest.issues.listComments({
+          const repo = context.repo;
+          const comments = await octokit.rest.issues.listComments({
             owner: repo.owner,
             repo:  repo.repo,
             issue_number: Number(PR)
@@ -92,7 +92,8 @@ jobs:
 
           let commentId = -1
           for (const comment of comments) {
-            if (comment.body.startsWith(header) && comment.user.name == 'github-actions') {
+            if (comment.body.startsWith(header)) {
+              core.info(JSON.stringify(comment));
               commentId = comment.id;
               break
             }
