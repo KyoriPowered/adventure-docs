@@ -50,9 +50,6 @@ jobs:
           await fs.writeFile('build/html/_preview_data.json', JSON.stringify(data));
 
           return data
-    - run: |
-        echo "Files:"
-        ls -Rl .
     - name: "publish to pages"
       id: "publish"
       uses: "JamesIves/github-pages-deploy-action@v4.2.5"
@@ -92,10 +89,9 @@ jobs:
 
           let commentId = -1;
           for (const comment of comments.data) {
-            if (comment.body.startsWith(header)) {
-              core.info(JSON.stringify(comment));
+            if (comment.body.startsWith(header) && comment.user.login == 'github-actions' && comment.user.type == 'Bot') {
               commentId = comment.id;
-              break
+              break;
             }
           }
 
