@@ -75,11 +75,11 @@ jobs:
           const { PR, COMMIT } = process.env
           // Format body
           const header = "Your pull request has been made available for preview at:"
-          const body = `{header}
+          const body = `${header}
 
-          https://kyoripowered.github.io/adventure-docs-previews/pull/{PR}/
+          https://kyoripowered.github.io/adventure-docs-previews/pull/${PR}/
 
-          <small>Last deployed: {COMMIT}. This deployment will expire after 90 days.</small>
+          <sub>Last deployed: ${COMMIT}. This deployment will expire after 90 days.</sub>
           `
 
           // Check for existing comment
