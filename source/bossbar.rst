@@ -3,7 +3,7 @@ Boss Bars
 =========
 
 Constructing a Boss Bar
-^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^
 
 Boss Bars are composed of:
   * A component used for the title of the boss bar
@@ -14,7 +14,7 @@ Boss Bars are composed of:
 
 **Examples:**
 
-.. code:: java
+.. cod:: java
 
   private @Nullable BossBar activeBar;
 

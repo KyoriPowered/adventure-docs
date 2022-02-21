@@ -1,6 +1,6 @@
-======================
+====================
 Text (Chat Components)
-======================
+=====================
 
 Components represent Minecraft chat components
 
