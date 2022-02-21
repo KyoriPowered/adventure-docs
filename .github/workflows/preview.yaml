@@ -89,13 +89,16 @@ jobs:
             repo:  repo.repo,
             issue_number: Number(PR)
           })
+          core.info(JSON.stringify(comments));
 
           let commentId = -1;
-          for (const comment of comments) {
-            if (comment.body.startsWith(header)) {
-              core.info(JSON.stringify(comment));
-              commentId = comment.id;
-              break
+          if (comments) {
+            for (const comment of comments) {
+              if (comment.body.startsWith(header)) {
+                core.info(JSON.stringify(comment));
+                commentId = comment.id;
+                break
+              }
             }
           }
 
