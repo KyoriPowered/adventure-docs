@@ -278,6 +278,8 @@ Allows you to insert a new line
 
 Tag
    :mm:`<br>`
+Aliases
+   ``newline``
 Arguments
    none
 Examples
