@@ -59,7 +59,7 @@ if 'GITHUB_REF' in os.environ:
         rst_prolog += f"""
 .. caution::
 
-    This version of the Adventure documentation has been built as a preview of pull request #{pr_number}, and has not been reviewed.
+    This version of the Adventure documentation has been built as a preview of pull request :github:`adventure-docs#{pr_number}`, and has not been reviewed.
 
     Please consult the pull request to view any discussion and existing reviews.
 """
@@ -77,6 +77,7 @@ extensions = [
   'sphinx_substitution_extensions',
   'sphinx_github_changelog',
   'sphinx_reredirects',
+  'sphinx_github_role',
   'minimessage_hl',
   'adventure_docs_extensions'
 ]
@@ -129,3 +130,6 @@ html_copy_source = False
 redirects = {
     'minimessage': 'minimessage/'
 }
+
+# sphinx-github-role
+github_default_org_project = ('KyoriPowered', 'adventure')
