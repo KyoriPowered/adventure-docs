@@ -84,7 +84,7 @@ jobs:
 
           // Check for existing comment
           const repo = context.repo;
-          const comments = await octokit.rest.issues.listComments({
+          const comments = await github.rest.issues.listComments({
             owner: repo.owner,
             repo:  repo.repo,
             issue_number: Number(PR)
