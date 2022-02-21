@@ -33,7 +33,7 @@ release = version
 if release.endswith('-SNAPSHOT'):
     tags.add('draft')
 
-rst_prolog = """
+rst_prolog = f"""
 .. danger::
 
     The Adventure docs are currently a **work in progress** and supplement the `Javadocs <https://jd.adventure.kyori.net>`_.
@@ -50,7 +50,19 @@ rst_prolog = """
     :language: java
     :class: highlight
 
-""".format(version=version)
+"""
+
+if 'GITHUB_REF' in os.environ:
+    ref = os.environ['GITHUB_REF']
+    if ref.startswith("refs/pull/"):
+        pr_number = ref[len("refs/pull/"):-len("/merge")]
+        rst_prolog += f"""
+.. caution::
+
+    This version of the Adventure documentation has been built as a preview of pull request #{pr_number}, and has not been reviewed.
+
+    Please consult the pull request to view any discussion and existing reviews.
+"""
 
 # -- General configuration ---------------------------------------------------
 
