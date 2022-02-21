@@ -15,6 +15,7 @@ jobs:
     runs-on: "ubuntu-latest"
     if: "github.event.workflow_run.event == 'pull_request' && github.event.workflow_run.conclusion == 'success'"
     steps:
+    - uses: "actions/checkout@v2" # for pages publishing
     - name: "download PR"
       uses: "dawidd6/action-download-artifact@v2"
       with:
@@ -49,7 +50,9 @@ jobs:
           await fs.writeFile('build/html/_preview_data.json', JSON.stringify(data));
 
           return data
-    - uses: "actions/checkout@v2" # for pages publishing
+    - run: |
+        echo "Files:"
+        ls -Rl .
     - name: "publish to pages"
       id: "publish"
       uses: "JamesIves/github-pages-deploy-action@v4.2.5"
