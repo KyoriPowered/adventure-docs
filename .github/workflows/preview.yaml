@@ -89,7 +89,7 @@ jobs:
 
           let commentId = -1;
           for (const comment of comments.data) {
-            if (comment.body.startsWith(header) && comment.user.login == 'github-actions' && comment.user.type == 'Bot') {
+            if (comment.body.startsWith(header) && comment.user.login == 'github-actions[bot]' && comment.user.type == 'Bot') {
               commentId = comment.id;
               break;
             }
