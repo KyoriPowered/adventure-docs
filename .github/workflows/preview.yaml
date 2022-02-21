@@ -22,10 +22,6 @@ jobs:
         run_id: "${{ github.event.workflow_run.id }}"
         name: "pr-num"
         path: "."
-    - name: "store PR number"
-      id: "pr"
-      run: |
-        echo "::set-output name=id::$(<pr-num.txt)"
     - name: "download dist artifact"
       uses: "dawidd6/action-download-artifact@v2"
       with:
@@ -33,6 +29,85 @@ jobs:
         run_id: "${{ github.event.workflow_run.id }}"
         name: "docs-html"
         path: "build/html"
-    - name: "TODO: actually publish this"
-      run: |
-        ls -l build/html
+    - name: "generate data blob"
+      id: "data"
+      uses: "actions/github-script@v6"
+      with:
+        script: |
+          let fs = require("fs/promises");
+
+          let dirPromise = fs.mkdir('build/html/', {recursive: true});
+          let prNum = await fs.readFile('pr-num.txt', {encoding: 'UTF-8'}).trim();
+          let time = new Date().toISOString();
+
+          let data = {
+            pr: prNum,
+            time: time
+          };
+
+          await dirPromise;
+          await fs.writeFile('build/html/_preview_data.json', JSON.stringify(data));
+
+          return data
+    - name: "publish to pages"
+      id: "publish"
+      uses: "JamesIves/github-pages-deploy-action@v4.2.5"
+      with:
+        branch: "main"
+        folder: "build/html"
+        ssh-key: "${{ secrets.DOCS_PREVIEW_DEPLOY_KEY }}"
+        repository-name: "KyoriPowered/adventure-docs-previews"
+        target-folder: "pull/${{ steps.data.outputs.pr }}"
+        clean: false
+        single-commit: true
+    - name: "notify"
+      if: "${{ steps.publish.outputs.deployment-status == 'success' }}"
+      uses: "actions/github-script@v6"
+      env:
+        PR: "${{ steps.data.outputs.pr }}"
+        COMMIT: "${{ github.event.workflow_run.head_sha }}"
+      with:
+        script: |
+          const { PR, COMMIT } = process.env
+          // Format body
+          const header = "Your pull request has been made available for preview at:"
+          const body = `{header}
+
+          https://kyoripowered.github.io/adventure-docs-previews/pull/{PR}/
+
+          <small>Last deployed: {COMMIT}. This deployment will expire after 90 days.</small>
+          `
+
+          // Check for existing comment
+          const repo = context.repo
+          await comments = octokit.rest.issues.listComments({
+            owner: repo.owner,
+            repo:  repo.repo,
+            issue_number: Number(PR)
+          })
+
+          let commentId = -1
+          for (const comment of comments) {
+            if (comment.body.startsWith(header) && comment.user.name == 'github-actions') {
+              commentId = comment.id;
+              break
+            }
+          }
+
+          // If comment exists: edit it, otherwise create 
+          if (commentId != -1) {
+            await github.rest.issues.updateComment({
+              owner: repo.owner,
+              repo: repo.repo,
+              comment_id: commentId,
+              body: body
+            });
+          } else {
+            await github.rest.issues.createComment({
+              owner: repo.owner,
+              repo: repo.repo,
+              issue_number: Number(PR)
+              body: body
+            });
+          }
+
