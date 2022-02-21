@@ -58,14 +58,14 @@ jobs:
         folder: "build/html"
         ssh-key: "${{ secrets.DOCS_PREVIEW_DEPLOY_KEY }}"
         repository-name: "KyoriPowered/adventure-docs-previews"
-        target-folder: "pull/${{ steps.data.outputs.pr }}"
+        target-folder: "pull/${{ fromJSON(steps.data.outputs.result).pr }}"
         clean: false
         single-commit: true
     - name: "notify"
       if: "${{ steps.publish.outputs.deployment-status == 'success' }}"
       uses: "actions/github-script@v6"
       env:
-        PR: "${{ steps.data.outputs.pr }}"
+        PR: "${{ fromJSON(steps.data.outputs.result).pr }}"
         COMMIT: "${{ github.event.workflow_run.head_sha }}"
       with:
         script: |
