@@ -37,7 +37,7 @@ jobs:
           let fs = require("fs/promises");
 
           let dirPromise = fs.mkdir('build/html/', {recursive: true});
-          let prNum = await fs.readFile('pr-num.txt', {encoding: 'UTF-8'}).trim();
+          let prNum = (await fs.readFile('pr-num.txt', {encoding: 'UTF-8'})).trim();
           let time = new Date().toISOString();
 
           let data = {
