@@ -29,5 +29,6 @@ jobs:
       with:
         name: docs-html
         path: build/html/
+        retention-days: 1
 
    

@@ -90,7 +90,7 @@ jobs:
             issue_number: Number(PR)
           })
 
-          let commentId = -1
+          let commentId = -1;
           for (const comment of comments) {
             if (comment.body.startsWith(header)) {
               core.info(JSON.stringify(comment));
@@ -111,7 +111,7 @@ jobs:
             await github.rest.issues.createComment({
               owner: repo.owner,
               repo: repo.repo,
-              issue_number: Number(PR)
+              issue_number: Number(PR),
               body: body
             });
           }

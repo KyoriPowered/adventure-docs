@@ -24,5 +24,6 @@ jobs:
       with:
         name: "pr-num"
         path: "./pr-num.txt"
+        retention-days: 1
       
 
