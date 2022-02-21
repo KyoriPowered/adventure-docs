@@ -49,6 +49,7 @@ jobs:
           await fs.writeFile('build/html/_preview_data.json', JSON.stringify(data));
 
           return data
+    - uses: "actions/checkout@v2" # for pages publishing
     - name: "publish to pages"
       id: "publish"
       uses: "JamesIves/github-pages-deploy-action@v4.2.5"
