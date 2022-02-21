@@ -271,20 +271,20 @@ Examples
 .. image:: /minimessage/images/font_1.png
    :alt: The result of parsing ``Nothing <font:uniform>Uniform <font:alt>Alt  </font> Uniform``, shown in-game in the Minecraft client's chat window
 
-New Line
-********
+Newline
+*******
 
-Allows you to insert a new line
+Insert a newline character.
 
 Tag
-   :mm:`<br>`
+   :mm:`<newline>`
 Aliases
-   ``newline``
+   ``br``
 Arguments
    none
 Examples
-   * :mm:`Let me insert a <br>line break here.`
-   * :mm:`<hover:show_text:'<red>Hover with a<br><green>line break'>Text with<br>line break</hover>`
+   * :mm:`Let me insert a <newline>line break here.`
+   * :mm:`<hover:show_text:'<red>Hover with a<newline><green>line break'>Text with<newline>line break</hover>`
 
 .. image:: /minimessage/images/newline_1.png
-   :alt: The result of parsing ``<hover:show_text:'<red>Hover with a<br><green>line break'>Text with<br>line break</hover>``, shown in-game in the Minecraft client's chat window
+   :alt: The result of parsing ``<hover:show_text:'<red>Hover with a<newline><green>line break'>Text with<newline>line break</hover>``, shown in-game in the Minecraft client's chat window
