@@ -146,7 +146,7 @@ which throws exceptions on unclosed tags, but still will allow any improperly sp
 
 To capture information on why a parse may have failed, ``MiniMessage.Builder#debug(Consumer<String>)`` can be provided, which will accept debug logging for an input string.
 
-Tag resolvers
+Tag Resolvers
 ^^^^^^^^^^^^^
 
 All tag resolution goes through tag resolvers. There is one global tag resolver, which describes the tags available through a `MiniMessage` instance, plus parse-specific resolvers which can provide additional input-specific tags.
@@ -192,27 +192,58 @@ Because the :mm:`<bold>` tag is not enabled on this builder, the bold tag is int
 Handling Arguments
 ------------------
 
-Tag resolvers have an ``ArgumentQueue`` paremeter, which provides any tag arguments that are present in the input. Helper methods on ``Tag.Argument`` can assist with conversions of the tag.
+Tag resolvers have an :java:`ArgumentQueue` paremeter, which provides any tag arguments that are present in the input. Helper methods on :java:`Tag.Argument` can assist with conversions of the tag.
 
-Exceptions thrown by the ``popOr()`` methods will interrupt execution, but are not currently exposed to users outside of debug output. We plan to add an auto-completion function that can 
+Exceptions thrown by the :java:`popOr()` methods will interrupt execution, but are not currently exposed to users outside of debug output. We plan to add an auto-completion function that can 
 reveal some of this information to the user, so please do try to write useful error messaces in custom tag resolvers.
 
 Tags
 ^^^^
 
-Once a tag resolver has handled arguments, it returns a ``Tag`` object. These objects implement the logic of producing or modifying a component tree. There are three main kinds of ``Tag`` -- all custom implementations must implement one of these interfaces.
+Once a tag resolver has handled arguments, it returns a :java:`Tag` object. These objects implement the logic of producing or modifying a component tree. There are three main kinds of :java:`Tag` -- all custom implementations must implement one of these interfaces.
 
 Pre-process
 -----------
 
 These tags implement the ``PreProcess`` interface, and have a value of a raw MiniMessage string that is replaced into the user input before parsing continues.
 
+Due to limitations in the current parser implementation, note that pre-process tags will adjust offsets in error messages, and may inhibit tab completion. However, they are currently the only way to integrate markup fragments into a message.
+
 Inserting
 ---------
 
-These tags are fairly straightforward: they represent a literal ``Component``. The vast majority of Tag implementations will want 
-to be ``Inserting`` tags. ``Inserting`` tags may also optionally be self-closing -- by default, this is only true for tags created by resolvers 
-from the ``Placeholder`` class, so that placeholders are self-contained.
+These tags are fairly straightforward: they represent a literal :java:`Component`. The vast majority of Tag implementations will want 
+to be :java:`Inserting` tags. :java:`Inserting` tags may also optionally be self-closing -- by default, this is only true for tags created by :java:`Placeholder.unparsed(String)` and :java:`Placeholder.component(Component)`,
+so that placeholders are self-contained.
+
+Most :doc:`standard tags <./format>` are :java:`Inserting`. These tags will either directly insert a component, or use the helper :java:`Tag.styling(StyleBuilderApplicable...)` to apply style to components.
+
+This helper can be used to efficiently apply a collection of styles with one tag. For example, to create a :mm:`<a:[href]>Title</a>` tag, that makes the ``Title`` text into a link that opens a URL with traditional link styling, this could be used:
+
+.. code:: java
+
+  Component aTagExample() {
+    final String input = "Hello, <a:https://kyori.net>click me!</a> but not me!";
+    final MiniMessage extendedInstance = MiniMessage.builder()
+      .tags(b -> b.resolver(TagResolver.resolver("a", MiniMessageTest::createA)))
+      .build();
+
+    return extendedInstance.deserialize(input);
+  }
+
+  static Tag createA(final ArgumentQueue args, final Context ctx) {
+    final String link = args.popOr("The <a> tag requires exactly one argument, the link to open").value();
+
+    return Tag.styling(
+      NamedTextColor.BLUE,
+      TextDecoration.UNDERLINED,
+      ClickEvent.openUrl(link),
+      HoverEvent.showText(Component.text("Open " + link))
+    );
+  }
+
+This allows producing rich styling relatively quickly.
+
 
 Modifying
 ---------
@@ -220,3 +251,38 @@ Modifying
 Modifying tags are the most complex, and most specialized of the tag types available. These tags receive the node tree and have an opportunity to analyze it before 
 components are constructed, and then receive every produced child component and can modify those children. This is used for the built-in :mm:`<rainbow>` and :mm:`<gradient>` tags, 
 but can be applied for similar complex transformations.
+
+Modifying tags are first given an opportunity to visit every node of the tree in a depth-first traversal. If a ``Modifying`` instance stores any state during this traversal, its resolver should return a new instance every time to prevent state corruption.
+
+.. note::
+
+   The :java:`Node` API in 4.10.0 is currently not very well developed -- most aspects are still internal. Additional information can be exposed as needed by tag developers.
+
+Once the whole parse tree has been visited, the :java:`postVisit()` method is called. This method can optionally be overridden if any additional calculations must be performed.
+
+Next, the ``Modifying`` instance enters the application phase, where the component tree is presented to the tag for transformation. This allows the tag to *modify* the contents of these components, giving it its name.
+
+Parser Directives
+-----------------
+
+Parser directives are a special kind of tag, as they are instructions for the parser, and therefore cannot be implemented by end users.
+
+There is currently only one, but more may be added at any time.
+
+``RESET``
+  This indicates to the parser that this tag should close all currently open tags.
+
+
+This can be used to provide the functionality of a :mm:`<reset>` tag under a different name. For example:
+
+.. code:: java
+
+   final var clearTag = TagResolver.resolver("clear", ParserDirective.RESET);
+
+   final var parser = MiniMessage.builder()
+     .editTags(t -> t.resolver(clearTag))
+     .build();
+
+   final Component parsed = parser.deserialize("<red>hello <bold>world<clear>, how are you?");
+
+would add a :mm:`<clear>` tag, behaving identically to the :mm:`<reset>` tag available by default -- ", how are you?" would not be bold or colored red.
