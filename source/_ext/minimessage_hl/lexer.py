@@ -41,7 +41,7 @@ class MiniMessageLexer(RegexLexer):
     tokens = {
         'root': [
             (r'[^<]+', Literal),
-            (r'\\<', Escape),
+            (r'\\[<\\]', Escape),
             (r'<', Name.Tag, 'tag')
         ],
         'tag': [
@@ -59,12 +59,12 @@ class MiniMessageLexer(RegexLexer):
             (r'[^>:\'"]+', Name.Attribute),
         ],
         'string_single': [
-            (r"\\[']", String.Escape),
+            (r"\\['\\]", String.Escape),
             (r"'", String.Single, '#pop'),
             (r"(?:\\[^']|[^'])+", String.Single)
         ],
         'string_double': [
-            (r'\\["]', String.Escape),
+            (r'\\["\\]', String.Escape),
             (r'"', String.Double, '#pop'),
             (r'(?:\\[^"]|[^"])+', String.Double)
         ]

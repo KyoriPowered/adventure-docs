@@ -4,20 +4,25 @@ Format
 ======
 
 The Minimessage language uses tags. Everything you do will be defined with tags. Tags have a start tag and an end tag (the :mm:`<reset>` tag is an exception here).
-Start tags are mandatory (obviously), end tags aren't outside of ``strict`` mode.
-:mm:`<yellow>Hello <blue>World<yellow>!` and :mm:`<yellow>Hello <blue>World</blue>!` and even :mm:`<yellow>Hello </yellow><blue>World</blue><yellow>!</yellow>` all do the same.
+Start tags are mandatory (obviously), but end tags aren't outside of ``strict`` mode.
+:mm:`<yellow>Hello <blue>World<yellow>!` and :mm:`<yellow>Hello <blue>World</blue>!` and even :mm:`<yellow>Hello </yellow><blue>World</blue><yellow>!</yellow>` are all visually identical.
 
 All tag names are case-insensitive to reduce the possibility for conflict, but we recommend keeping all tag names lowercase (or at the very least, being consistent).
 
 Some tags have argument. Those look like this: :mm:`<tag:argument>stuff</tag>`. For example: :mm:`<hover:show_text:"<red>test:TEST">TEST` or :mm:`<click:run_command:test>TEST`
 As you can see, those sometimes contain components, sometimes just numbers, strings, or other types. Refer to the detailed docs below.
 
-Single (``'``) and double (``"``) quotes can be used interchangeably, but for your own sanity, please stay consistent, choose one for all your messages.
+Single (``'``) and double (``"``) quotes can be used interchangeably. We recommend staying consistent, though in order to minimize escaping it might make more sense to switch quote types for some arguments.
 
-The default tags try to represent components in a manner compatible with Vanilla, but simplifying some elements.
-It might to helpful to use `the minecraft wiki <https://minecraft.gamepedia.com/Raw_JSON_text_format>`_ as a reference, especially for things like the actions and values of click and hover events.
+Any meaningful token can be escaped in the locations where they have influence. In plain text, tag open characters (``<``) can be escaped with a leading backslash (``\``). Within quoted strings,
+the opening quote character can be escaped (``'`` or ``"``). In either place, the escape character can be escaped in places where it would otherwise be relevant. Unquoted tag arguments cannot have escapes, for simplicity.
+In locations where escaping is not supported, the literal escape character will be passed through.
 
-The `MiniMessage Web Viewer <https://webui.adventure.kyori.net>`_ allows testing MiniMessage text locally, without having to spin up a Minecraft instance. 
+The default tags try to represent components in a manner compatible with Vanilla, but simplifying some elements. It might to helpful to
+use `the minecraft wiki <https://minecraft.gamepedia.com/Raw_JSON_text_format>`_ as a reference for the Vanilla component system, especially
+for things like the actions and values of click and hover events.
+
+The `MiniMessage Web Viewer <https://webui.adventure.kyori.net>`_ allows testing MiniMessage text locally, without having to spin up a Minecraft instance.
 It can be helpful to put examples from these docs into the viewer while learning.
 
 Strict mode
