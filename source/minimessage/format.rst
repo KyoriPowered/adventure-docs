@@ -16,7 +16,7 @@ Single (``'``) and double (``"``) quotes can be used interchangeably. We recomme
 
 Any meaningful token can be escaped in the locations where they have influence. In plain text, tag open characters (``<``) can be escaped with a leading backslash (``\``). Within quoted strings,
 the opening quote character can be escaped (``'`` or ``"``). In either place, the escape character can be escaped in places where it would otherwise be relevant. Unquoted tag arguments cannot have escapes, for simplicity.
-In locations where escaping is not supported, the literal escape character will be passed through.
+In locations where escaping is not supported, the literal escape character will be passed through. In locations where escaping *is* supported but a literal escape character is desired, the escape character can itself be escaped to produce a ``\``.
 
 The default tags try to represent components in a manner compatible with Vanilla, but simplifying some elements. It might to helpful to
 use `the minecraft wiki <https://minecraft.gamepedia.com/Raw_JSON_text_format>`_ as a reference for the Vanilla component system, especially
