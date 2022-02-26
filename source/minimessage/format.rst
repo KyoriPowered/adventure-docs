@@ -5,7 +5,8 @@ Format
 
 The Minimessage language uses tags. Everything you do will be defined with tags. Tags have a start tag and an end tag (the :mm:`<reset>` tag is an exception here).
 Start tags are mandatory (obviously), but end tags aren't outside of ``strict`` mode.
-:mm:`<yellow>Hello <blue>World<yellow>!` and :mm:`<yellow>Hello <blue>World</blue>!` and even :mm:`<yellow>Hello </yellow><blue>World</blue><yellow>!</yellow>` are all visually identical.
+:mm:`<yellow>Hello <blue>World<yellow>!` and :mm:`<yellow>Hello <blue>World</blue>!` and even :mm:`<yellow>Hello </yellow><blue>World</blue><yellow>!</yellow>` are all
+visually identical. For tags with no content, tags can be auto-closed by using the format :mm:`<tag/>`. With this format, even in strict mode no separate closing tag should be provided.
 
 All tag names are case-insensitive to reduce the possibility for conflict, but we recommend keeping all tag names lowercase (or at the very least, being consistent).
 
