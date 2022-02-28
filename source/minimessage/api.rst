@@ -156,6 +156,8 @@ Tag resolvers are the binding between a name and arguments, and the logic to pro
 MiniMessage has built-in resolver types that can be used for most use-cases, including custom tags and fixed-value placeholder-style tags. For single-tag resolvers, use the static factory methods in 
 ``TagResolver`` and ``Placeholder``. To combine multiple resolvers, take a look at the tag resolver builder, :java:`TagResolver.builder()`.
 
+Tag names are only allowed to contain the characters a-z, 0-9, ``_``, and ``-``. They can also optionally start with any of the following characters: ``!?#``.
+
 Placeholder resolvers are especially useful for simple cases:
 
 .. code:: java
