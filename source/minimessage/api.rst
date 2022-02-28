@@ -60,31 +60,34 @@ Declaring the dependency:
    .. tab-item:: Maven
       :sync: maven
 
-      .. code:: xml
+      .. code-block:: xml
+        :substitutions:
 
          <dependency>
             <groupId>net.kyori</groupId>
             <artifactId>adventure-text-minimessage</artifactId>
-            <version>4.10.0-SNAPSHOT</version>
+            <version>|version|</version>
          </dependency>
 
    .. tab-item:: Gradle (Groovy)
       :sync: gradle-groovy
 
-      .. code:: groovy
+      .. code-block:: groovy
+        :substitutions:
 
          dependencies {
-            implementation "net.kyori:adventure-text-minimessage:4.10.0-SNAPSHOT"
+            implementation "net.kyori:adventure-text-minimessage:|version|"
          }
 
 
    .. tab-item:: Gradle (Kotlin)
       :sync: gradle-kotlin
 
-      .. code:: kotlin
+      .. code-block:: kotlin
+        :substitutions:
 
          dependencies {
-            implementation("net.kyori:adventure-text-minimessage:4.10.0-SNAPSHOT")
+            implementation("net.kyori:adventure-text-minimessage:|version|")
          }
 
 
