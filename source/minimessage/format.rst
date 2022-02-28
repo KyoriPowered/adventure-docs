@@ -31,7 +31,7 @@ Strict mode
 
 By default, MiniMessage is extremely lenient, and any invalid tags will just be ignored. Any tags left unclosed at the end of an input string will be automatically closed.
 
-Applications can optionally enable *strict mode*, which prohibits using :mm:`<reset>`, and requires all tags to be closed in reverse order of opening. Any application 
+Applications can optionally enable *strict mode*, which prohibits using :mm:`<reset>`, and requires all tags to be closed in reverse order of opening. Any application
 using MiniMessage should make it clear to end users which language variant is being used.
 
 Standard tags
@@ -48,7 +48,7 @@ Tag
    :mm:`<_colorname_>`
 Arguments
    * | ``_colorname_``, any minecraft color constant: ``black``, ``dark_blue``, ``dark_green``, ``dark_aqua``, ``dark_red``, ``dark_purple``, ``gold``, ``gray``, ``dark_gray``, ``blue``, ``green``, ``aqua``, ``red``, ``light_purple``, ``yellow``, or ``white``.
-     | 
+     |
      | ``dark_grey`` can be used in place of ``dark_gray``, and so can ``grey`` in place of ``gray``.
      | Hex colours are supported as well, with the format ``#RRGGBB``.
 Examples
@@ -91,7 +91,7 @@ Tag
    :mm:`<_decorationname_[:false]>`, or :mm:`<!_decorationname_>` as an alias to invert the decoration.
 Arguments:
    ``_decorationname_``, Any decoration supported in Minecraft:
-   
+
    =================   =======
    Decoration           Aliases
    =================   =======
@@ -154,14 +154,14 @@ Tag
 Arguments
    * ``_action_``, the type of hover event, one of this `list <https://jd.adventure.kyori.net/api/latest/net/kyori/adventure/text/event/HoverEvent.Action.html#field.summary>`_
    * ``_value..._``, arguments specific to each event action:
-     
+
      .. list-table:: Arguments for each action
         :header-rows: 1
 
         * - Action
           - Value
         * - ``show_text``
-          - ``_text_`` (a MiniMessage string) 
+          - ``_text_`` (a MiniMessage string)
         * - ``show_item``
           - ``_type_[:_count_[:tag]]`` (a ``Key`` for the item's type, optionally followed by count (an integer) and tag (a SNBT string))
         * -  ``show_entity``
@@ -260,6 +260,25 @@ Examples
 
 .. image:: /minimessage/images/gradient_1.png
    :alt: The result of parsing the examples for the gradint tag, shown in-game in the Minecraft client's chat window
+
+
+Transition
+**********
+
+Transitions between colors.
+Similar to a gradient, but everything is the same color and the phase chooses that color
+
+Tag
+   :mm:`<transition:[color1]:[color...]:[phase]>`
+Arguments
+   a list of 1 to n colors, either hex or named colors and an optional phase param (range -1 to 1) allows you to shift the transition around, creating animations.
+Examples
+   * :mm:`<transition:#00ff00:#ff0000:0>|||||||||</transition>`
+   * :mm:`<transition:white:black:red:[phase]>Hello world [phase]</transition>`
+
+.. image:: /minimessage/images/transition_1.png
+   :alt: The result of parsing ``<transition:white:black:red:[phase]>Hello World [phase]</transition>``, shown in-game in the Minecraft client's chat window
+
 
 Font
 ****
