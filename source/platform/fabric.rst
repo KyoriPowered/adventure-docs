@@ -80,7 +80,7 @@ The fabric platform requires *fabric-api-base* in order to provide the locale ch
    1.16.2-1.16.4      4.0.0
    1.17.x             4.1.0
    1.18, 1.18.1       5.1.0
-   1.18.2             5.2.0-SNAPSHOT
+   1.18.2             5.2.0
    =================  ======================================
 
 
