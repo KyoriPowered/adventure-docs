@@ -10,7 +10,7 @@ The platform supports all features, including localization and custom renderers.
 Dependency
 ----------
 
-The fabric platform is packaged as a mod, designed to be included in mods via jar-in-jar packaging. As with the rest of the adventure projects, releases are distributed on Maven Central, and snapshots on Sonatype OSS.
+The Fabric platform is packaged as a mod, designed to be included in mods via jar-in-jar packaging. As with the rest of the Adventure projects, releases are distributed on Maven Central, and snapshots on Sonatype OSS.
 
 Add the artifact to your build file:
 
@@ -68,20 +68,20 @@ First, add the repository:
             modImplementation(include("net.kyori:adventure-platform-fabric:5.2.0")!!) // for Minecraft 1.18.2
          }
 
-The fabric platform requires *fabric-api-base* in order to provide the locale change event, and can optionally use Colonel_ to allow the ``Component`` and ``Key`` argument types to be used on clients without the mod installed. There are no other dependencies.
+The Fabric platform requires *fabric-api-base* in order to provide the locale change event, and can optionally use Colonel_ to allow the ``Component`` and ``Key`` argument types to be used on clients without the mod installed. There are no other dependencies.
 
 .. attention::
 
    Each major Minecraft release will require different platform versions. The following platform versions are the last released version for each Minecraft release. Older releases may not receive any support.
 
-   =================  ======================================
-   Minecraft Version  ``adventure-platform-fabric`` version
-   =================  ======================================
-   1.16.2-1.16.4      4.0.0
-   1.17.x             4.1.0
-   1.18, 1.18.1       5.1.0
-   1.18.2             5.2.0
-   =================  ======================================
+   ================= ================= ======================================
+   Minecraft Version Adventure version ``adventure-platform-fabric`` version
+   ================= ================= ======================================
+   1.16.2-1.16.4     4.9.3             4.0.0
+   1.17.x            4.9.3             4.1.0
+   1.18, 1.18.1      4.10.0            5.1.0
+   1.18.2            4.10.0            5.2.0
+   ================= ================= ======================================
 
 
 ------
