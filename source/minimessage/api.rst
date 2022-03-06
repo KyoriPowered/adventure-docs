@@ -133,7 +133,8 @@ To make customizing MiniMessage easier, we provide a Builder. The specific metho
           .resolver(StandardTags.color())
           .resolver(StandardTags.decorations())
           .resolver(this.additionalPlaceholders)
-         )
+          .build()
+        )
         .build();
 
 .. tip::
