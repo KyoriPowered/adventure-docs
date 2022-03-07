@@ -2,8 +2,32 @@
 PlayerList/Tablist
 ==================
 
-Adventure does currently only support changing the header and footer of the tablist through
-``Audience#sendPlayerListHeader``, ``Audience#sendPlayerListFooter`` and ``Audience#sendPlayerListHeaderAndFooter``.
+Adventure only supports changing the header(encased in red) and footer(encased in yellow) of the tablist.
 
-Sending only a header might also display an existing footer. Likewise, sending only a footer might also display
-an existing header. This can vary depending on the platform you are running on.
+.. image:: /images/tablist.png
+   :alt: Image showing a tablist from a multiplayer server with the header and footer encased, shown through the vanilla Minecraft client
+
+**Usage**
+
+With any :java:`Audience` use :java:`Audience.sendPlayerListHeader(Component)`, :java:`Audience.sendPlayerListFooter(Component)`
+and/or :java:`Audience.sendPlayerListHeaderAndFooter(Component, Component)`.
+
+Whether sending a header or footer by itself will display another existing header or footer will vary depending on which platform
+you are working on. Servers will most likely support keeping headers or footers when sending them separately, while proxies are
+more likely to only let you send everything at once.
+
+**Examples**
+
+.. code-block:: java
+
+    public void onPlayerJoin(final Audience player) {
+        final Component header = Component.text("My Cool Server", NamedTextColor.BLUE);
+        final Component footer = Component.text("It is: today!");
+        player.sendPlayerListHeaderAndFooter(header, footer);
+    }
+
+    //Depending on your platform this might display an existing header as well
+    public void onDayChange(final Audience server) {
+        final Component footer = Component.text("It is: tomorrow!");
+        server.sendPlayerListFooter(footer);
+    }
