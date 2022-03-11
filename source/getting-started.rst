@@ -68,8 +68,8 @@ To use snapshot builds, you will need to add the following repository:
 
          <repositories>
              <repository>
-                <id>sonatype-oss-snapshots</id>
-                <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+                <id>sonatype-oss-snapshots1</id>
+                <url>https://s01.oss.sonatype.org/content/repositories/snapshots/</url>
              </repository>
          </repositories>
 
@@ -80,8 +80,8 @@ To use snapshot builds, you will need to add the following repository:
 
          repositories {
             maven {
-                name = "sonatype-oss-snapshots"
-                url = "https://oss.sonatype.org/content/repositories/snapshots/"
+                name = "sonatype-oss-snapshots1"
+                url = "https://s01.oss.sonatype.org/content/repositories/snapshots/"
             }
          }
 
@@ -91,7 +91,7 @@ To use snapshot builds, you will need to add the following repository:
       .. code:: kotlin
 
          repositories {
-            maven(url = "https://oss.sonatype.org/content/repositories/snapshots/") {
+            maven(url = "https://s01.oss.sonatype.org/content/repositories/snapshots/") {
                 name = "sonatype-oss-snapshots"
             }
          }

@@ -26,8 +26,8 @@ First, add the repository:
          repositories {
             // for development builds
             maven {
-                name = "sonatype-oss-snapshots"
-                url = "https://oss.sonatype.org/content/repositories/snapshots/"
+                name = "sonatype-oss-snapshots1"
+                url = "https://s01.oss.sonatype.org/content/repositories/snapshots/"
             }
             // for releases
             mavenCentral()
@@ -40,8 +40,8 @@ First, add the repository:
 
          repositories {
             // for development builds
-            maven(url = "https://oss.sonatype.org/content/repositories/snapshots/") {
-                name = "sonatype-oss-snapshots"
+            maven(url = "https://s01.oss.sonatype.org/content/repositories/snapshots/") {
+                name = "sonatype-oss-snapshots1"
             }
             // for releases
             mavenCentral()
