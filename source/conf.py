@@ -63,6 +63,8 @@ if 'GITHUB_REF' in os.environ:
 
     Please consult the pull request to view any discussion and existing reviews.
 """
+    else:
+        html_baseurl = "https://docs.adventure.kyori.net/"
 
 # -- General configuration ---------------------------------------------------
 
@@ -120,11 +122,14 @@ html_theme_options = {
     'dark_css_variables': {
         "color-brand-primary": "#b597d3",
         "color-brand-content": "#7767c9",
-    }
+    },
+    'sidebar_hide_name': True
 }
 
 html_show_sourcelink = False
 html_copy_source = False
+html_favicon = '_static/favicon.ico'
+html_logo = '_static/logo.png'
 
 # sphinx-reredirects
 redirects = {
