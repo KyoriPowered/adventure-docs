@@ -126,6 +126,7 @@ html_theme_options = {
     'sidebar_hide_name': True
 }
 
+html_title = f'Adventure Documentation (v{version})'
 html_show_sourcelink = False
 html_copy_source = False
 html_favicon = '_static/favicon.ico'
