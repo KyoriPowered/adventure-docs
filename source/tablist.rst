@@ -2,7 +2,7 @@
 PlayerList/Tablist
 ==================
 
-Adventure only supports changing the header(above the players) and footer(below the players) of the tablist.
+Adventure only supports changing the header (above the players) and footer (below the players) of the tablist.
 
 .. image:: tablist.png
    :alt: Image showing a tablist from a multiplayer server with the header and footer encased, shown through the vanilla Minecraft client
