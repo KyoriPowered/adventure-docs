@@ -21,14 +21,15 @@ They typically have no dependencies on a specific platform, just Adventure and p
 
 .. Elements in this table should be alphabetized
 
-===================== =================================================== ====================================================================================
-Name                  Description                                          Link
-===================== =================================================== ====================================================================================
-EnhancedLegacyText    Alternative input format that is legacy compatible  `Vankka/EnhancedLegacyText <https://github.com/Vankka/EnhancedLegacyText>`_
-                      with new features 
-MCDiscordReserializer Serializers for going between Minecraft & Discord   `Vankka/MCDiscordReserializer <https://github.com/Vankka/MCDiscordReserializer>`_
-Minedown              A markdown-style format for representing components `Phoenix616/MineDown <https://github.com/Phoenix616/MineDown/tree/kyori-adventure>`_
-===================== =================================================== ====================================================================================
+=========================== =================================================== ====================================================================================================
+Name                        Description                                          Link
+=========================== =================================================== ====================================================================================================
+adventure-binary-serializer Serializer for converting to packed bytes           `Moulberry/adventure-binary-serializer` <https://github.com/Moulberry/adventure-binary-serializer/>
+EnhancedLegacyText          Alternative input format that is legacy compatible  `Vankka/EnhancedLegacyText <https://github.com/Vankka/EnhancedLegacyText>`_
+                            with new features 
+MCDiscordReserializer       Serializers for going between Minecraft & Discord   `Vankka/MCDiscordReserializer <https://github.com/Vankka/MCDiscordReserializer>`_
+Minedown                    A markdown-style format for representing components `Phoenix616/MineDown <https://github.com/Phoenix616/MineDown/tree/kyori-adventure>`_
+=========================== =================================================== ====================================================================================================
 
 Libraries that use Adventure
 ----------------------------
