@@ -24,7 +24,7 @@ They typically have no dependencies on a specific platform, just Adventure and p
 =========================== =================================================== ====================================================================================================
 Name                        Description                                          Link
 =========================== =================================================== ====================================================================================================
-adventure-binary-serializer Serializer for converting to packed bytes           `Moulberry/adventure-binary-serializer` <https://github.com/Moulberry/adventure-binary-serializer/>
+adventure-binary-serializer Serializer for converting to packed bytes           `Moulberry/adventure-binary-serializer <https://github.com/Moulberry/adventure-binary-serializer/>`_
 EnhancedLegacyText          Alternative input format that is legacy compatible  `Vankka/EnhancedLegacyText <https://github.com/Vankka/EnhancedLegacyText>`_
                             with new features 
 MCDiscordReserializer       Serializers for going between Minecraft & Discord   `Vankka/MCDiscordReserializer <https://github.com/Vankka/MCDiscordReserializer>`_
