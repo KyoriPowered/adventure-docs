@@ -5,6 +5,7 @@
 # https://www.sphinx-doc.org/en/master/usage/configuration.html
 
 import os
+from pathlib import Path
 import sys
 
 # -- Path setup --------------------------------------------------------------
@@ -80,6 +81,7 @@ extensions = [
   'sphinx_github_changelog',
   'sphinx_reredirects',
   'sphinx_github_role',
+  'sphinx_copybutton',
   'minimessage_hl',
   'adventure_docs_extensions'
 ]
@@ -91,7 +93,6 @@ templates_path = ['_templates']
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
 exclude_patterns = ['_ext']
-
 
 # General style
 
@@ -113,6 +114,9 @@ html_theme = 'furo'
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
+html_css_files = ["button/button.css"]
+copy_button_svg_file = Path("_static/button/copy-button.svg")
+copy_button_checked_svg_file = Path("_static/button/copy-button-checked.svg")
 
 html_theme_options = {
     'light_css_variables': {
@@ -131,6 +135,9 @@ html_show_sourcelink = False
 html_copy_source = False
 html_favicon = '_static/favicon.ico'
 html_logo = '_static/logo.png'
+
+copybutton_image_svg = copy_button_svg_file.read_text()
+
 
 # sphinx-reredirects
 redirects = {
