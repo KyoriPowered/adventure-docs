@@ -128,7 +128,7 @@ A simple example of how to appropriately initialize this platform follows:
 Component serializers
 ---------------------
 
-For functionality not already supported by ``Audience``, the ``BungeeCordComponentSerializer`` allows you to convert between Adventure :doc:`Components </text>` and the native BungeeCord chat component API and back.
+For functionality not already supported by ``Audience``, the ``BungeeComponentSerializer`` allows you to convert between Adventure :doc:`Components </text>` and the native BungeeCord chat component API and back.
 
 .. caution::
 
