@@ -11,7 +11,6 @@ Boss Bars are composed of:
   * A color, will be downsampeled for clients <1.9
   * An overlay that determines the amount of visual segments on the boss bar
 
-
 **Examples:**
 
 .. code:: java
@@ -46,13 +45,13 @@ Changing an active Boss Bar
 Boss bars are mutable and listen for changes on their object,
 the in-game view will change automatically without having to manually refresh it!
 
-Therefore, if this boss bar is currently active
+Therefore, if this boss bar is currently active...
 
 .. code:: java
 
    final BossBar bossBar = BossBar.bossBar(Component.text("Cat counter"), 0, BossBar.Color.RED, BossBar.Overlay.PROGRESS);
 
-and :java:`BossBar.name()` with a component is called
+...and :java:`BossBar.name()` with a component is called...
 
 .. code:: java
 
@@ -60,4 +59,4 @@ and :java:`BossBar.name()` with a component is called
 
    bossBar.name(newText);
 
-the boss bar will be updated automatically. The same thing goes for ``progress``, ``color`` and ``overlay``.
+...the boss bar will be updated automatically. The same thing goes for ``progress``, ``color`` and ``overlay``.

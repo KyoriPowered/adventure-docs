@@ -5,9 +5,7 @@ Bukkit
 The Adventure platform implementation for Bukkit targets Paper, Spigot, and Bukkit for
 Minecraft 1.7.10 through 1.18.2.
 
-Add the artifact to your build file:
-
-First, add the repository:
+To get started, add the artifact to your build file by first adding the repository:
 
 .. tab-set::
    

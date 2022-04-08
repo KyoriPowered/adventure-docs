@@ -5,9 +5,7 @@ BungeeCord
 Adventure targets the latest version of BungeeCord and BungeeCord-compatible
 forks, such as Waterfall.
 
-Add the artifact to your build file:
-
-First, add the repository:
+To get started, add the artifact to your build file by first adding the repository:
 
 .. tab-set::
    

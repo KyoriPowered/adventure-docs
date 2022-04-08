@@ -32,12 +32,12 @@ Pointers
 Audiences can also provide arbitrary information, such as display name or UUID.
 This is done using the pointer system.
 
-Examples:
+**Examples:**
 
 .. code:: java
 
-  // get the uuid from an audience member, returning an Optional<UUID>
+  // Get the uuid from an audience member, returning an Optional<UUID>.
   audience.get(Identity.UUID);
 
-  // get the display name, returning a default
+  // Get the display name, returning a default.
   audience.getOrDefault(Identity.DISPLAY_NAME, Component.text("no display name!"));

@@ -4,9 +4,7 @@ SpongeAPI
 
 Adventure provides a platform for SpongeAPI 7 for *Minecraft: Java Edition* 1.12. For SpongeAPI 8 and up (targeting *Minecraft: Java Edition* 1.16.4), Adventure is the native text library, so no platform is needed.
 
-To get started using this platform, add the artifact to your build file:
-
-First, add the repository:
+To get started, add the artifact to your build file by first adding the repository:
 
 .. tab-set::
    

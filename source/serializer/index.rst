@@ -3,16 +3,8 @@ Text Serializers
 ================
 
 The lowest-level way to convert between Adventure's data and other formats 
-are serializers. Some serializers convert to standard formats, while others 
+are text serializers. Some serializers convert to standard formats, while others
 convert to Adventure's own formats.
-
-.. toctree::
-    :maxdepth: 1
-    :caption: Serializers
-
-    gson
-    legacy
-    plain
 
 Components can be converted using any of these serializers:
 
@@ -32,21 +24,29 @@ Components can be converted using any of these serializers:
    // Converts textComponent to the JSON form used for serialization by Minecraft.
    final String json = GsonComponentSerializer.gson().serialize(textComponent);
 
-   // Converts textComponent to a legacy string - "&6Hello &b&lworld&c!"
+   // Converts textComponent to a legacy string of "&6Hello &b&lworld&c!".
    final String legacy = LegacyComponentSerializer.legacyAmpersand().serialize(textComponent);
 
-   // Converts textComponent to a plain string - "Hello world!"
+   // Converts textComponent to a plain string of "Hello world!".
    final String plain = PlainTextComponentSerializer.plainText().serialize(textComponent);
 
 The same is of course also possible in reverse for deserialization.
 
 .. code:: java
 
-   // Converts JSON in the form used for serialization by Minecraft to a Component
+   // Converts JSON in the form used for serialization by Minecraft to a Component.
    final Component component = GsonComponentSerializer.gson().deserialize(json);
 
-   // Converts a legacy string (using formatting codes) to a TextComponent
+   // Converts a legacy string (using formatting codes) to a TextComponent.
    final Component component = LegacyComponentSerializer.legacyAmpersand().deserialize("&6Hello &b&lworld&c!");
 
-   // Converts a plain string to a TextComponent
+   // Converts a plain string to a TextComponent.
    final Component component = PlainTextComponentSerializer.plainText().deserialize("Hello world!");
+
+.. toctree::
+    :maxdepth: 1
+    :caption: Contents:
+
+    gson
+    legacy
+    plain

@@ -82,4 +82,3 @@ Creating a custom sound
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 Use the :file:`sounds.json` file to define sounds in a resource pack. Further reading about this limits can be done at the `Minecraft Wiki <https://minecraft.gamepedia.com/Sounds.json>`_
-

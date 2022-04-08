@@ -12,9 +12,7 @@ Dependency
 
 The Fabric platform is packaged as a mod, designed to be included in mods via jar-in-jar packaging. As with the rest of the Adventure projects, releases are distributed on Maven Central, and snapshots on Sonatype OSS.
 
-Add the artifact to your build file:
-
-First, add the repository:
+To get started, add the artifact to your build file by first adding the repository:
 
 .. tab-set::
    

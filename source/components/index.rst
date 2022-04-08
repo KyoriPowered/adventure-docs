@@ -1,15 +1,15 @@
-======================
+=========
 Text (Chat Components)
-======================
+=========
 
-Components represent Minecraft chat components
+Components represent Minecraft chat components.
 
 Creating components
 ^^^^^^^^^^^^^^^^^^^
 
 .. code:: java
 
-   // Creates a line of text saying "You're a Bunny! Press <key> to jump!", with some colouring and styling.
+   // Creates a line of text saying "You're a Bunny! Press <key> to jump!" with colouring and styling.
    final TextComponent textComponent = Component.text("You're a ")
      .color(TextColor.color(0x443344))
      .append(Component.text("Bunny", NamedTextColor.LIGHT_PURPLE))
@@ -20,14 +20,14 @@ Creating components
          .decoration(TextDecoration.BOLD, true)
      )
      .append(Component.text(" to jump!"));
-   // now you can send `textComponent` to something, such as a client
+   // Now you can send `textComponent` to something, such as a client.
 
 You can also use a builder, which is mutable, and creates one final
 component with the children.
 
 .. code:: java
 
-   // Creates a line of text saying "You're a Bunny! Press <key> to jump!", with some colouring and styling.
+   // Creates a line of text saying "You're a Bunny! Press <key> to jump!" with colouring and styling.
    final TextComponent textComponent2 = Component.text()
      .content("You're a ")
      .color(TextColor.color(0x443344))
@@ -41,7 +41,7 @@ component with the children.
      )
      .append(Component.text(" to jump!"))
      .build();
-   // now you can send `textComponent2` to something, such as a client
+   // Now you can send `textComponent2` to something, such as a client.
 
 Styling components
 ^^^^^^^^^^^^^^^^^^^^
@@ -91,6 +91,14 @@ the platform your program is running on, however it is likely to involve
 serializing the component to Minecraft’s JSON format, and then sending
 the JSON through another method provided by the platform.
 
-The text library is platform agnostic and therefore doesn’t provide any
+The text library is platform agnostic and therefore does not provide any
 way to send components to clients. Some platforms implement :ref:`Adventure natively <native-support>`, so ``Components``
-can be directly used with their API. For other platforms (Spigot/Bukkit, BungeeCord, and SpongeAPI 7), we provide compatibility bridges as :ref:`platforms` which can be distributed with your own plugins.
+can be directly used with their API. For other platforms (Spigot/Bukkit, BungeeCord, and SpongeAPI 7), we provide
+compatibility bridges as :ref:`platforms` which can be distributed with your own plugins.
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Contents:
+
+   actionbar
+   playerlist

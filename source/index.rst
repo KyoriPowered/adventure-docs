@@ -13,7 +13,7 @@ Most users will want to use Adventure as a component of an existing modding plat
 
 To get started using Adventure on its own, see :doc:`getting-started`.
 
-There are many community-supported libraries that extend the capabilities of Adventure and provide integrations with other software. To see a list of those we've heard of, see :doc:`/community-libraries`
+There are many community-supported libraries that extend the capabilities of Adventure and provide integrations with other software. To see a list of those we've heard of, see :doc:`/community-libraries`.
 
 .. the auto-generated TOC already exists in the sidebar, let's not show it here
 
@@ -23,21 +23,16 @@ There are many community-supported libraries that extend the capabilities of Adv
 
    getting-started
    community-libraries
-
    audiences
-   text
-   serializer/index
-
+   components/index
    bossbar
    sound
    title
    book
    tablist
    minimessage/index
-
+   serializer/index
    platform/index
-
    migration/index
-
    contributing
    version-history/index
