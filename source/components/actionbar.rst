@@ -2,7 +2,7 @@
 Action Bar
 ==================
 
-Send messaegs to the action bar, located above the health bar of a player.
+Send messages to the action bar, located above the health bar of a player.
 
 .. code-block:: java
 
