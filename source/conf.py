@@ -19,6 +19,7 @@ import sys
 
 
 # -- Project information -----------------------------------------------------
+from pathlib import Path
 
 project = 'Adventure'
 copyright = '2020-2021, KyoriPowered'
@@ -80,6 +81,7 @@ extensions = [
   'sphinx_github_changelog',
   'sphinx_reredirects',
   'sphinx_github_role',
+  'sphinx_copybutton',
   'minimessage_hl',
   'adventure_docs_extensions'
 ]
@@ -113,6 +115,7 @@ html_theme = 'furo'
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
+html_css_files = ["button/button.css"]
 
 html_theme_options = {
     'light_css_variables': {
