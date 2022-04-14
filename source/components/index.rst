@@ -63,7 +63,8 @@ their Minecraft jar at ``assets\minecraft\font``.
 .. code:: java
 
    // Creates a line of text in the uniform font, if applicable
-   final TextComponent textComponent3 = Component.text("This is fancy font")
+   final TextComponent textComponent3 = Component.text()
+     .content("This is fancy font")
      .font(Key.key("uniform"))
      .build();
    // Now you can send `textComponent3` to something, such as a client.
