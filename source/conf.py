@@ -135,6 +135,8 @@ html_logo = '_static/logo.png'
 # sphinx-reredirects
 redirects = {
     'minimessage': 'minimessage/'
+    'text': 'components/'
+    'tablist': 'components/playerlist'
 }
 
 # sphinx-github-role
