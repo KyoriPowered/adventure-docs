@@ -5,6 +5,7 @@ sphinx-design==0.0.13
 rstcheck==3.3.1 # format checks
 Sphinx-Substitution-Extensions==2022.2.16 # for replacements in code blocks/etc
 sphinx-github-changelog==1.2.0 # add a changelog section
+sphinx-copybutton==0.5.0 # copy button for code blocks
 sphinx-reredirects==0.0.1 # for changing URLs
 pygments==2.11.2 # bump version for more themes
 sphinx-github-role @ git+https://github.com/astrojuanlu/sphinx-github-role.git@3e1ba6c226f5aa7ece66816484f240f77f1d9376
