@@ -55,7 +55,7 @@ First, add the repository:
       .. code:: groovy
 
          dependencies {
-            modImplementation include("net.kyori:adventure-platform-fabric:5.2.0") // for Minecraft 1.18.2
+            modImplementation include("net.kyori:adventure-platform-fabric:5.2.1") // for Minecraft 1.18.2
          }
 
 
@@ -65,7 +65,7 @@ First, add the repository:
       .. code:: kotlin
 
          dependencies {
-            modImplementation(include("net.kyori:adventure-platform-fabric:5.2.0")!!) // for Minecraft 1.18.2
+            modImplementation(include("net.kyori:adventure-platform-fabric:5.2.1")!!) // for Minecraft 1.18.2
          }
 
 The Fabric platform requires *fabric-api-base* in order to provide the locale change event, and can optionally use Colonel_ to allow the ``Component`` and ``Key`` argument types to be used on clients without the mod installed. There are no other dependencies.
@@ -80,7 +80,7 @@ The Fabric platform requires *fabric-api-base* in order to provide the locale ch
    1.16.2-1.16.4     4.9.3             4.0.0
    1.17.x            4.9.3             4.1.0
    1.18, 1.18.1      4.10.0            5.1.0
-   1.18.2            4.10.0            5.2.0
+   1.18.2            4.10.0            5.2.1
    ================= ================= ======================================
 
 
