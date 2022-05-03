@@ -15,16 +15,16 @@ jobs:
     runs-on: "ubuntu-latest"
     if: "github.event.workflow_run.event == 'pull_request' && github.event.workflow_run.conclusion == 'success'"
     steps:
-    - uses: "actions/checkout@v2" # for pages publishing
+    - uses: "actions/checkout@v3" # for pages publishing
     - name: "download PR"
-      uses: "dawidd6/action-download-artifact@v2"
+      uses: "dawidd6/action-download-artifact@v3"
       with:
         workflow: "${{ github.event.workflow_run.workflow_id }}"
         run_id: "${{ github.event.workflow_run.id }}"
         name: "pr-num"
         path: "."
     - name: "download dist artifact"
-      uses: "dawidd6/action-download-artifact@v2"
+      uses: "dawidd6/action-download-artifact@v3"
       with:
         workflow: "${{ github.event.workflow_run.workflow_id }}"
         run_id: "${{ github.event.workflow_run.id }}"
@@ -52,7 +52,7 @@ jobs:
           return data
     - name: "publish to pages"
       id: "publish"
-      uses: "JamesIves/github-pages-deploy-action@v4.2.5"
+      uses: "JamesIves/github-pages-deploy-action@v4.3.3"
       with:
         branch: "main"
         folder: "build/html"
@@ -61,6 +61,7 @@ jobs:
         target-folder: "pull/${{ fromJSON(steps.data.outputs.result).pr }}"
         clean: false
         single-commit: true
+        force: true
     - name: "notify"
       if: "${{ steps.publish.outputs.deployment-status == 'success' }}"
       uses: "actions/github-script@v6"

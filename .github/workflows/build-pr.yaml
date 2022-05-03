@@ -1,6 +1,6 @@
 # Making changes? https://github.com/nektos/act may help you test locally
 
-name: Build PR to Artifact
+name: "Build PR to Artifact"
 
 on:
   pull_request:
@@ -20,7 +20,7 @@ jobs:
       run: "echo ${{ github.event.number }} > ./pr-num.txt"
     - name: "pr number / publish"
       if: "${{ always() }}"
-      uses: "actions/upload-artifact@v2"
+      uses: "actions/upload-artifact@v3"
       with:
         name: "pr-num"
         path: "./pr-num.txt"
