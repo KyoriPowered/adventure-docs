@@ -2,7 +2,7 @@ sphinx==4.5.0
 sphinx-autobuild==2021.3.14 # for live reload in development
 furo==2022.4.7
 sphinx-design==0.1.0
-rstcheck==3.5.0 # format checks
+rstcheck==5.0.0 # format checks
 Sphinx-Substitution-Extensions==2022.2.16 # for replacements in code blocks/etc
 sphinx-github-changelog==1.2.0 # add a changelog section
 sphinx-copybutton==0.5.0 # copy button for code blocks
