@@ -17,14 +17,14 @@ jobs:
     steps:
     - uses: "actions/checkout@v3" # for pages publishing
     - name: "download PR"
-      uses: "dawidd6/action-download-artifact@v3"
+      uses: "dawidd6/action-download-artifact@v2"
       with:
         workflow: "${{ github.event.workflow_run.workflow_id }}"
         run_id: "${{ github.event.workflow_run.id }}"
         name: "pr-num"
         path: "."
     - name: "download dist artifact"
-      uses: "dawidd6/action-download-artifact@v3"
+      uses: "dawidd6/action-download-artifact@v2"
       with:
         workflow: "${{ github.event.workflow_run.workflow_id }}"
         run_id: "${{ github.event.workflow_run.id }}"
