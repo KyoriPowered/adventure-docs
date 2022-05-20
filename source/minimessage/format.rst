@@ -313,3 +313,20 @@ Examples
 
 .. image:: /minimessage/images/newline_1.png
    :alt: The result of parsing ``<hover:show_text:'<red>Hover with a<newline><green>line break'>Text with<newline>line break</hover>``, shown in-game in the Minecraft client's chat window
+
+Selector
+********
+
+Insert a selector component
+
+Tag
+   :mm:`<selector:_sel_>`
+Aliases
+   ``sel``
+Arguments
+   * ``_sel_``, the selector pattern to insert
+Examples
+   * :mm:`Hello <selector:@e[limit=5]>, I'm <selector:@s>!`
+
+.. image:: /minimessage/images/selector_1.png
+   :alt: The result of parsing ``Hello <selector:@e[limit=5]>, I'm <selector:@s>!``, show in-game in the Minecraft client's chat window
