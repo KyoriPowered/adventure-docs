@@ -119,6 +119,10 @@ The following Adventure interfaces are directly implemented:
 ``Keyed``
     :java:`net.minecraft.resources.ResourceKey`
 
+``HoverEventSource``
+    :java:`net.minecraft.world.entity.Entity`
+    :java:`net.minecraft.world.item.ItemStack`
+
 Additionally, all :java:`Key`s created will be :java:`ResourceLocation` instances (on Loader 0.14.0+)
 
 Using these injections, getting started is as simple as:
