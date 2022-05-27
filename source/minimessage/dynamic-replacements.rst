@@ -3,7 +3,7 @@
 Dynamic Replacements
 ====================
 
-MiniMessage has some included ``TagResolver``s which can replace tags dynamically when parsing those. Those resolvers can replace a tag with dynamic input such as a string or a formatted number.
+MiniMessage has some included ``TagResolver`` s which can replace tags dynamically when parsing those. Those resolvers can replace a tag with dynamic input such as a string or a formatted number.
 
 Placeholders
 ^^^^^^^^^^^^
@@ -106,7 +106,7 @@ This will accept a ChoiceFormat pattern.
 
   MiniMessage.miniMessage().deserialize("<gray>I met <choice:'0#no developer|1#one developer|1<many developers'>!", Formatter.choice("choice", 5));
 
-This will format your input based on the provided ChoiceFormat. In this case it will be ``I met many developers!
+This will format your input based on the provided ChoiceFormat. In this case it will be ``I met many developers!``
 
 
 Custom placeholders
@@ -120,6 +120,7 @@ Examples
 Create your own styling tags:
 
 .. code:: java
+
   TagResolver.resolver("fancy", Tag.styling(TextColor.color(150, 200, 150))); // will replace the color between "<fancy>" and "</fancy>"
   TagResolver.resolver("myhover", Tag.styling(HoverEvent.showText(Component.text("test")))); // will display your custom text as hover
   TagResolver.resolver("mycmd", Tag.styling(ClickEvent.runCommand("/mycmd is cool"))); // will create a clickable text which will run your specified command.
