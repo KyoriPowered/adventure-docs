@@ -6,6 +6,8 @@ Adventure supports Fabric on *Minecraft: Java Edition* 1.16 and up, for both ser
 
 The platform supports all features, including localization and custom renderers.
 
+When using at least version 5.3.0, this platform provides a *near-native* experience by directly implementing Adventure interfaces on Minecraft classes where possible.
+
 ----------
 Dependency
 ----------
@@ -28,6 +30,7 @@ First, add the repository:
             maven {
                 name = "sonatype-oss-snapshots1"
                 url = "https://s01.oss.sonatype.org/content/repositories/snapshots/"
+                mavenContent { snapshotsOnly() }
             }
             // for releases
             mavenCentral()
@@ -42,6 +45,7 @@ First, add the repository:
             // for development builds
             maven(url = "https://s01.oss.sonatype.org/content/repositories/snapshots/") {
                 name = "sonatype-oss-snapshots1"
+                mavenContent { snapshotsOnly() }
             }
             // for releases
             mavenCentral()
@@ -55,7 +59,7 @@ First, add the repository:
       .. code:: groovy
 
          dependencies {
-            modImplementation include("net.kyori:adventure-platform-fabric:5.2.1") // for Minecraft 1.18.2
+            modImplementation include("net.kyori:adventure-platform-fabric:5.3.0") // for Minecraft 1.18.2
          }
 
 
@@ -65,7 +69,7 @@ First, add the repository:
       .. code:: kotlin
 
          dependencies {
-            modImplementation(include("net.kyori:adventure-platform-fabric:5.2.1")!!) // for Minecraft 1.18.2
+            modImplementation(include("net.kyori:adventure-platform-fabric:5.3.0")!!) // for Minecraft 1.18.2
          }
 
 The Fabric platform requires *fabric-api-base* in order to provide the locale change event, and can optionally use Colonel_ to allow the ``Component`` and ``Key`` argument types to be used on clients without the mod installed. There are no other dependencies.
@@ -80,9 +84,57 @@ The Fabric platform requires *fabric-api-base* in order to provide the locale ch
    1.16.2-1.16.4     4.9.3             4.0.0
    1.17.x            4.9.3             4.1.0
    1.18, 1.18.1      4.10.0            5.1.0
-   1.18.2            4.10.0            5.2.1
+   1.18.2            4.11.0            5.3.0
    ================= ================= ======================================
 
+---------
+Basic use
+---------
+
+The easiest way to get started with this platform is to work with the Minecraft game objects that directly implement Adventure interfaces (requires Loom 0.11 or newer).
+
+This covers almost all cases where the default renderer is used.
+
+The following Adventure interfaces are directly implemented:
+
+``Audience``
+    :java:`net.minecraft.commands.CommandSourceStack`, :java:`net.minecraft.server.MinecraftServer`, :java:`net.minecraft.server.rcon.RconConsoleSource`, 
+    :java:`net.minecraft.server.level.ServerPlayer`, :java:`net.minecraft.client.player.LocalPlayer`
+
+``Sound.Emitter``
+    :java:`net.minecraft.world.entity.Entity`
+
+``Sound.Type``
+    :java:`net.minecraft.sounds.SoundEvent`
+
+``Identified``
+    :java:`net.minecraft.world.entity.player.Player`
+
+``ComponentLike``
+    :java:`net.minecraft.network.chat.Component`
+
+``Key``
+    :java:`net.minecraft.resources.ResourceLocation`
+
+``Keyed``
+    :java:`net.minecraft.resources.ResourceKey`
+
+``HoverEventSource``
+    :java:`net.minecraft.world.entity.Entity`,
+    :java:`net.minecraft.world.item.ItemStack`
+
+Additionally, all :java:`Key`s created will be :java:`ResourceLocation` instances (on Loader 0.14.0+)
+
+Using these injections, getting started is as simple as:
+
+
+.. code:: java
+
+   void greet(final ServerPlayer player) {
+     player.sendMessage(Component.text().content("Hello ").append(player.get(Identity.DISPLAY_NAME).get().color(NamedTextColor.RED)));
+   }
+
+For more complex use cases, :java:`FabricServerAudiences` or :java:`FabricClientAudiences` provide additional API.
 
 ------
 Server
@@ -144,10 +196,9 @@ As an example, here's a simple command that will echo whatever is provided as in
 
    void registerCommands(final CommandDispatcher dispatcher, final boolean isDedicated) {
      dispatcher.register(literal("echo").then(argument(ARG_MESSAGE, component()).executes(ctx -> {
-       final AdventureCommandSourceStack source = this.adventure().audience(ctx.getSource());
        final Component message = component(ctx, ARG_MESSAGE);
 
-       source.sendMessage(Component.text("You said: ").append(message));
+       ctx.getSource().sendMessage(Component.text("You said: ").append(message));
      }));
    }
 
@@ -175,7 +226,8 @@ The full functionality of the ``Audience`` interface is available, including loc
 Working with native types
 -------------------------
 
-Sadly, Adventure can't provide API for every place chat components are used in the game. However, for areas not covered by the API in ``Audience``, it's possible to convert components between native and Adventure types. See the methods on ``FabricAudiences`` for an idea of what's available.
+Sadly, Adventure can't provide API for every place chat components are used in the game. However, for areas not covered by the API in ``Audience``, it's possible to convert components between native and Adventure types. See certain native types which implement 
+Adventure interfaces, and the methods on ``FabricAudiences`` for other available conversions.
 
 
 .. _Colonel: https://gitlab.com/stellardrift/colonel
