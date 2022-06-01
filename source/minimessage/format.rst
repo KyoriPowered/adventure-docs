@@ -320,11 +320,12 @@ Selector
 Insert a selector component
 
 Tag
-   :mm:`<selector:_sel_>`
+   :mm:`<selector:_sel_[:_separator_]>`
 Aliases
    ``sel``
 Arguments
    * ``_sel_``, the selector pattern to insert
+   * ``_separator_`` (optional), the separator to insert between values the selector matches
 Examples
    * :mm:`Hello <selector:@e[limit=5]>, I'm <selector:@s>!`
 
