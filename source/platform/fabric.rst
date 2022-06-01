@@ -84,7 +84,7 @@ The Fabric platform requires *fabric-api-base* in order to provide the locale ch
    1.16.2-1.16.4     4.9.3             4.0.0
    1.17.x            4.9.3             4.1.0
    1.18, 1.18.1      4.10.0            5.1.0
-   1.18.2            4.10.0            5.3.0
+   1.18.2            4.11.0            5.3.0
    ================= ================= ======================================
 
 ---------
@@ -99,7 +99,7 @@ The following Adventure interfaces are directly implemented:
 
 ``Audience``
     :java:`net.minecraft.commands.CommandSourceStack`, :java:`net.minecraft.server.MinecraftServer`, :java:`net.minecraft.server.rcon.RconConsoleSource`, 
-    :java:`net.minecraft.server.level.ServerPlayer` :java:`net.minecraft.client.player.LocalPlayer`
+    :java:`net.minecraft.server.level.ServerPlayer`, :java:`net.minecraft.client.player.LocalPlayer`
 
 ``Sound.Emitter``
     :java:`net.minecraft.world.entity.Entity`
@@ -120,7 +120,7 @@ The following Adventure interfaces are directly implemented:
     :java:`net.minecraft.resources.ResourceKey`
 
 ``HoverEventSource``
-    :java:`net.minecraft.world.entity.Entity`
+    :java:`net.minecraft.world.entity.Entity`,
     :java:`net.minecraft.world.item.ItemStack`
 
 Additionally, all :java:`Key`s created will be :java:`ResourceLocation` instances (on Loader 0.14.0+)
