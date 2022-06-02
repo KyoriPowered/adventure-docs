@@ -85,6 +85,7 @@ The Fabric platform requires *fabric-api-base* in order to provide the locale ch
    1.17.x            4.9.3             4.1.0
    1.18, 1.18.1      4.10.0            5.1.0
    1.18.2            4.11.0            5.3.0
+   1.19              4.11.0            5.4.0-SNAPSHOT
    ================= ================= ======================================
 
 ---------
