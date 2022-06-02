@@ -132,7 +132,7 @@ To make customizing MiniMessage easier, we provide a Builder. The specific metho
         .tags(TagResolver.builder()
           .resolver(StandardTags.color())
           .resolver(StandardTags.decorations())
-          .resolver(this.additionalPlaceholders)
+          .resolver(this.someResolvers)
           .build()
         )
         .build();
@@ -157,23 +157,13 @@ All tag resolution goes through tag resolvers. There is one global tag resolver,
 
 Tag resolvers are the binding between a name and arguments, and the logic to produce a ``Component`` contained in a ``Tag`` instance. They are composable so a ``TagResolver`` can produce any number of actual ``Tag`` instances. The tag name passed to resolvers will always be lower-cased, to ensure case-insensitve searches.
 
-MiniMessage has built-in resolver types that can be used for most use-cases, including custom tags and fixed-value placeholder-style tags. For single-tag resolvers, use the static factory methods in 
-``TagResolver`` and ``Placeholder``. To combine multiple resolvers, take a look at the tag resolver builder, :java:`TagResolver.builder()`.
-
 Tag names are only allowed to contain the characters a-z, 0-9, ``_``, and ``-``. They can also optionally start with any of the following characters: ``!?#``.
 
-Placeholder resolvers are especially useful for simple cases:
-
-.. code:: java
-
-    MiniMessage.miniMessage().deserialize("<gray>Hello <name> :)", Placeholder.component("name", Component.text("TEST", NamedTextColor.RED))); // return Component.text("Hello ", NamedTextColor.GRAY).append(Component.text("TEST", NamedTextColor.RED), Component.text(" :)"))
-    MiniMessage.miniMessage().deserialize("<gray>Hello <name>", Placeholder.unparsed("name", "<red>TEST :)")); // returns Component.text("Hello <red>TEST :)", NamedTextColor.GRAY);
-    MiniMessage.miniMessage().deserialize("<gray>Hello <name> :)", Placeholder.parsed("name", "<red>TEST")); // returns Component.text("Hello ", NamedTextColor.GRAY).append(Component.text("TEST :)", NamedTextColor.RED));
-    TagResolver placeholders = TagResolver.resolver(Placeholder.parsed("name", "TEST"), Placeholder.parsed("name2", "TEST"));
-    MiniMessage.miniMessage().deserialize("<gray>Hello <name> and <name2>", placeholders);
-
-
+You can create your own ``TagResolver`` by using the static factory methods in ``TagResolver``. To replace tags dynamically with text MiniMessage has built-in ``Placeholder`` and ``Formatter``.
 Where possible, these built-in resolvers should be used, as MiniMessage can flatten combinations of these resolvers into a more efficient format.
+For built-in dynamic replacements take a look :doc:`here<./dynamic-replacements>`.
+
+To combine multiple resolvers, take a look at the tag resolver builder, :java:`TagResolver.builder()`.
 
 The builder for ``MiniMessage`` allows providing a custom tag resolver rather than the default (:java:`StandardTags.all()`), allowing 
 
