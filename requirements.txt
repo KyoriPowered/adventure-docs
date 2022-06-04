@@ -1,6 +1,6 @@
 sphinx==4.5.0
 sphinx-autobuild==2021.3.14 # for live reload in development
-furo==2022.4.7
+furo==2022.6.4
 sphinx-design==0.1.0
 rstcheck==5.0.0 # format checks
 Sphinx-Substitution-Extensions==2022.2.16 # for replacements in code blocks/etc
