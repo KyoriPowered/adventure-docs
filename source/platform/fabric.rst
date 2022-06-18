@@ -124,7 +124,7 @@ The following Adventure interfaces are directly implemented:
     :java:`net.minecraft.world.entity.Entity`,
     :java:`net.minecraft.world.item.ItemStack`
 
-Additionally, all :java:`Key`s created will be :java:`ResourceLocation` instances (on Loader 0.14.0+)
+Additionally, all :java:`Key`\ s created will be :java:`ResourceLocation` instances (on Loader 0.14.0+)
 
 Using these injections, getting started is as simple as:
 
@@ -185,7 +185,7 @@ The Fabric platform provides custom argument types to specify ``Key`` and ``Comp
 
 .. warning::
 
-    If these custom argument types are used, Vanilla clients will not be able to join unless the Colonel_ mod is installed on the server. Like the platform, it is small and easily included in your mod jar.
+    If these custom argument types are used (pre-1.19), Vanilla clients will not be able to join unless the Colonel_ mod is installed on the server. Like the platform, it is small and easily included in your mod jar.
 
 As an example, here's a simple command that will echo whatever is provided as input:
 
