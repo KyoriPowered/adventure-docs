@@ -66,7 +66,7 @@ Declaring the dependency:
          <dependency>
          <groupId>net.kyori</groupId>
          <artifactId>adventure-platform-bungeecord</artifactId>
-         <version>4.1.0</version>
+         <version>|platform_version|</version>
          </dependency>
    
    .. tab-item:: Gradle (Groovy)
@@ -75,7 +75,7 @@ Declaring the dependency:
       .. code:: groovy
 
          dependencies {
-            implementation "net.kyori:adventure-platform-bungeecord:4.1.0"
+            implementation "net.kyori:adventure-platform-bungeecord:|platform_version|"
          }
 
 
@@ -85,7 +85,7 @@ Declaring the dependency:
       .. code:: kotlin
 
          dependencies {
-            implementation("net.kyori:adventure-platform-bungeecord:4.1.0")
+            implementation("net.kyori:adventure-platform-bungeecord:|platform_version|")
          }
 
 Usage

@@ -28,6 +28,10 @@ author = 'KyoriPowered'
 # The short X.Y version
 version = '4.11.0'
 
+# The latest version of adventure-platform builds
+platformVersion = '4.1.1'
+fabricPlatformVersion = '5.3.1'
+
 # The full version, including alpha/beta/rc tags
 release = version
 
@@ -42,6 +46,10 @@ rst_prolog = f"""
     Feel free to join our `Discord <https://discord.gg/MMfhJ8F>`_ if you have any questions.
 
 .. |version| replace:: {version}
+
+.. |platform_version| replace:: {platformVersion}
+
+.. |fabric_platform_version| replace:: {fabricPlatformVersion}
 
 .. role:: mm(code)
     :language: minimessage
