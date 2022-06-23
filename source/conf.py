@@ -47,6 +47,8 @@ rst_prolog = f"""
     Some areas may have limited coverage or may not be entirely up to date.
     Feel free to join our `Discord <https://discord.gg/MMfhJ8F>`_ if you have any questions.
 
+.. |fabric_version| replace:: {_platform_fabric_version}
+
 .. role:: mm(code)
     :language: minimessage
     :class: highlight

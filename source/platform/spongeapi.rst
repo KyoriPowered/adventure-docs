@@ -4,55 +4,6 @@ SpongeAPI
 
 Adventure provides a platform for SpongeAPI 7 for *Minecraft: Java Edition* 1.12. For SpongeAPI 8 and up (targeting *Minecraft: Java Edition* 1.16.4), Adventure is the native text library, so no platform is needed.
 
-To get started using this platform, add the artifact to your build file:
-
-First, add the repository:
-
-.. tab-set::
-   
-   .. tab-item:: Maven
-      :sync: maven
-
-      .. code:: xml
-
-         <repositories>
-             <!-- ... -->
-             <repository> <!-- for development builds -->
-               <id>sonatype-oss-snapshots1</id>
-               <url>https://s01.oss.sonatype.org/content/repositories/snapshots/</url>
-             </repository>
-             <!-- ... -->
-         </repositories>
-   
-   .. tab-item:: Gradle (Groovy)
-      :sync: gradle-groovy
-
-      .. code:: groovy
-
-         repositories {
-            // for development builds
-            maven {
-                name = "sonatype-oss-snapshots1"
-                url = "https://s01.oss.sonatype.org/content/repositories/snapshots/"
-            }
-            // for releases
-            mavenCentral()
-         }
-
-   .. tab-item:: Gradle (Kotlin)
-      :sync: gradle-kotlin
-
-      .. code:: kotlin
-
-         repositories {
-            // for development builds
-            maven(url = "https://s01.oss.sonatype.org/content/repositories/snapshots/") {
-                name = "sonatype-oss-snapshots1"
-            }
-            // for releases
-            mavenCentral()
-         }
-
 .. kyori-dep:: adventure-platform-spongeapi platform
 
 Usage

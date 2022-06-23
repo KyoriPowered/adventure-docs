@@ -83,8 +83,6 @@ def _fix_cloudflare_name_mangling(app: Sphinx):
 
 
 dependencyText = """
-Declaring the dependency:
-
 .. |artifact| replace:: {artifact}
 
 .. |version| replace:: {version}

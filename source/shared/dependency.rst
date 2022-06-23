@@ -1,3 +1,5 @@
+Declaring the dependency:
+
 .. tab-set::
 
    .. tab-item:: Maven
@@ -16,6 +18,10 @@
       .. code-block:: groovy
         :substitutions:
 
+         repositories {
+            mavenCentral()
+         }
+
          dependencies {
             implementation "net.kyori:|artifact|:|version|"
          }
@@ -26,6 +32,12 @@
       .. code-block:: kotlin
         :substitutions:
 
+         repositories {
+            mavenCentral()
+         }
+
          dependencies {
             implementation("net.kyori:|artifact|:|version|")
          }
+
+Need development/snapshot builds? :ref:`snapshot-reference`
