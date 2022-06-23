@@ -25,11 +25,17 @@ project = 'Adventure'
 copyright = '2020-2022 KyoriPowered'
 author = 'KyoriPowered'
 
-# The short X.Y version
-version = '4.11.0'
+# The short X.Y versions
 
-# The full version, including alpha/beta/rc tags
-release = version
+# The latest version of the Adventure api
+_api_version = '4.11.0'
+
+# The latest versions of adventure-platform builds
+_platform_version = '4.1.1'
+_platform_fabric_version = '5.3.1'
+
+# The full api version, including alpha/beta/rc tags
+release = _api_version
 
 if release.endswith('-SNAPSHOT'):
     tags.add('draft')
@@ -40,8 +46,6 @@ rst_prolog = f"""
     The Adventure docs are currently a **work in progress** and supplement the `Javadocs <https://jd.adventure.kyori.net>`_.
     Some areas may have limited coverage or may not be entirely up to date.
     Feel free to join our `Discord <https://discord.gg/MMfhJ8F>`_ if you have any questions.
-
-.. |version| replace:: {version}
 
 .. role:: mm(code)
     :language: minimessage
@@ -129,7 +133,7 @@ html_theme_options = {
     'sidebar_hide_name': True
 }
 
-html_title = f'Adventure Documentation (v{version})'
+html_title = f'Adventure Documentation (v{_api_version})'
 html_show_sourcelink = False
 html_copy_source = False
 html_favicon = '_static/favicon.ico'

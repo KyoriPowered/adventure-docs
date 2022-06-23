@@ -54,39 +54,7 @@ First, add the repository:
             mavenCentral()
          }
 
-Declaring the dependency:
-
-.. tab-set::
-   
-   .. tab-item:: Maven
-      :sync: maven
-
-      .. code:: xml
-
-         <dependency>
-         <groupId>net.kyori</groupId>
-         <artifactId>adventure-platform-bungeecord</artifactId>
-         <version>4.1.0</version>
-         </dependency>
-   
-   .. tab-item:: Gradle (Groovy)
-      :sync: gradle-groovy
-
-      .. code:: groovy
-
-         dependencies {
-            implementation "net.kyori:adventure-platform-bungeecord:4.1.0"
-         }
-
-
-   .. tab-item:: Gradle (Kotlin)
-      :sync: gradle-kotlin
-
-      .. code:: kotlin
-
-         dependencies {
-            implementation("net.kyori:adventure-platform-bungeecord:4.1.0")
-         }
+.. kyori-dep:: adventure-platform-bungeecord platform
 
 Usage
 -----

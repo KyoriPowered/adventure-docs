@@ -23,14 +23,18 @@
 
 from pathlib import Path
 import re
+
+from docutils.statemachine import StringList
 from sphinx.application import Sphinx
 from docutils.parsers.rst import nodes
+from docutils.parsers.rst import Directive
+from source.conf import _api_version, _platform_version, _platform_fabric_version
 
 
 def setup(app: Sphinx):
     app.add_role("mojira", mojira_role)
     app.connect('html-collect-pages', _fix_cloudflare_name_mangling)
-
+    app.add_directive("kyori-dep", KyoriDepDirective)
 
 _issue_regex = re.compile(r'[A-Z]+-[1-9][0-9]*')
 _mojira_url = "https://bugs.mojang.com/browse/"
@@ -76,3 +80,48 @@ def _fix_cloudflare_name_mangling(app: Sphinx):
         from_path.write_text(from_contents, encoding='UTF-8')
 
     return []
+
+
+dependencyText = """
+Declaring the dependency:
+
+.. |artifact| replace:: {artifact}
+
+.. |version| replace:: {version}
+
+.. include:: /shared/dependency.rst
+"""
+
+
+class KyoriDepDirective(Directive):
+    """
+    Takes two arguments:
+
+    1. the artifact id (e.g adventure-text-serializer-gson)
+    2. the version type (e.g api, platform, platform_fabric)
+
+    Example usage:
+
+    .. kyori-dep:: adventure-text-serializer-gson api
+    """
+
+    has_content = True
+    required_arguments = 2
+
+    def run(self):
+        artifact = self.arguments[0]
+        version = convert_version(self.arguments[1])
+        dummy_parent = nodes.paragraph()
+        string_list = StringList(initlist=dependencyText.format(artifact=artifact, version=version).split("\n"), source="simon")
+        self.state.nested_parse(string_list, 0, dummy_parent)
+
+        return dummy_parent.children
+
+
+def convert_version(version_id):
+    if version_id == "api":
+        return _api_version
+    if version_id == "platform":
+        return _platform_version
+    if version_id == "platform_fabric":
+        return _platform_fabric_version
