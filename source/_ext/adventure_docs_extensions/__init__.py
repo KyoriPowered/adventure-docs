@@ -28,13 +28,15 @@ from docutils.statemachine import StringList
 from sphinx.application import Sphinx
 from docutils.parsers.rst import nodes
 from docutils.parsers.rst import Directive
-from source.conf import _api_version, _platform_version, _platform_fabric_version
-
 
 def setup(app: Sphinx):
     app.add_role("mojira", mojira_role)
     app.connect('html-collect-pages', _fix_cloudflare_name_mangling)
     app.add_directive("kyori-dep", KyoriDepDirective)
+    app.add_config_value("api_version", "0.0.0", "html")
+    app.add_config_value("platform_version", "0.0.0", "html")
+    app.add_config_value("platform_fabric_version", "0.0.0", "html")
+
 
 _issue_regex = re.compile(r'[A-Z]+-[1-9][0-9]*')
 _mojira_url = "https://bugs.mojang.com/browse/"
@@ -108,7 +110,7 @@ class KyoriDepDirective(Directive):
 
     def run(self):
         artifact = self.arguments[0]
-        version = convert_version(self.arguments[1])
+        version = convert_version(self.arguments[1], self.state.document.settings.env.config)
         dummy_parent = nodes.paragraph()
         string_list = StringList(initlist=dependencyText.format(artifact=artifact, version=version).split("\n"), source="simon")
         self.state.nested_parse(string_list, 0, dummy_parent)
@@ -116,10 +118,10 @@ class KyoriDepDirective(Directive):
         return dummy_parent.children
 
 
-def convert_version(version_id):
+def convert_version(version_id, config):
     if version_id == "api":
-        return _api_version
+        return config.api_version
     if version_id == "platform":
-        return _platform_version
+        return config.platform_version
     if version_id == "platform_fabric":
-        return _platform_fabric_version
+        return config.platform_fabric_version

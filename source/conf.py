@@ -28,14 +28,14 @@ author = 'KyoriPowered'
 # The short X.Y versions
 
 # The latest version of the Adventure api
-_api_version = '4.11.0'
+api_version = '4.11.0'
 
 # The latest versions of adventure-platform builds
-_platform_version = '4.1.1'
-_platform_fabric_version = '5.3.1'
+platform_version = '4.1.1'
+platform_fabric_version = '5.3.1'
 
 # The full api version, including alpha/beta/rc tags
-release = _api_version
+release = api_version
 
 if release.endswith('-SNAPSHOT'):
     tags.add('draft')
@@ -47,7 +47,7 @@ rst_prolog = f"""
     Some areas may have limited coverage or may not be entirely up to date.
     Feel free to join our `Discord <https://discord.gg/MMfhJ8F>`_ if you have any questions.
 
-.. |fabric_version| replace:: {_platform_fabric_version}
+.. |fabric_version| replace:: {platform_fabric_version}
 
 .. role:: mm(code)
     :language: minimessage
@@ -135,7 +135,7 @@ html_theme_options = {
     'sidebar_hide_name': True
 }
 
-html_title = f'Adventure Documentation (v{_api_version})'
+html_title = f'Adventure Documentation (v{api_version})'
 html_show_sourcelink = False
 html_copy_source = False
 html_favicon = '_static/favicon.ico'
