@@ -34,6 +34,8 @@ api_version = '4.11.0'
 platform_version = '4.1.1'
 platform_fabric_version = '5.3.1'
 
+dependency_versions = {'api': api_version, 'platform': platform_version, 'platform_fabric': platform_fabric_version}
+
 # The full api version, including alpha/beta/rc tags
 release = api_version
 

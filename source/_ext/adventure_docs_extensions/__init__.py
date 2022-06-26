@@ -33,9 +33,7 @@ def setup(app: Sphinx):
     app.add_role("mojira", mojira_role)
     app.connect('html-collect-pages', _fix_cloudflare_name_mangling)
     app.add_directive("kyori-dep", KyoriDepDirective)
-    app.add_config_value("api_version", "0.0.0", "html")
-    app.add_config_value("platform_version", "0.0.0", "html")
-    app.add_config_value("platform_fabric_version", "0.0.0", "html")
+    app.add_config_value("dependency_versions", {'api': "0.0.0", 'platform': "0.0.0", 'platform_fabric': "0.0.0"}, "html", types=[dict])
 
 
 _issue_regex = re.compile(r'[A-Z]+-[1-9][0-9]*')
@@ -110,18 +108,9 @@ class KyoriDepDirective(Directive):
 
     def run(self):
         artifact = self.arguments[0]
-        version = convert_version(self.arguments[1], self.state.document.settings.env.config)
+        version = self.state.document.settings.env.config.dependency_versions[self.arguments[1]]
         dummy_parent = nodes.paragraph()
         string_list = StringList(initlist=dependencyText.format(artifact=artifact, version=version).split("\n"), source="simon")
         self.state.nested_parse(string_list, 0, dummy_parent)
 
         return dummy_parent.children
-
-
-def convert_version(version_id, config):
-    if version_id == "api":
-        return config.api_version
-    if version_id == "platform":
-        return config.platform_version
-    if version_id == "platform_fabric":
-        return config.platform_fabric_version
