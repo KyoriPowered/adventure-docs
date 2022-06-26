@@ -55,40 +55,7 @@ Adding the repository
 
 Declaring the dependency:
 
-.. tab-set::
-
-   .. tab-item:: Maven
-      :sync: maven
-
-      .. code-block:: xml
-        :substitutions:
-
-         <dependency>
-            <groupId>net.kyori</groupId>
-            <artifactId>adventure-text-minimessage</artifactId>
-            <version>|version|</version>
-         </dependency>
-
-   .. tab-item:: Gradle (Groovy)
-      :sync: gradle-groovy
-
-      .. code-block:: groovy
-        :substitutions:
-
-         dependencies {
-            implementation "net.kyori:adventure-text-minimessage:|version|"
-         }
-
-
-   .. tab-item:: Gradle (Kotlin)
-      :sync: gradle-kotlin
-
-      .. code-block:: kotlin
-        :substitutions:
-
-         dependencies {
-            implementation("net.kyori:adventure-text-minimessage:|version|")
-         }
+.. kyori-dep:: adventure-text-minimessage api
 
 
 Getting Started

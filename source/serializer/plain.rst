@@ -12,39 +12,7 @@ The plain text serializer, by its nature, does not support any advanced features
 color, hover and click events, URL linking, or insertions. If advanced features are desired,
 consider using :doc:`/minimessage/index`.
 
-**Importing this serializer into your project**
-
-.. tab-set::
-
-   .. tab-item:: Maven
-
-      .. code-block:: xml
-        :substitutions:
-
-         <dependency>
-            <groupId>net.kyori</groupId>
-            <artifactId>adventure-text-serializer-plain</artifactId>
-            <version>|version|</version>
-         </dependency>
-
-   .. tab-item:: Gradle (Groovy)
-
-      .. code-block:: groovy
-        :substitutions:
-
-         dependencies {
-            implementation "net.kyori:adventure-text-serializer-plain:|version|"
-         }
-
-
-   .. tab-item:: Gradle (Kotlin)
-
-      .. code-block:: kotlin
-        :substitutions:
-
-         dependencies {
-            implementation("net.kyori:adventure-text-serializer-plain:|version|")
-         }
+.. kyori-dep:: adventure-text-serializer-plain api
 
 Usage
 -----

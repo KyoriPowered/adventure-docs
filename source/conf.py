@@ -25,11 +25,19 @@ project = 'Adventure'
 copyright = '2020-2022 KyoriPowered'
 author = 'KyoriPowered'
 
-# The short X.Y version
-version = '4.11.0'
+# The short X.Y versions
 
-# The full version, including alpha/beta/rc tags
-release = version
+# The latest version of the Adventure api
+api_version = '4.11.0'
+
+# The latest versions of adventure-platform builds
+platform_version = '4.1.1'
+platform_fabric_version = '5.3.1'
+
+dependency_versions = {'api': api_version, 'platform': platform_version, 'platform_fabric': platform_fabric_version}
+
+# The full api version, including alpha/beta/rc tags
+release = api_version
 
 if release.endswith('-SNAPSHOT'):
     tags.add('draft')
@@ -41,7 +49,7 @@ rst_prolog = f"""
     Some areas may have limited coverage or may not be entirely up to date.
     Feel free to join our `Discord <https://discord.gg/MMfhJ8F>`_ if you have any questions.
 
-.. |version| replace:: {version}
+.. |fabric_version| replace:: {platform_fabric_version}
 
 .. role:: mm(code)
     :language: minimessage
@@ -129,7 +137,7 @@ html_theme_options = {
     'sidebar_hide_name': True
 }
 
-html_title = f'Adventure Documentation (v{version})'
+html_title = f'Adventure Documentation (v{api_version})'
 html_show_sourcelink = False
 html_copy_source = False
 html_favicon = '_static/favicon.ico'

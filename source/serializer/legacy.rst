@@ -13,39 +13,7 @@ into clickable components if explicitly requested (note, however, that click eve
 containing a URL will *not* be serialized). If advanced features are desired, consider
 using :doc:`/minimessage/index`.
 
-**Importing this serializer into your project**
-
-.. tab-set::
-
-   .. tab-item:: Maven
-
-      .. code-block:: xml
-        :substitutions:
-
-         <dependency>
-            <groupId>net.kyori</groupId>
-            <artifactId>adventure-text-serializer-legacy</artifactId>
-            <version>|version|</version>
-         </dependency>
-
-   .. tab-item:: Gradle (Groovy)
-
-      .. code-block:: groovy
-        :substitutions:
-
-         dependencies {
-            implementation "net.kyori:adventure-text-serializer-legacy:|version|"
-         }
-
-
-   .. tab-item:: Gradle (Kotlin)
-
-      .. code-block:: kotlin
-        :substitutions:
-
-         dependencies {
-            implementation("net.kyori:adventure-text-serializer-legacy:|version|")
-         }
+.. kyori-dep:: adventure-text-serializer-legacy api
 
 
 Usage

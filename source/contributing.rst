@@ -95,8 +95,16 @@ While we try to rely on external projects as much as possible, there are some sm
 
     For example, ``:mojira:`MC-4``` will produce :mojira:`MC-4`
 
+.. rst:directive:: kyori-dep
 
-MiniMessage syntax
+    The ``kyori-dep`` directive inserts a dependency block for a kyori module. The directive takes two parameters,
+    artifact and version type(api, platform or platform_fabric).
+
+    For example, ``..kyori-dep:: adventure-api api`` will produce:
+
+        .. kyori-dep:: adventure-api api
+
+MniMessage syntax
 ~~~~~~~~~~~~~~~~~~
 
 This documentation has MiniMessage syntax highlighting enabled. In code blocks, this can be used with the ``mm`` or ``minimessage`` languages:
