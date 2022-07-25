@@ -15,7 +15,12 @@ Building
 
 Sphinx is a Python tool, so the steps to build this documentation will be familiar to anyone who's set up a Python project before.
 
-Make sure `Git <https://git-scm.com>`_ and `Python <https://www.python.org>`_ 3.7 or newer are installed. `Virtualenv <https://virtualenv.pypa.io/en/latest/>`_ is also highly recommened to maintain an isolated environment for this project's dependencies.
+.. note::
+
+    For those wishing to make a simple contribution quickly, we provide a Github Codespaces configuration file for this repository 
+    allowing for quick setup with VS Code as an editor.
+
+Make sure `Git <https://git-scm.com>`_ and `Python <https://www.python.org>`_ 3.7 or newer are installed. 
 These instructions assume you are working from a terminal, either on Windows or Linux.
 
 .. tab-set::
