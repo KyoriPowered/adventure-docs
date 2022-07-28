@@ -15,7 +15,12 @@ Building
 
 Sphinx is a Python tool, so the steps to build this documentation will be familiar to anyone who's set up a Python project before.
 
-Make sure `Git <https://git-scm.com>`_ and `Python <https://www.python.org>`_ 3.7 or newer are installed. `Virtualenv <https://virtualenv.pypa.io/en/latest/>`_ is also highly recommened to maintain an isolated environment for this project's dependencies.
+.. note::
+
+    For those wishing to make a simple contribution quickly, we provide a Github Codespaces configuration file for this repository 
+    allowing for quick setup with VS Code as an editor.
+
+Make sure `Git <https://git-scm.com>`_ and `Python <https://www.python.org>`_ 3.7 or newer are installed. 
 These instructions assume you are working from a terminal, either on Windows or Linux.
 
 .. tab-set::
@@ -23,17 +28,17 @@ These instructions assume you are working from a terminal, either on Windows or 
     .. tab-item:: Linux/macOS (POSIX)
 
         1. Clone the repository from `GitHub <https://github.com/KyoriPowered/adventure-docs/>`_ and switch into the directory
-        2. (optional) Set up a Virtualenv in the checkout director: ``virtualenv ENV``, and activate it: ``. ENV/bin/activate``
-        3. Install the dependencies: ``pip install -r requirements.txt``
-        4. Build the documentation: ``make livehtml``
+        2. Install pipenv (if not present): ``$ apt install pipenv``
+        3. Install the dependencies: ``pipenv install``
+        4. Build the documentation: ``pipenv run make livehtml``
         5. Open a browser to ``https://localhost:8000`` to view the just-built site. Pages will auto-refresh when changes are made.
         
     .. tab-item:: Windows (PowerShell)
 
         1. Clone the repository from `GitHub <https://github.com/KyoriPowered/adventure-docs/>`_ and switch into the directory
-        2. (optional) Set up a Virtualenv in the checkout director: ``virtualenv ENV``, and activate it: ``ENV/Scripts/Activate.ps1``
-        3. Install the dependencies: ``pip install -r requirements.txt``
-        4. Build the documentation: ``./make livehtml``
+        2. Install pipenv (if not present): ``pip install pipenv```
+        3. Install the dependencies: ``pipenv install``
+        4. Build the documentation: ``pipenv run ./make livehtml``
         5. Open a browser to ``https://localhost:8000`` to view the just-built site. Pages will auto-refresh when changes are made.
 
 

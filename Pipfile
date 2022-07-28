@@ -1,0 +1,22 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+sphinx = "*"
+sphinx-autobuild = "*"
+furo = "*"
+sphinx-design = "*"
+rstcheck = "*"
+sphinx-substitution-extensions = "*"
+sphinx-github-changelog = "*"
+sphinx-copybutton = "*"
+sphinx-reredirects = "*"
+pygments = "*"
+sphinx-github-role = { git = "https://github.com/astrojuanlu/sphinx-github-role.git", ref = "main", editable = true }
+
+[dev-packages]
+
+[requires]
+python_version = "3.10"
