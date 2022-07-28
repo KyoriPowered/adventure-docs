@@ -60,7 +60,7 @@ First, add the repository:
         :substitutions:
 
          dependencies {
-            modImplementation include("net.kyori:adventure-platform-fabric:|fabric_version|") // for Minecraft 1.18.2
+            modImplementation include("net.kyori:adventure-platform-fabric:|fabric_version|") // for Minecraft 1.19
          }
 
 
@@ -71,7 +71,7 @@ First, add the repository:
         :substitutions:
 
          dependencies {
-            modImplementation(include("net.kyori:adventure-platform-fabric:|fabric_version|")!!) // for Minecraft 1.18.2
+            modImplementation(include("net.kyori:adventure-platform-fabric:|fabric_version|")!!) // for Minecraft 1.19
          }
 
 The Fabric platform requires *fabric-api-base* in order to provide the locale change event, and can optionally use Colonel_ to allow the ``Component`` and ``Key`` argument types to be used on clients without the mod installed. There are no other dependencies.
@@ -87,7 +87,8 @@ The Fabric platform requires *fabric-api-base* in order to provide the locale ch
    1.17.x            4.9.3             4.1.0
    1.18, 1.18.1      4.10.0            5.1.0
    1.18.2            4.11.0            5.3.1
-   1.19              4.11.0            5.4.0-SNAPSHOT
+   1.19              4.11.0            5.4.0
+   1.19.1            4.11.0            5.5.0-SNAPSHOT
    ================= ================= ======================================
 
 ---------
