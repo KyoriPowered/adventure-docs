@@ -21,19 +21,26 @@ jobs:
   publish:
     needs: "build"
     runs-on: "ubuntu-latest"
+
+    permissions:
+      pages: "write"
+      id-token: "write"
+    environment:
+      name: "github-pages"
+      url: "${{ steps.deployment.output.page_url }}"
+
     steps:
-    - name: "checkout"
-      uses: "actions/checkout@v3"
-    - name: "restore artifact"
+    - name: "artifact / restore"
       uses: "actions/download-artifact@v3"
       with: 
         name: "docs-html"
         path: "build/html"
-    - name: "publish to pages"
-      uses: "JamesIves/github-pages-deploy-action@v4.4.0"
+    - name: "artifact / repackage"
+      uses: "actions/upload-pages-artifact@v1"
       with:
-        branch: "gh-pages"
-        folder: "build/html"
-        force: true
-        single-commit: true
+        path: "build/html"
+    - name: "deploy / pages"
+      id: "deployment"
+      uses: "actions/deploy-pages@v1"
+   
 
