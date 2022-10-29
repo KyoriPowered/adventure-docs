@@ -26,11 +26,14 @@ import re
 
 from docutils.statemachine import StringList
 from sphinx.application import Sphinx
+from sphinx.roles import code_role
 from docutils.parsers.rst import nodes
 from docutils.parsers.rst import Directive
 
 def setup(app: Sphinx):
     app.add_role("mojira", mojira_role)
+    app.add_role("mm", highlight_role("minimessage"))
+    app.add_role("java", highlight_role("java"))
     app.connect('html-collect-pages', _fix_cloudflare_name_mangling)
     app.add_directive("kyori-dep", KyoriDepDirective)
     app.add_config_value("dependency_versions", {'api': "0.0.0", 'platform': "0.0.0", 'platform_fabric': "0.0.0"}, "html", types=[dict])
@@ -51,6 +54,16 @@ def mojira_role(role, rawtext, text, lineno, inliner, options={}, content=[]):
     node = nodes.reference(rawtext, text, refuri=ref, **options)
 
     return [node], []
+
+def highlight_role(language: str):
+    def lang_highlight_role(role, rawtext, text, lineno, inliner, options={}, content=[]):
+        extended_options: dict = options.copy()
+        extended_options["language"] = language
+        extended_options["class"] = "highlight"
+
+        return code_role(role, rawtext, text, lineno, inliner, options=extended_options, content=content)
+
+    return lang_highlight_role
 
 
 def _fix_cloudflare_name_mangling(app: Sphinx):

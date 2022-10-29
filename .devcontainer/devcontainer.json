@@ -40,7 +40,8 @@
 				"ms-python.python",
 				"ms-python.vscode-pylance",
 				"swyddfa.esbonio",
-				"trond-snekvik.simple-rst"
+				"trond-snekvik.simple-rst",
+				"ExecutableBookProject.myst-highlight"
 			]
 		}
 	},

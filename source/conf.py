@@ -50,15 +50,6 @@ rst_prolog = f"""
     Feel free to join our `Discord <https://discord.gg/MMfhJ8F>`_ if you have any questions.
 
 .. |fabric_version| replace:: {platform_fabric_version}
-
-.. role:: mm(code)
-    :language: minimessage
-    :class: highlight
-
-.. role:: java(code)
-    :language: java
-    :class: highlight
-
 """
 
 if 'GITHUB_REF' in os.environ:
@@ -91,6 +82,7 @@ extensions = [
   'sphinx_github_role',
   'sphinx_copybutton',
   'minimessage_hl',
+  'myst_parser',
   'adventure_docs_extensions'
 ]
 
@@ -110,6 +102,17 @@ language = 'en'
 
 pygments_style = 'friendly'
 pygments_dark_style = 'dracula'
+
+myst_enable_extensions=[
+  "colon_fence",
+  "deflist",
+  "fieldlist",
+  "dollarmath",
+  "html_admonition",
+  "replacements",
+  "smartquotes",
+  "tasklist"
+]
 
 
 # -- Options for HTML output -------------------------------------------------

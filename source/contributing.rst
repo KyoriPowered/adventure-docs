@@ -59,9 +59,12 @@ When providing examples for build tools, those examples should be provided for M
 Helpful Roles and Directives
 ----------------------------
 
-Source for this documentation is in the `reStructured Text`_ format, the default used by Sphinx. The syntax may be a touch different than what many people are used to, 
+Source for this documentation is primarily in the `reStructured Text`_ format, the default used by Sphinx. The syntax may be a touch different than what many people are used to, 
 but the documentation for rST should give a good overview. There are still a large number of included directives and roles, especially once Sphinx's extensions enter the
 mix, so here are some of the less common ones. 
+
+New pages can alternatively be written in Markdown. We use the `MyST Parser`_ package to support Markdown with several Sphinx-specific extensions to support roles and directives. 
+See `their documentation <https://myst-parser.readthedocs.io/en/latest/syntax/syntax.html>`_ for more information.
 
 Standrd Sphinx/Docutils
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -90,7 +93,7 @@ While we try to rely on external projects as much as possible, there are some sm
 
 .. rst:role:: java
 
-    The ``:java:`` role will insert its contents as an inline syntax-highlighted code block.
+    The ``:java:`` (or ``{java}`` in Markdown) role will insert its contents as an inline syntax-highlighted code block.
 
     For example, ``:java:`Component.text("Hello world", NamedTextColor.RED)``` will produce :java:`Component.text("Hello world", NamedTextColor.RED)`
 
@@ -98,7 +101,7 @@ While we try to rely on external projects as much as possible, there are some sm
 
     The ``:mojira:`` role can insert references to Mojang's issue tracker for Minecraft issues.
 
-    For example, ``:mojira:`MC-4``` will produce :mojira:`MC-4`
+    For example, ``:mojira:`MC-4``` (or ``{mojira}`MC-4``` in Markdown) will produce :mojira:`MC-4`
 
 .. rst:directive:: kyori-dep
 
@@ -119,7 +122,7 @@ This documentation has MiniMessage syntax highlighting enabled. In code blocks, 
     This is <bold>a MiniMessage <hover:show_text:'<rainbow>hi'>string</hover>!
 
 
-Inline, the `:mm:` role can be used.
+Inline, the `:mm:` (or `{mm}` in Markdown) role can be used.
 
 .. rst:role:: mm
 
@@ -129,3 +132,4 @@ Inline, the `:mm:` role can be used.
 
 .. _Sphinx: https://www.sphinx-doc.org/
 .. _reStructured Text: https://docutils.sourceforge.io/rst.html
+.. _MyST Parser: https://myst-parser.readthedocs.io/en/latest

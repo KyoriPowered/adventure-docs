@@ -7,7 +7,7 @@
             "label": "adventure-docs: Build Live Preview",
             "type": "shell",
             "windows": {
-                "command": "pipenv run ./make livehtml"
+                "command": "pipenv run .\\make livehtml"
             },
             "command": "pipenv run make livehtml",
             "isBackground": true,
