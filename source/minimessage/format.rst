@@ -317,7 +317,7 @@ Examples
 Selector
 ********
 
-Insert a selector component
+*(since v4.11.0)* Insert a selector component
 
 Tag
    :mm:`<selector:_sel_[:_separator_]>`
@@ -335,7 +335,7 @@ Examples
 Score
 *****
 
-Insert a score component.
+*(since v4.13.0)* Insert a score component.
 
 .. note::
 
@@ -352,7 +352,7 @@ Examples
 NBT
 *****
 
-Insert a NBT component. The syntax of this tag is intended to be familiar to users of vanilla Minecraft's ``/data`` command.
+*(since v4.13.0)* Insert a NBT component. The syntax of this tag is intended to be familiar to users of vanilla Minecraft's ``/data`` command.
 
 .. note::
 
