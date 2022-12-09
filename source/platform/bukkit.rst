@@ -3,7 +3,7 @@ Bukkit
 ======
 
 The Adventure platform implementation for Bukkit targets Paper, Spigot, and Bukkit for
-Minecraft 1.7.10 through 1.19.2.
+Minecraft 1.7.10 through 1.19.3.
 
 
 .. kyori-dep:: adventure-platform-bukkit platform

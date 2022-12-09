@@ -31,7 +31,7 @@ author = 'KyoriPowered'
 api_version = '4.12.0'
 
 # The latest versions of adventure-platform builds
-platform_version = '4.1.2'
+platform_version = '4.2.0'
 platform_fabric_version = '5.6.0'
 
 dependency_versions = {'api': api_version, 'platform': platform_version, 'platform_fabric': platform_fabric_version}
