@@ -23,6 +23,7 @@ There are many community-supported libraries that extend the capabilities of Adv
 
    getting-started
    community-libraries
+   faq
 
    audiences
    text
