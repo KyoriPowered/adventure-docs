@@ -26,6 +26,6 @@ allow you to obtain ``Audience`` instances from native user types.
 
   Next, make sure that the feature you are using exists on the client version that is receiving the action. For example, hex colour codes won't work on clients older than 1.16, so hex colours will be down-sampled.
 
-  If it's still not working, it is useful to enable debug mode by setting the system property ``net.kyori.adventure.debug`` to ``true`` and pasteing (to a pastebin such as https://paste.gg/) the output
+  If it's still not working, it is useful to enable debug mode by setting the system property ``net.kyori.adventure.debug`` to ``true`` and pasting (to a pastebin such as https://paste.gg/) the output
   in the appropriate ``#platform-`` channel on our Discord.
   This will show what facets are being selected which will help point towards why it is not working for you.

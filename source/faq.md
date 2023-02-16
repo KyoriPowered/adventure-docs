@@ -5,7 +5,7 @@ We find that there are some issues users come across relatively frequently while
 
 ## Why is my lore in italics?
 
-Components will inherit style from their parent. For example, in the following code snippet, each word will be red, despite red not being explicitly set on the appended component: text("hi", RED).append(text("also red!")).
+Components will inherit style from their parent. For example, in the following code snippet, each word will be red, despite red not being explicitly set on the appended component: {java}`text("hi", RED).append(text("also red!"))`.
 
 In vanilla Minecraft, some places were components are rendered have parent styles. For example, lore text has a parent style that makes all text italic. This means that you will need to set italic to false if you do not want any component you are storing in lore to be italic. The {java}`Component.decorationIfAbsent()` method can apply this to existing components without overriding any formatting specifically set by users.
 
