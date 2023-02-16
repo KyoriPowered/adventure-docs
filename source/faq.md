@@ -19,7 +19,7 @@ In vanilla Minecraft, some places were components are rendered have parent style
 
 If you have legacy in config files, or other places, it is suggested that you migrate them once using the legacy deserialiser to turn them into a component and then MiniMessage to serialise them into proper MiniMessage format.
 
-There are no working, recommended or supported ways of using both MiniMessage and legacy colour codes and there never will be. Even simple find-and-replace style techniques do not work and will fail to take into account the quirks of style resetting in legacy formatting.
+There are no working, recommended, or supported ways of using both MiniMessage and legacy colour codes and there never will be. Even simple find-and-replace style techniques do not work and will fail to take into account the quirks of style resetting in legacy formatting.
 
 ## How can I use Bukkit's PlaceholderAPI in MiniMessage messages?
 
