@@ -16,7 +16,7 @@
       ]
     },
     {
-      "owner": "sphinx-spelling-problem-matcher-loose-no-severity",
+      "owner": "sphinx-spelling-problem-matcher-loose-no-severity-or-line",
       "severity": "warning",
       "pattern": [
         {
