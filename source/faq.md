@@ -17,7 +17,7 @@ In vanilla Minecraft, some places where components are rendered have parent styl
 
 ## How can I support both MiniMessage and legacy (§-code) formatting?
 
-If you have legacy in config files, or other places, it is suggested that you migrate them once using the legacy deserializer to turn them into a component and then MiniMessage to serialize them into proper MiniMessage format.
+If you have legacy in configuration files, or other places, it is suggested that you migrate them once using the legacy deserializer to turn them into a component and then MiniMessage to serialize them into proper MiniMessage format.
 
 There are no working, recommended, or supported ways of using both MiniMessage and legacy color codes and there never will be. Even simple find-and-replace style techniques do not work and will fail to take into account the quirks of style resetting in legacy formatting.
 
@@ -31,7 +31,7 @@ Example method to create a MiniMessage placeholder that parses PlaceholderAPI pl
 
 The tag added is of the format {mm}`<papi:[papi_placeholder]>`. For example, {mm}`<papi:luckperms_prefix>`.
 
-Credit to mbaxter.
+Credit to {spelling:ignore}`mbaxter`.
 
 ```java
 /**
@@ -61,7 +61,7 @@ public @NotNull TagResolver papiTag(final @NotNull Player player) {
 
 ## Why am I getting a `NoSuchFieldError`, `NoSuchMethodError`, `ClassNotFoundException` or similar when updating/using `adventure-platform-*`, `adventure-text-minimessage`, `adventure-api` or other related libraries/tools?
 
-In the case of `adventure-platform-fabric`, you need to make sure you are properly include()-ing the mod. For legacy platform implementations, you need to make sure you are properly shading and relocating your specific dependencies. Specific issues may include:
+In the case of `adventure-platform-fabric`, you need to make sure you are properly `include()`-{spelling:ignore}`ing` the mod. For legacy platform implementations, you need to make sure you are properly shading and relocating your specific dependencies. Specific issues may include:
 
 - Not shading the correct version of `adventure-api`. You can check your dependency tree to see what or why your build tool is not including the correct version of the API that matches the one used by the platform version you are using.
 - Not relocating your dependencies. If you are running on a platform that includes an older version of the API, or another mod/plugin is also not properly relocating their dependencies, you will use their out-of-date version of the API, causing errors.
