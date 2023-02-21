@@ -7,11 +7,10 @@
       "pattern": [
         {
           "_comment": "Looks for file names ending with .rst or .md and line numbers but without severity",
-          "regexp": "^(.*\\.(?:rst|md)):(\\d+): : Spell check: ([^:]+):(.*)$",
+          "regexp": "^(.*\\.(?:rst|md)):(\\d+): : Spell check: (.*)$",
           "file": 1,
           "line": 2,
-          "code": 3,
-          "message": 4
+          "message": 3
         }
       ]
     },
@@ -21,10 +20,9 @@
       "pattern": [
         {
           "_comment": "Looks for file names ending with .rst or .md, without line numbers or severity",
-          "regexp": "^(.*\\.(?:rst|md)):None: : Spell check: ([^:]+):(.*)$",
+          "regexp": "^(.*\\.(?:rst|md)):None: : Spell check: (.*)$",
           "file": 1,
-          "code": 2,
-          "message": 3
+          "message": 2
         }
       ]
     }
