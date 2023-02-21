@@ -3,7 +3,7 @@
 Format
 ======
 
-The Minimessage language uses tags. Everything you do will be defined with tags. Tags have a start tag and an end tag (the :mm:`<reset>` tag is an exception here).
+The MiniMessage language uses tags. Everything you do will be defined with tags. Tags have a start tag and an end tag (the :mm:`<reset>` tag is an exception here).
 Start tags are mandatory (obviously), but end tags aren't outside of ``strict`` mode.
 :mm:`<yellow>Hello <blue>World<yellow>!` and :mm:`<yellow>Hello <blue>World</blue>!` and even :mm:`<yellow>Hello </yellow><blue>World</blue><yellow>!</yellow>` are all
 visually identical. For tags with no content, tags can be auto-closed by using the format :mm:`<tag/>`. With this format, even in strict mode no separate closing tag should be provided.
@@ -19,7 +19,7 @@ Any meaningful token can be escaped in the locations where they have influence. 
 the opening quote character can be escaped (``'`` or ``"``). In either place, the escape character can be escaped in places where it would otherwise be relevant. Unquoted tag arguments cannot have escapes, for simplicity.
 In locations where escaping is not supported, the literal escape character will be passed through. In locations where escaping *is* supported but a literal escape character is desired, the escape character can itself be escaped to produce a ``\``.
 
-The default tags try to represent components in a manner compatible with Vanilla, but simplifying some elements. It might to helpful to
+The default tags try to represent components in a manner compatible with Vanilla, but simplifying some elements. It might be helpful to
 use `the minecraft wiki <https://minecraft.gamepedia.com/Raw_JSON_text_format>`_ as a reference for the Vanilla component system, especially
 for things like the actions and values of click and hover events.
 
@@ -50,7 +50,7 @@ Arguments
    * | ``_colorname_``, any minecraft color constant: ``black``, ``dark_blue``, ``dark_green``, ``dark_aqua``, ``dark_red``, ``dark_purple``, ``gold``, ``gray``, ``dark_gray``, ``blue``, ``green``, ``aqua``, ``red``, ``light_purple``, ``yellow``, or ``white``.
      |
      | ``dark_grey`` can be used in place of ``dark_gray``, and so can ``grey`` in place of ``gray``.
-     | Hex colours are supported as well, with the format ``#RRGGBB``.
+     | Hex colors are supported as well, with the format ``#RRGGBB``.
 Examples
    * :mm:`<yellow>Hello <blue>World</blue>!`
    * :mm:`<red>This is a <green>test!`
@@ -111,7 +111,7 @@ Examples:
 Reset
 *****
 
-Close all currently open tags, resetting colour/decoration/etc. The reset tag cannot be closed.
+Close all currently open tags, resetting color/decoration/etc. The reset tag cannot be closed.
 
 In strict mode, reset tags are forbidden.
 
@@ -199,7 +199,7 @@ Aliases
    ``tr``, ``translate``
 Arguments
    * ``_key_``, the translation key
-   * ``_valueX_``, optional values that are used for placeholders in the key (they will end up in the ``with`` tag in the json)
+   * ``_valueX_``, optional values that are used for placeholders in the key (they will end up in the ``with`` tag in the JSON)
 Examples
    * :mm:`You should get a <lang:block.minecraft.diamond_block>!`
    * :mm:`<lang:commands.drop.success.single:'<red>1':'<blue>Stone'>!`
@@ -227,7 +227,7 @@ Examples
 Rainbow
 *******
 
-Rainbow colored text?!
+Rainbow-colored text?!
 
 Tag
    :mm:`<rainbow:[!][phase]>`
@@ -251,7 +251,7 @@ Gradient colored text
 Tag
    :mm:`<gradient:[color1]:[color...]:[phase]>`
 Arguments
-   a list of 1 to n colors, either hex or named colors and an optional phase param (range -1 to 1) allows you to shift the gradient around, creating animations.
+   a list of 1 to n colors, either hex or named colors and an optional phase parameter (range -1 to 1) allows you to shift the gradient around, creating animations.
 Examples
    * :mm:`<yellow>Woo: <gradient>||||||||||||||||||||||||</gradient>!`
    * :mm:`<yellow>Woo: <gradient:#5e4fa2:#f79459>||||||||||||||||||||||||</gradient>!`
@@ -259,7 +259,7 @@ Examples
    * :mm:`<yellow>Woo: <gradient:green:blue>||||||||||||||||||||||||</gradient>!`
 
 .. image:: /minimessage/images/gradient_1.png
-   :alt: The result of parsing the examples for the gradint tag, shown in-game in the Minecraft client's chat window
+   :alt: The result of parsing the examples for the gradient tag, shown in-game in the Minecraft client's chat window
 
 
 Transition
@@ -271,7 +271,7 @@ Similar to a gradient, but everything is the same color and the phase chooses th
 Tag
    :mm:`<transition:[color1]:[color...]:[phase]>`
 Arguments
-   a list of 1 to n colors, either hex or named colors and an optional phase param (range -1 to 1) allows you to shift the transition around, creating animations.
+   a list of 1 to n colors, either hex or named colors and an optional phase parameter (range -1 to 1) allows you to shift the transition around, creating animations.
 Examples
    * :mm:`<transition:#00ff00:#ff0000:0>|||||||||</transition>`
    * :mm:`<transition:white:black:red:[phase]>Hello world [phase]</transition>`

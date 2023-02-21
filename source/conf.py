@@ -75,6 +75,7 @@ sys.path.append(os.path.abspath("./_ext"))
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
+  'sphinxcontrib.spelling',
   'sphinx_design',
   'sphinx_substitution_extensions',
   'sphinx_github_changelog',
@@ -153,3 +154,8 @@ redirects = {
 
 # sphinx-github-role
 github_default_org_project = ('KyoriPowered', 'adventure')
+
+# sphinxcontrib-spelling
+spelling_word_list_filename='../.config/spelling_wordlist.txt'
+spelling_show_suggestions=True
+spelling_suggestion_limit=5

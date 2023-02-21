@@ -3,7 +3,7 @@ Migrating from text 3.x
 =======================
 
 Adventure is an evolution of the text 3.x API. If you've worked with
-the text API before, the switch to Adventure should be relatively quick. 
+the text API before, the switch to Adventure should be relatively quick.
 For the most part, you'll just need to depend on the Adventure API
 and the relevant :doc:`/platform/index` you support and replace references
 to classes in ``net.kyori.text`` to ``net.kyori.adventure.text``, though see
@@ -23,8 +23,8 @@ Breaking changes from text 3.x
 
 Factory methods renamed
 ^^^^^^^^^^^^^^^^^^^^^^^
-In text 3.x, components could be constructed using the :java:`<type>Component.of()` methods. 
-In Adventure, we've changed to using :java:`Component.<type>(/*...*/)` style methods to allow 
+In text 3.x, components could be constructed using the :java:`<type>Component.of()` methods.
+In Adventure, we've changed to using :java:`Component.<type>(/*...*/)` style methods to allow
 for easier static imports.
 
 Similarly, :java:`Style.of(/*...*/)` is changed to :java:`Style.style(/*...*/)`.
@@ -55,7 +55,7 @@ to :java:`LegacyComponentSerializer.builder().extractUrl(style).build()`.
 ``TextColor`` renamed to ``NamedTextColor``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-In order to accomodate the new RGB colors introduced in 1.16, all the named text colors
+In order to accommodate the new RGB colors introduced in 1.16, all the named text colors
 were moved to the ``NamedTextColor`` class. References to the old ``TextColor`` class
 should be updated to refer to ``NamedTextColor``.
 
