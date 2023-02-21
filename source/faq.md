@@ -9,7 +9,7 @@ Components will inherit style from their parent. For example, in the following c
 
 In vanilla Minecraft, some places where components are rendered have parent styles. For example, lore text has a parent style that makes all text italic. This means that you will need to set italic to false if you do not want any component you are storing in lore to be italic. The {java}`Component.decorationIfAbsent()` method can apply this to existing components without overriding any formatting specifically set by users.
 
-## Messages not sending? Hex colours not working? Events not appearing? Fonts messed up?
+## Messages not sending? Hex colors not working? Events not appearing? Fonts messed up?
 
 - Test on a vanilla client. Modded clients such as Lunar, Badlion and others commonly break many elements of the modern JSON chat format and mess with incoming chat packets in ways that cause a myriad of issues.
 - Try without other plugins/mods. If another plugin/mod is modifying outgoing packets or formatting chat messages, this could cause a loss of formatting in the messages you send. Try without any other plugins to see if any are causing issues.
@@ -17,9 +17,9 @@ In vanilla Minecraft, some places where components are rendered have parent styl
 
 ## How can I support both MiniMessage and legacy (§-code) formatting?
 
-If you have legacy in config files, or other places, it is suggested that you migrate them once using the legacy deserialiser to turn them into a component and then MiniMessage to serialise them into proper MiniMessage format.
+If you have legacy in config files, or other places, it is suggested that you migrate them once using the legacy deserializer to turn them into a component and then MiniMessage to serialize them into proper MiniMessage format.
 
-There are no working, recommended, or supported ways of using both MiniMessage and legacy colour codes and there never will be. Even simple find-and-replace style techniques do not work and will fail to take into account the quirks of style resetting in legacy formatting.
+There are no working, recommended, or supported ways of using both MiniMessage and legacy color codes and there never will be. Even simple find-and-replace style techniques do not work and will fail to take into account the quirks of style resetting in legacy formatting.
 
 ## How can I use Bukkit's PlaceholderAPI in MiniMessage messages?
 
@@ -63,9 +63,9 @@ public @NotNull TagResolver papiTag(final @NotNull Player player) {
 
 In the case of `adventure-platform-fabric`, you need to make sure you are properly include()-ing the mod. For legacy platform implementations, you need to make sure you are properly shading and relocating your specific dependencies. Specific issues may include:
 
-- Not shading the correct version of adventure-api. You can check your dependency tree to see what or why your build tool is not including the correct version of the API that matches the one used by the platform version you are using.
+- Not shading the correct version of `adventure-api`. You can check your dependency tree to see what or why your build tool is not including the correct version of the API that matches the one used by the platform version you are using.
 - Not relocating your dependencies. If you are running on a platform that includes an older version of the API, or another mod/plugin is also not properly relocating their dependencies, you will use their out-of-date version of the API, causing errors.
-- Building/running against a native implementation of adventure-api.  If you are running on a platform that includes an older version of the API, this could cause issues if the library depends on newer features that are not available in the outdated version of the API, your library will not be able to find these methods, causing errors.
-- Relocating adventure-api and trying to use native/library methods. If you relocate the API, you will not be able to use any methods that use the API in native implementations or libraries as method signatures will differ. Either shade and relocate this software, or do not use native methods. Alternatively, if you are shading and relocating a library but want to use the the API, make sure you are only relocating the packages that you are shading.
+- Building/running against a native implementation of `adventure-api`.  If you are running on a platform that includes an older version of the API, this could cause issues if the library depends on newer features that are not available in the outdated version of the API, your library will not be able to find these methods, causing errors.
+- Relocating `adventure-api` and trying to use native/library methods. If you relocate the API, you will not be able to use any methods that use the API in native implementations or libraries as method signatures will differ. Either shade and relocate this software, or do not use native methods. Alternatively, if you are shading and relocating a library but want to use the API, make sure you are only relocating the packages that you are shading.
 
 Please consult the documentation for your build tool for more information on how to shade, relocate and manage your dependencies. We do not provide one-on-one support for these sorts of issues, as there are far too many project-specific variables that make isolating issues difficult.
