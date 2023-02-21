@@ -64,7 +64,7 @@ There are currently two types of events available for text components.
 Hover events allow you to show another component, item or entity when a user hovers their mouse over the text.
 When a user clicks on the text component, a click event is fired which can perform one of the following actions:
 
-* Open a url
+* Open a URL
 * Open a file
 * Run a command
 * Suggest a command
@@ -83,14 +83,14 @@ Using components within your application
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The way you use components within your application will of course vary
-depending on what you’re aiming to achieve.
+depending on what you're aiming to achieve.
 
 However, the most common task is likely to be sending a component to
 some sort of Minecraft client. The method for doing this will depend on
 the platform your program is running on, however it is likely to involve
-serializing the component to Minecraft’s JSON format, and then sending
+serializing the component to Minecraft's JSON format, and then sending
 the JSON through another method provided by the platform.
 
-The text library is platform agnostic and therefore doesn’t provide any
+The text library is platform-agnostic and therefore doesn't provide any
 way to send components to clients. Some platforms implement :ref:`Adventure natively <native-support>`, so ``Components``
 can be directly used with their API. For other platforms (Spigot/Bukkit, BungeeCord, and SpongeAPI 7), we provide compatibility bridges as :ref:`platforms` which can be distributed with your own plugins.

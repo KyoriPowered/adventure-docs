@@ -2,7 +2,7 @@
 Fabric
 ======
 
-Adventure supports Fabric on *Minecraft: Java Edition* 1.16 and up, for both serverside and clientside use. Each major version of Minecraft will usually require a new release of the platform.
+Adventure supports Fabric on *Minecraft: Java Edition* 1.16 and up, for both server-side and client-side use. Each major version of Minecraft will usually require a new release of the platform.
 
 The platform supports all features, including localization and custom renderers.
 
@@ -19,7 +19,7 @@ Add the artifact to your build file:
 First, add the repository:
 
 .. tab-set::
-   
+
    .. tab-item:: Gradle (Groovy)
       :sync: gradle-groovy
 
@@ -52,7 +52,7 @@ First, add the repository:
          }
 
 .. tab-set::
-   
+
    .. tab-item:: Gradle (Groovy)
       :sync: gradle-groovy
 
@@ -104,7 +104,7 @@ This covers almost all cases where the default renderer is used.
 The following Adventure interfaces are directly implemented:
 
 ``Audience``
-    :java:`net.minecraft.commands.CommandSourceStack`, :java:`net.minecraft.server.MinecraftServer`, :java:`net.minecraft.server.rcon.RconConsoleSource`, 
+    :java:`net.minecraft.commands.CommandSourceStack`, :java:`net.minecraft.server.MinecraftServer`, :java:`net.minecraft.server.rcon.RconConsoleSource`,
     :java:`net.minecraft.server.level.ServerPlayer`, :java:`net.minecraft.client.player.LocalPlayer`
 
 ``Sound.Emitter``
@@ -152,7 +152,7 @@ For more complex use cases, :java:`FabricServerAudiences` or :java:`FabricClient
 Server
 ------
 
-The logical-server side of the Fabric platform can be accessed any time a server is available, through a ``FabricServerAudiences`` instance. By default, translatable components will be rendered with the global translator, but a custom renderer can be passed when initializing the platform. 
+The logical-server side of the Fabric platform can be accessed any time a server is available, through a ``FabricServerAudiences`` instance. By default, translatable components will be rendered with the global translator, but a custom renderer can be passed when initializing the platform.
 
 All ``AudienceProvider`` interface methods are supported, except for the ``permission`` method. This will become supported as soon as Fabric gets a suitable permissions API.
 
@@ -180,7 +180,7 @@ To get started with Adventure, set up an audience provider like this:
      }
    }
 
-From here, audiences can be aquired for players and any other ``CommandSource``. Specialized serializer instances are also available, to allow using game information in component serialization.
+From here, audiences can be acquired for players and any other ``CommandSource``. Specialized serializer instances are also available, to allow using game information in component serialization.
 
 ~~~~~~~~~~~~
 Localization
@@ -218,7 +218,7 @@ As an example, here's a simple command that will echo whatever is provided as in
 Client
 ------
 
-Special for the Fabric platform, purely clientside operations are supported. The setup is less involved than it is for the server, since the client is a singleton, and there is only one subject that can be acted on: the client's player.
+Special for the Fabric platform, purely client-side operations are supported. The setup is less involved than it is for the server, since the client is a singleton, and there is only one subject that can be acted on: the client's player.
 
 This means that for most users the ``FabricClientAudiences`` object can be treated as a singleton. The only exception is users using a custom renderer. This makes using Adventure audiences fairly simple, as this code example shows:
 
@@ -238,7 +238,7 @@ The full functionality of the ``Audience`` interface is available, including loc
 Working with native types
 -------------------------
 
-Sadly, Adventure can't provide API for every place chat components are used in the game. However, for areas not covered by the API in ``Audience``, it's possible to convert components between native and Adventure types. See certain native types which implement 
+Sadly, Adventure can't provide API for every place chat components are used in the game. However, for areas not covered by the API in ``Audience``, it's possible to convert components between native and Adventure types. See certain native types which implement
 Adventure interfaces, and the methods on ``FabricAudiences`` for other available conversions.
 
 

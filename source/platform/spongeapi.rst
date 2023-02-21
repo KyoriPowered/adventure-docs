@@ -1,5 +1,5 @@
 =========
-SpongeAPI 
+SpongeAPI
 =========
 
 Adventure provides a platform for SpongeAPI 7 for *Minecraft: Java Edition* 1.12. For SpongeAPI 8 and up (targeting *Minecraft: Java Edition* 1.16.4), Adventure is the native text library, so no platform is needed.
@@ -9,7 +9,7 @@ Adventure provides a platform for SpongeAPI 7 for *Minecraft: Java Edition* 1.12
 Usage
 ~~~~~
 
-The SpongeAPI platform can either be created through Guice dependency injection, or created directly. We recommend using injection, since less boilerplate is requred.
+The SpongeAPI platform can either be created through Guice dependency injection, or created directly. We recommend using injection, since less boilerplate is required.
 
 An example plugin is fairly straightforward:
 

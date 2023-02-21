@@ -65,7 +65,7 @@ MiniMessage exposes a simple API via the ``MiniMessage`` class.
 
 .. note::
 
-   Previously, a Markdown mode was available. This has been temporarily removed due to some issues 
+   Previously, a Markdown mode was available. This has been temporarily removed due to some issues
    with the new 4.10.0 parser backend, but there are plans to re-add it once time permits.
 
 A standard instance of the serializer is available through the :java:`miniMessage()` method. This uses the default set of tags and is not in strict mode.
@@ -105,14 +105,14 @@ To make customizing MiniMessage easier, we provide a Builder. The specific metho
         .build();
 
 .. tip::
-   
+
    It's a good idea to initialize such a MiniMessage instance once, in a central location, and then use it for all your messages.
    Exception being if you want to customize MiniMessage based on permissions of a user (for example, admins should be allowed to use color and decoration in the message, normal users not)
 
 Error handling
 --------------
 
-By default, MiniMessage will never throw an exception caused by user input. Instead, it will treat any invalid tags as normal text. ``MiniMessage.Builder#strict(true)`` mode will enable strict mode, 
+By default, MiniMessage will never throw an exception caused by user input. Instead, it will treat any invalid tags as normal text. ``MiniMessage.Builder#strict(true)`` mode will enable strict mode,
 which throws exceptions on unclosed tags, but still will allow any improperly specified tags through.
 
 To capture information on why a parse may have failed, ``MiniMessage.Builder#debug(Consumer<String>)`` can be provided, which will accept debug logging for an input string.
@@ -122,7 +122,7 @@ Tag Resolvers
 
 All tag resolution goes through tag resolvers. There is one global tag resolver, which describes the tags available through a `MiniMessage` instance, plus parse-specific resolvers which can provide additional input-specific tags.
 
-Tag resolvers are the binding between a name and arguments, and the logic to produce a ``Component`` contained in a ``Tag`` instance. They are composable so a ``TagResolver`` can produce any number of actual ``Tag`` instances. The tag name passed to resolvers will always be lower-cased, to ensure case-insensitve searches.
+Tag resolvers are the binding between a name and arguments, and the logic to produce a ``Component`` contained in a ``Tag`` instance. They are composable so a ``TagResolver`` can produce any number of actual ``Tag`` instances. The tag name passed to resolvers will always be lower-cased, to ensure case-insensitive searches.
 
 Tag names are only allowed to contain the characters a-z, 0-9, ``_``, and ``-``. They can also optionally start with any of the following characters: ``!?#``.
 
@@ -132,7 +132,7 @@ For built-in dynamic replacements take a look :doc:`here<./dynamic-replacements>
 
 To combine multiple resolvers, take a look at the tag resolver builder, :java:`TagResolver.builder()`.
 
-The builder for ``MiniMessage`` allows providing a custom tag resolver rather than the default (:java:`StandardTags.all()`), allowing 
+The builder for ``MiniMessage`` allows providing a custom tag resolver rather than the default (:java:`StandardTags.all()`), allowing
 
 MiniMessage also provides convenience methods to do that:
 
@@ -155,10 +155,10 @@ Because the :mm:`<bold>` tag is not enabled on this builder, the bold tag is int
 Handling Arguments
 ------------------
 
-Tag resolvers have an :java:`ArgumentQueue` paremeter, which provides any tag arguments that are present in the input. Helper methods on :java:`Tag.Argument` can assist with conversions of the tag.
+Tag resolvers have an :java:`ArgumentQueue` parameter, which provides any tag arguments that are present in the input. Helper methods on :java:`Tag.Argument` can assist with conversions of the tag.
 
-Exceptions thrown by the :java:`popOr()` methods will interrupt execution, but are not currently exposed to users outside of debug output. We plan to add an auto-completion function that can 
-reveal some of this information to the user, so please do try to write useful error messaces in custom tag resolvers.
+Exceptions thrown by the :java:`popOr()` methods will interrupt execution, but are not currently exposed to users outside of debug output. We plan to add an auto-completion function that can
+reveal some of this information to the user, so please do try to write useful error messages in custom tag resolvers.
 
 Tags
 ^^^^
@@ -175,7 +175,7 @@ Due to limitations in the current parser implementation, note that pre-process t
 Inserting
 ---------
 
-These tags are fairly straightforward: they represent a literal :java:`Component`. The vast majority of Tag implementations will want 
+These tags are fairly straightforward: they represent a literal :java:`Component`. The vast majority of Tag implementations will want
 to be :java:`Inserting` tags. :java:`Inserting` tags may also optionally be self-closing -- by default, this is only true for tags created by :java:`Placeholder.unparsed(String)` and :java:`Placeholder.component(Component)`,
 so that placeholders are self-contained.
 
@@ -211,8 +211,8 @@ This allows producing rich styling relatively quickly.
 Modifying
 ---------
 
-Modifying tags are the most complex, and most specialized of the tag types available. These tags receive the node tree and have an opportunity to analyze it before 
-components are constructed, and then receive every produced child component and can modify those children. This is used for the built-in :mm:`<rainbow>` and :mm:`<gradient>` tags, 
+Modifying tags are the most complex, and most specialized of the tag types available. These tags receive the node tree and have an opportunity to analyze it before
+components are constructed, and then receive every produced child component and can modify those children. This is used for the built-in :mm:`<rainbow>` and :mm:`<gradient>` tags,
 but can be applied for similar complex transformations.
 
 Modifying tags are first given an opportunity to visit every node of the tree in a depth-first traversal. If a ``Modifying`` instance stores any state during this traversal, its resolver should return a new instance every time to prevent state corruption.
