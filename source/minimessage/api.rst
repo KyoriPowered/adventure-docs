@@ -186,7 +186,7 @@ This helper can be used to efficiently apply a collection of styles with one tag
 .. code:: java
 
   Component aTagExample() {
-    final String input = "Hello, <a:https://kyori.net>click me!</a> but not me!";
+    final String input = "Hello, <a:https://docs.advntr.dev>click me!</a> but not me!";
     final MiniMessage extendedInstance = MiniMessage.builder()
       .tags(b -> b.resolver(TagResolver.resolver("a", MiniMessageTest::createA)))
       .build();

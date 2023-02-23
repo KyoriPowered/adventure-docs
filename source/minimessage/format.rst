@@ -23,7 +23,7 @@ The default tags try to represent components in a manner compatible with Vanilla
 use `the minecraft wiki <https://minecraft.gamepedia.com/Raw_JSON_text_format>`_ as a reference for the Vanilla component system, especially
 for things like the actions and values of click and hover events.
 
-The `MiniMessage Web Viewer <https://webui.adventure.kyori.net>`_ allows testing MiniMessage text locally, without having to spin up a Minecraft instance.
+The `MiniMessage Web Viewer <https://webui.advntr.dev>`_ allows testing MiniMessage text locally, without having to spin up a Minecraft instance.
 It can be helpful to put examples from these docs into the viewer while learning.
 
 Strict mode
@@ -135,7 +135,7 @@ Allows doing multiple things when clicking on the component.
 Tag
    :mm:`<click:_action_:_value_>`
 Arguments
-   * ``_action_``, the type of click event, one of `this list <https://jd.adventure.kyori.net/api/latest/net/kyori/adventure/text/event/ClickEvent.Action.html#enum.constant.summary>`_
+   * ``_action_``, the type of click event, one of `this list <https://jd.advntr.dev/api/latest/net/kyori/adventure/text/event/ClickEvent.Action.html#enum.constant.summary>`_
    * ``_value_``, the argument for that particular event, refer to `the minecraft wiki <https://minecraft.gamepedia.com/Raw_JSON_text_format>`_
 Examples
    * :mm:`<click:run_command:/say hello>Click</click> to say hello`
@@ -152,7 +152,7 @@ Allows doing multiple things when hovering on the component.
 Tag
    :mm:`<hover:_action_:_value..._>`
 Arguments
-   * ``_action_``, the type of hover event, one of this `list <https://jd.adventure.kyori.net/api/latest/net/kyori/adventure/text/event/HoverEvent.Action.html#field.summary>`_
+   * ``_action_``, the type of hover event, one of this `list <https://jd.advntr.dev/api/latest/net/kyori/adventure/text/event/HoverEvent.Action.html#field.summary>`_
    * ``_value..._``, arguments specific to each event action:
 
      .. list-table:: Arguments for each action

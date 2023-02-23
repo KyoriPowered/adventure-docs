@@ -1,6 +1,6 @@
 # adventure-docs
 
-Source for [the documentation](https://docs.adventure.kyori.net/) of adventure.
+Source for [the documentation](https://docs.advntr.dev/) of adventure.
 
 ## Usage
 

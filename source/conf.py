@@ -45,7 +45,7 @@ if release.endswith('-SNAPSHOT'):
 rst_prolog = f"""
 .. danger::
 
-    The Adventure docs are currently a **work in progress** and supplement the `Javadocs <https://jd.adventure.kyori.net>`_.
+    The Adventure docs are currently a **work in progress** and supplement the `Javadocs <https://jd.advntr.dev>`_.
     Some areas may have limited coverage or may not be entirely up to date.
     Feel free to join our `Discord <https://discord.gg/MMfhJ8F>`_ if you have any questions.
 
@@ -64,7 +64,7 @@ if 'GITHUB_REF' in os.environ:
     Please consult the pull request to view any discussion and existing reviews.
 """
     else:
-        html_baseurl = "https://docs.adventure.kyori.net/"
+        html_baseurl = "https://docs.advntr.dev/"
 
 # -- General configuration ---------------------------------------------------
 
