@@ -33,7 +33,7 @@ goto end
 goto end
 
 :livehtml
-sphinx-autobuild -b html %SOURCEDIR% %BUILDDIR%/html %SPHINXOPTS%
+sphinx-autobuild --re-ignore _build -b html %SOURCEDIR% %BUILDDIR%/html %SPHINXOPTS%
 goto end
 
 :end

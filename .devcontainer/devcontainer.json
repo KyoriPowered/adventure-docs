@@ -33,10 +33,10 @@
 				"python.linting.pycodestylePath": "/usr/local/py-utils/bin/pycodestyle",
 				"python.linting.pydocstylePath": "/usr/local/py-utils/bin/pydocstyle",
 				"python.linting.pylintPath": "/usr/local/py-utils/bin/pylint",
-        "ltex.language": "en-US",
-        "ltex.dictionary": {
-          "en-US": [":../.config/spelling_wordlist.txt"]
-        }
+				"ltex.language": "en-US",
+				"ltex.dictionary": {
+				"en-US": [":../.config/spelling_wordlist.txt"]
+				}
 			},
 
 			// Add the IDs of extensions you want installed when the container is created.
@@ -46,7 +46,7 @@
 				"swyddfa.esbonio",
 				"trond-snekvik.simple-rst",
 				"ExecutableBookProject.myst-highlight",
-        "valentjn.vscode-ltex"
+				"valentjn.vscode-ltex"
 			]
 		}
 	},
