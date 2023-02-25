@@ -5,12 +5,17 @@ BungeeCord
 Adventure targets the latest version of BungeeCord and BungeeCord-compatible
 forks, such as Waterfall.
 
+.. warning:: 
+
+  The BungeeCord platform is intended for legacy environments only. 
+  Most developers will want to write plugins for `Velocity <https://velocitypowered.com/>`_, which natively implements the Adventure API. No adapters required!
+
 .. kyori-dep:: adventure-platform-bungeecord platform
 
 Usage
 -----
 
-You should first obtain an ``BungeeAudiences`` object by using :java:`BungeeAudiences.create(plugin)`. This object is thread-safe
+You should first obtain a ``BungeeAudiences`` object by using :java:`BungeeAudiences.create(plugin)`. This object is thread-safe
 and can be reused from different threads if needed. This object should also be *closed* when the plugin is disabled.
 
 Note that not all functionality is available on the proxy. Sending chat messages, action bar messages, titles, and boss bars, and tab list header and footer are supported, but all other requests will fail silently.

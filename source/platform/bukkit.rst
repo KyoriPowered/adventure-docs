@@ -5,13 +5,17 @@ Bukkit
 The Adventure platform implementation for Bukkit targets Paper, Spigot, and Bukkit for
 Minecraft 1.7.10 through 1.19.3.
 
+.. warning::
+
+  This page documents only the *legacy* platform adapter for Bukkit. Most users should use `Paper <https://papermc.io>`_'s native implementation instead. 
+  This native implementation provides more functionality, better integration with the server, and does not require the :java:`BukkitAudiences` adapter.
 
 .. kyori-dep:: adventure-platform-bukkit platform
 
 Usage
 -----
 
-You should first obtain an :java:`BukkitAudiences` object by using :java:`BukkitAudiences.create(plugin)`. This object is thread-safe
+You should first obtain a :java:`BukkitAudiences` object by using :java:`BukkitAudiences.create(plugin)`. This object is thread-safe
 and can be reused from different threads if needed. From here, Bukkit ``CommandSender`` s and ``Player`` s may be converted into
 ``Audience`` s using the appropriate methods on ``BukkitAudiences``.
 

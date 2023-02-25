@@ -4,12 +4,16 @@
 Native Support
 ==============
 
+Native platforms integrate Adventure directly with their platform's provided API, and bundle Adventure automatically. 
+This allows them to more tightly integrate Adventure with the rest of the game, and avoids users having to handle distributing 
+Adventure and some platform adapter themselves.
+
 The following software provide native support for Adventure.
 
 +------------------------------+--------------------------------------+-----------------------------------------------------------------------------+
 | Platform                     | Minimum Version                      | Additional Notes                                                            |
 +==============================+======================================+=============================================================================+
-| Sponge                       | Sponge 8                             |                                                                             |
+| Sponge                       | Sponge 8 (1.16.5)                    |                                                                             |
 +------------------------------+--------------------------------------+-----------------------------------------------------------------------------+
 | Velocity                     | 1.1.0 build 158                      | Only messages, action bars, boss bars, and titles are supported.            |
 +------------------------------+--------------------------------------+-----------------------------------------------------------------------------+
