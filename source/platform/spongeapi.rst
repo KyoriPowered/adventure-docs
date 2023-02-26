@@ -2,7 +2,12 @@
 SpongeAPI
 =========
 
-Adventure provides a platform for SpongeAPI 7 for *Minecraft: Java Edition* 1.12. For SpongeAPI 8 and up (targeting *Minecraft: Java Edition* 1.16.4), Adventure is the native text library, so no platform is needed.
+Adventure provides a platform for SpongeAPI 7 for *Minecraft: Java Edition* 1.12. 
+
+.. warning:: 
+
+  For SpongeAPI 8 and up (targeting *Minecraft: Java Edition* 1.16.4), Adventure is the native text library, so no platform adapter is needed.
+  Sponge's API interfaces directly extend Adventure's rather than needing a :java:`SpongeAudiences` adapter.
 
 .. kyori-dep:: adventure-platform-spongeapi platform
 
