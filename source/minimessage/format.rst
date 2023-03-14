@@ -317,7 +317,7 @@ Examples
 Selector
 ********
 
-Insert a selector component
+*(since v4.11.0)* Insert a selector component
 
 Tag
    :mm:`<selector:_sel_[:_separator_]>`
@@ -331,3 +331,42 @@ Examples
 
 .. image:: /minimessage/images/selector_1.png
    :alt: The result of parsing ``Hello <selector:@e[limit=5]>, I'm <selector:@s>!``, show in-game in the Minecraft client's chat window
+
+Score
+*****
+
+*(since v4.13.0)* Insert a score component.
+
+.. note::
+
+   The score component requires *rendering* on the server to be seen by clients. This is a platform-specific operation.
+
+Tag
+   :mm:`<score:_name_:_objective_>`
+Arguments:
+   * ``_name_``, the name of the score holder on the server scoreboard, or a selector resolved with receiver context
+   * ``_objective_``, the name of the objective to get ``name``'s score in
+Examples
+   * :mm:`You have won <score:rymiel:gamesWon/> games!`
+
+NBT
+*****
+
+*(since v4.13.0)* Insert a NBT component. The syntax of this tag is intended to be familiar to users of vanilla Minecraft's ``/data`` command.
+
+.. note::
+
+   The produced NBT component requires *rendering* on the server to be seen by clients. This is a platform-specific operation.
+
+Tag
+   :mm:`<nbt:block|entity|storage:id:path[:_separator_][:interpret]>`
+Aliases
+    ``data``
+Arguments:
+   * ``block|entity|storage`` the type of data source to read from -- a ``block`` entity, an ``entity`` selector, or the persistent command ``storage`` container
+   * ``_id_``, the position for a block NBT component, a selector for an entity NBT component, or a key (resource location) for a storage NBT component
+   * ``_path_``, the NBT path to resolve from within the data source
+   * ``_separator_``, the separator between multiple values, if (primarily for entity NBT) the data source returns more than one
+   * ``interpret``, the literal text ``interpret`` if the result should be parsed as component JSON
+Examples
+   * :mm:`Your health is <nbt:entity:'@s':Health/>`
