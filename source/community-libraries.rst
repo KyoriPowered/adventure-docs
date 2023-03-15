@@ -47,4 +47,6 @@ LiteCommands        A annotation based command framework for Velocity, Bukkit, B
 Triumph GUI         A library made to simplify the creation of inventory GUIs             `Triumph GUI <https://mf.mattstudios.me/triumph-gui/introduction>`_
 Inventory Framework An inventory framework for managing GUIs                              `Inventory Framework <https://github.com/stefvanschie/IF>`_
 ScoreboardLibrary   A scoreboard library for Paper/Spigot servers                         `MegavexNetwork/scoreboard-library <https://github.com/MegavexNetwork/scoreboard-library>`_
+ProtocolSidebar     An easy to use sidebar library for Paper/Spigot servers               `CatCoderr/ProtocolSidebar <https://github.com/CatCoderr/ProtocolSidebar>`_
+
 =================== ===================================================================== ===================================================
