@@ -3,11 +3,11 @@ Bukkit
 ======
 
 The Adventure platform implementation for Bukkit targets Paper, Spigot, and Bukkit for
-Minecraft 1.7.10 through 1.19.3.
+Minecraft 1.7.10 through 1.19.4.
 
 .. warning::
 
-  This page documents only the *legacy* platform adapter for Bukkit. Most users should use `Paper <https://papermc.io>`_'s native implementation instead. 
+  This page documents only the *legacy* platform adapter for Bukkit. Most users should use `Paper <https://papermc.io>`_'s native implementation instead.
   This native implementation provides more functionality, better integration with the server, and does not require the :java:`BukkitAudiences` adapter.
 
 .. kyori-dep:: adventure-platform-bukkit platform

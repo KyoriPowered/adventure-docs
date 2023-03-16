@@ -19,6 +19,8 @@ allow you to obtain ``Audience`` instances from native user types.
    fabric
    viaversion
 
+
+.. _sending-messages:
 .. note::
   **Why is adventure-platform not sending any messages or not working correctly?**
 
