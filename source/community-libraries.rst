@@ -48,5 +48,4 @@ Triumph GUI         A library made to simplify the creation of inventory GUIs   
 Inventory Framework An inventory framework for managing GUIs                              `Inventory Framework <https://github.com/stefvanschie/IF>`_
 ScoreboardLibrary   A scoreboard library for Paper/Spigot servers                         `MegavexNetwork/scoreboard-library <https://github.com/MegavexNetwork/scoreboard-library>`_
 ProtocolSidebar     An easy to use sidebar library for Paper/Spigot servers               `CatCoderr/ProtocolSidebar <https://github.com/CatCoderr/ProtocolSidebar>`_
-
 =================== ===================================================================== ===================================================
