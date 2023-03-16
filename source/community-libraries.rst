@@ -43,8 +43,9 @@ These libraries will often depend on one or more specific platforms to support t
 Name                Description                                                           Link
 =================== ===================================================================== ===================================================
 Cloud               A general-purpose Java command dispatcher & framework                 `Incendo/cloud <https://github.com/Incendo/cloud>`_
-LiteCommands        A annotation based command framework for Velocity, Bukkit, BungeeCord `LiteCommands <https://github.com/Rollczi/LiteCommands>`_
-Triumph GUI         A library made to simplify the creation of inventory GUIs             `Triumph GUI <https://mf.mattstudios.me/triumph-gui/introduction>`_
 Inventory Framework An inventory framework for managing GUIs                              `Inventory Framework <https://github.com/stefvanschie/IF>`_
+LiteCommands        A annotation based command framework for Velocity, Bukkit, BungeeCord `LiteCommands <https://github.com/Rollczi/LiteCommands>`_
+ProtocolSidebar     An easy to use sidebar library for Paper/Spigot servers               `CatCoderr/ProtocolSidebar <https://github.com/CatCoderr/ProtocolSidebar>`_
 ScoreboardLibrary   A scoreboard library for Paper/Spigot servers                         `MegavexNetwork/scoreboard-library <https://github.com/MegavexNetwork/scoreboard-library>`_
+Triumph GUI         A library made to simplify the creation of inventory GUIs             `Triumph GUI <https://mf.mattstudios.me/triumph-gui/introduction>`_
 =================== ===================================================================== ===================================================
