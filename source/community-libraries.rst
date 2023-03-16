@@ -43,6 +43,8 @@ These libraries will often depend on one or more specific platforms to support t
 Name                Description                                                           Link
 =================== ===================================================================== ===================================================
 Cloud               A general-purpose Java command dispatcher & framework                 `Incendo/cloud <https://github.com/Incendo/cloud>`_
+Core                The last backend your minecraft network will ever need!               `JuliGamesCore <https://github.com/JuliGames/JuliGamesCore>`_
+                    Database, messages, cluster, easy to use, and endless possibilities!  `Download <https://hangar.papermc.io/TureBentzin/Core>`_
 Inventory Framework An inventory framework for managing GUIs                              `Inventory Framework <https://github.com/stefvanschie/IF>`_
 LiteCommands        A annotation based command framework for Velocity, Bukkit, BungeeCord `LiteCommands <https://github.com/Rollczi/LiteCommands>`_
 MiniPlaceholders    MiniMessage Component-based Placeholders for PaperMC, Krypton and     `MiniPlaceholders <https://github.com/MiniPlaceholders/MiniPlaceholders>`_
