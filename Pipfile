@@ -1,7 +1,7 @@
 [[source]]
-url = "https://pypi.org/simple"
+url = "https://repo.kyori.net/repository/pip-internal/simple"
 verify_ssl = true
-name = "pypi"
+name = "kyori"
 
 [packages]
 sphinx = "*"
