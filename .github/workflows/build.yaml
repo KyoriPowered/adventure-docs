@@ -41,6 +41,6 @@ jobs:
         path: "build/html"
     - name: "deploy / pages"
       id: "deployment"
-      uses: "actions/deploy-pages@v1"
+      uses: "actions/deploy-pages@v2"
    
 
