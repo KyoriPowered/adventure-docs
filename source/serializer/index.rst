@@ -2,8 +2,8 @@
 Text Serializers
 ================
 
-The lowest-level way to convert between Adventure's data and other formats 
-are serializers. Some serializers convert to standard formats, while others 
+The lowest-level way to convert between Adventure's data and other formats
+are serializers. Some serializers convert to standard formats, while others
 convert to Adventure's own formats.
 
 .. toctree::
@@ -50,3 +50,15 @@ The same is of course also possible in reverse for deserialization.
 
    // Converts a plain string to a TextComponent
    final Component component = PlainTextComponentSerializer.plainText().deserialize("Hello world!");
+
+Text Encoders
+-------------
+
+Text encoders are similar to serializers, but they only provide one-way
+operations, allowing for serialization but not deserialization.
+
+.. toctree::
+    :maxdepth: 1
+    :caption: Encoders
+
+    ansi
