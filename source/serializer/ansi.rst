@@ -1,8 +1,8 @@
 ====
-Ansi
+ANSI
 ====
 
-The Ansi text serializer is an encoder that converts components to text containing
+The ANSI text serializer is an encoder that converts components to text containing
 `ANSI escape codes <https://en.wikipedia.org/wiki/ANSI_escape_code>`_, which allows
 for styled text in a terminal. This can then be used to, for example, output server
 logs containing components while preserving their color and style.
@@ -17,17 +17,17 @@ deserialize text back into components.
 Usage
 -----
 
-The Ansi text serializer is accessed using the ``AnsiComponentSerializer``.
+The ANSI text serializer is accessed using the ``ANSIComponentSerializer``.
 
 Different kind of ANSI escape codes exist, allowing for different levels of color
 precision, however, not all terminals support newer kinds of ANSI escape sequences.
-By default, ``AnsiComponentSerializer`` will attempt to guess the supported kinds of
+By default, ``ANSIComponentSerializer`` will attempt to guess the supported kinds of
 escape sequences based on the system's environment variables.
 
 This can be overridden individually for a single serializer instance using the
 ``colorLevel`` method of the builder.
 
-It can also be overriden globally using system properties, using the property
+It can also be overridden globally using system properties, using the property
 ``net.kyori.ansi.colorLevel``, which can be set when launching the JVM using the
 command-line option ``-Dnet.kyori.ansi.colorLevel=value``. 4 different values can
 be set:
@@ -40,15 +40,15 @@ be set:
 ANSI escape sequences can also be disabled using the ``terminal.ansi`` system property,
 by setting it to ``false``.
 
-Ansi library
+ANSI library
 ------------
 
 .. note::
   This section talks about the component-agnostic library. If you are only interested in
   the Adventure component-specific implementation, you do not need to read this section.
 
-The ``AnsiComponentSerializer`` is built upon a separate Ansi library, which deals with
-the lower-level ANSI escape sequence logic, and also allows for creating an Ansi
+The ``AnsiComponentSerializer`` is built upon a separate ANSI library, which deals with
+the lower-level ANSI escape sequence logic, and also allows for creating an ANSI
 converter for any kind of component, not just those by Adventure.
 
 .. kyori-dep:: ansi ansi
@@ -57,12 +57,12 @@ Implementation usage
 ^^^^^^^^^^^^^^^^^^^^
 
 To begin with, you need to create a class that implements ``StyleOps<S>``, where ``S`` is
-the "style" type for your component type. This adaptor class allows for the Ansi logic to
+the "style" type for your component type. This adapter class allows for the ANSI logic to
 access properties about the style.
 
 To actually begin conversion, create an instance of a ``ANSIComponentRenderer``, by using
 one of the static methods, the simplest of which is ``ANSIComponentRenderer.toString()``,
-passing it an instance of your ``StyleOps`` adaptor described above.
+passing it an instance of your ``StyleOps`` adapter described above.
 
 Then, you will need to traverse the structure of your component's tree, using the
 ``pushStyle()``, ``text()`` and ``popStyle()`` methods of the renderer instance.
