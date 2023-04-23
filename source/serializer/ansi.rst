@@ -12,6 +12,8 @@ deserialize text back into components.
 
 .. kyori-dep:: adventure-text-serializer-ansi api
 
+.. _ANSI Usage:
+
 Usage
 -----
 
@@ -41,4 +43,35 @@ by setting it to ``false``.
 Ansi library
 ------------
 
+.. note::
+  This section talks about the component-agnostic library. If you are only interested in
+  the Adventure component-specific implementation, you do not need to read this section.
+
+The ``AnsiComponentSerializer`` is built upon a separate Ansi library, which deals with
+the lower-level ANSI escape sequence logic, and also allows for creating an Ansi
+converter for any kind of component, not just those by Adventure.
+
 .. kyori-dep:: ansi ansi
+
+Implementation usage
+^^^^^^^^^^^^^^^^^^^^
+
+To begin with, you need to create a class that implements ``StyleOps<S>``, where ``S`` is
+the "style" type for your component type. This adaptor class allows for the Ansi logic to
+access properties about the style.
+
+To actually begin conversion, create an instance of a ``ANSIComponentRenderer``, by using
+one of the static methods, the simplest of which is ``ANSIComponentRenderer.toString()``,
+passing it an instance of your ``StyleOps`` adaptor described above.
+
+Then, you will need to traverse the structure of your component's tree, using the
+``pushStyle()``, ``text()`` and ``popStyle()`` methods of the renderer instance.
+
+Finally, call ``complete()`` after traversing the tree has finished. The renderer's job
+is now concluded. In the case of the ``ToString`` renderer, you can access the result
+using the ``asString()`` method.
+
+As described in the :ref:`ANSI Usage` section, the library will, by default, try to guess the
+supported colors of the current environment. This may be overridden by passing a custom
+``ColorLevel`` when creating the renderer, or by using the system properties as previously
+described.
