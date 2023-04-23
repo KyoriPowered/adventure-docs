@@ -37,3 +37,8 @@ be set:
 
 ANSI escape sequences can also be disabled using the ``terminal.ansi`` system property,
 by setting it to ``false``.
+
+Ansi library
+------------
+
+.. kyori-dep:: ansi ansi

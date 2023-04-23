@@ -109,7 +109,7 @@ While we try to rely on external projects as much as possible, there are some sm
 .. rst:directive:: kyori-dep
 
     The ``kyori-dep`` directive inserts a dependency block for a Kyori module. The directive takes two parameters,
-    artifact and version type (``api``, ``platform`` or ``platform_fabric``).
+    artifact and version type (``api``, ``platform``, ``platform_fabric``, or ``ansi``).
 
     For example, ``..kyori-dep:: adventure-api api`` will produce:
 
