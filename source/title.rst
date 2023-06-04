@@ -27,7 +27,7 @@ Titles are composed of:
   }
 
   public void showMyTitleWithDurations(final @NonNull Audience target) {
-    final Title.Times times = Title.Times.of(Duration.ofMillis(500), Duration.ofMillis(3000), Duration.ofMillis(1000));
+    final Title.Times times = Title.Times.times(Duration.ofMillis(500), Duration.ofMillis(3000), Duration.ofMillis(1000));
     // Using the times object this title will use 500ms to fade in, stay on screen for 3000ms and then fade out for 1000ms
     final Title title = Title.title(Component.text("Hello!"), Component.empty(), times);
 

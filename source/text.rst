@@ -31,7 +31,7 @@ component with the children.
    final TextComponent textComponent2 = Component.text()
      .content("You're a ")
      .color(TextColor.color(0x443344))
-     .append(Component.text().content("Bunny").color(NamedTextColor.LIGHT_PURPLE).build())
+     .append(Component.text().content("Bunny").color(NamedTextColor.LIGHT_PURPLE))
      .append(Component.text("! Press "))
      .append(
        Component.keybind().keybind("key.jump")

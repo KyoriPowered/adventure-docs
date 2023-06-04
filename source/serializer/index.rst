@@ -2,8 +2,8 @@
 Text Serializers
 ================
 
-The lowest-level way to convert between Adventure's data and other formats 
-are serializers. Some serializers convert to standard formats, while others 
+The lowest-level way to convert between Adventure's data and other formats
+are serializers. Some serializers convert to standard formats, while others
 convert to Adventure's own formats.
 
 .. toctree::
@@ -19,14 +19,11 @@ Components can be converted using any of these serializers:
 .. code:: java
 
    // Creates a text component
-   final TextComponent textComponent = Component.text("Hello ")
+   final TextComponent textComponent = Component.text()
+     .content("Hello ")
      .color(NamedTextColor.GOLD)
-     .append(
-       Component.text("world")
-         .color(NamedTextColor.AQUA).
-         decoration(TextDecoration.BOLD, true)
-     )
-     .append(Component.text("!").color(NamedTextColor.RED))
+     .append(Component.text("world", NamedTextColor.AQUA, TextDecoration.BOLD))
+     .append(Component.text("!", NamedTextColor.RED))
      .build();
 
    // Converts textComponent to the JSON form used for serialization by Minecraft.
