@@ -36,7 +36,7 @@ def setup(app: Sphinx):
     app.add_role("java", highlight_role("java"))
     app.connect('html-collect-pages', _fix_cloudflare_name_mangling)
     app.add_directive("kyori-dep", KyoriDepDirective)
-    app.add_config_value("dependency_versions", {'api': "0.0.0", 'platform': "0.0.0", 'platform_fabric': "0.0.0"}, "html", types=[dict])
+    app.add_config_value("dependency_versions", {'api': "0.0.0", 'platform': "0.0.0", 'platform_fabric': "0.0.0", 'ansi': "0.0.0"}, "html", types=[dict])
 
 
 _issue_regex = re.compile(r'[A-Z]+-[1-9][0-9]*')

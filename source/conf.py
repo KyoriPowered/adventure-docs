@@ -34,7 +34,10 @@ api_version = '4.14.0'
 platform_version = '4.3.0'
 platform_fabric_version = '5.8.0'
 
-dependency_versions = {'api': api_version, 'platform': platform_version, 'platform_fabric': platform_fabric_version}
+# The latest version of the ansi library
+ansi_version = '1.0.0'
+
+dependency_versions = {'api': api_version, 'platform': platform_version, 'platform_fabric': platform_fabric_version, 'ansi': ansi_version}
 
 # The full api version, including alpha/beta/rc tags
 release = api_version
