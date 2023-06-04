@@ -28,7 +28,7 @@ author = 'KyoriPowered'
 # The short X.Y versions
 
 # The latest version of the Adventure api
-api_version = '4.13.1'
+api_version = '4.14.0'
 
 # The latest versions of adventure-platform builds
 platform_version = '4.3.0'
