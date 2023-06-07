@@ -22,7 +22,7 @@ In Minecraft 1.16, Mojang made several major changes to the JSON chat format, ad
 RGB chat colors and changing how hover events are serialized. Components generated for
 older versions of Minecraft will still be able to be displayed in a 1.16 client,
 however components serialized for a 1.16 client will not be able to be displayed in
-a Minecraft 1.15.2 client or lower. 
+a Minecraft 1.15.2 client or lower.
 
 To get a serializer that works with 1.16 clients and above, use
 :java:`GsonComponentSerializer.gson()`. To get a serializer that works with all versions
@@ -41,3 +41,10 @@ provided platforms. If you can't use a platform, generally you should prefer the
 serializer for deserializing components (as it is backwards-compatible), and make a decision
 on whether to use the default or the color downsampling serializer based on the version the
 client is on.
+
+
+Advanced Usage
+^^^^^^^^^^^^^^
+
+The Gson serializer exposes both the backing ``Gson`` instance and a populator that allows
+registering Adventure serializers on any ``GsonBuilder`` instance.
