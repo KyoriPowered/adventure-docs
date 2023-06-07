@@ -3,60 +3,14 @@
 API
 ===
 
-Usage
-^^^^^
-
-Adding the repository
-
-.. tab-set::
-
-   .. tab-item:: Maven
-      :sync: maven
-
-      .. code:: xml
-
-         <repositories>
-             <!-- ... -->
-             <repository> <!-- for development builds -->
-               <id>sonatype-oss-snapshots1</id>
-               <url>https://s01.oss.sonatype.org/content/repositories/snapshots/</url>
-             </repository>
-             <!-- ... -->
-         </repositories>
-
-   .. tab-item:: Gradle (Groovy)
-      :sync: gradle-groovy
-
-      .. code:: groovy
-
-         repositories {
-            // for development builds
-            maven {
-                name = "sonatype-oss-snapshots1"
-                url = "https://s01.oss.sonatype.org/content/repositories/snapshots/"
-            }
-            // for releases
-            mavenCentral()
-         }
-
-   .. tab-item:: Gradle (Kotlin)
-      :sync: gradle-kotlin
-
-      .. code:: kotlin
-
-         repositories {
-            // for development builds
-            maven(url = "https://s01.oss.sonatype.org/content/repositories/snapshots/") {
-                name = "sonatype-oss-snapshots1"
-            }
-            // for releases
-            mavenCentral()
-         }
-
-Declaring the dependency:
+Dependency
+^^^^^^^^^^
 
 .. kyori-dep:: adventure-text-minimessage api
 
+.. note::
+
+   Some platforms already provide MiniMessage natively. In this case you will not need to add MiniMessage as a dependency.
 
 Getting Started
 ^^^^^^^^^^^^^^^
