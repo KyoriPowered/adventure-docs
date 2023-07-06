@@ -46,11 +46,6 @@ if release.endswith('-SNAPSHOT'):
     tags.add('draft')
 
 rst_prolog = f"""
-.. caution::
-
-    Some areas of the Adventure docs may have limited coverage. 
-    Check the `Javadocs <https://jd.advntr.dev>`_ or join our `Discord <https://discord.gg/MMfhJ8F>`_ if you have any questions.
-
 .. |fabric_version| replace:: {platform_fabric_version}
 """
 

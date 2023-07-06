@@ -7,7 +7,12 @@ Adventure
    .. warning:: This documentation is for an **unreleased** version of
       Adventure. Some information may not be up to date, and API is subject to change.
 
+.. 
+
 Adventure is a library for server-controllable user interface elements in *Minecraft: Java Edition*.
+
+The Adventure documentation should be used alongside the `Javadocs <https://jd.advntr.dev>`_.
+If you have further questions, feel free to join our `Discord <https://discord.gg/MMfhJ8F>`_.
 
 Most users will want to use Adventure as a component of an existing modding platform. The best-integrated are our :ref:`native-support`, but we also support other platforms via adapters.
 
