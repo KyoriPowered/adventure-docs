@@ -46,12 +46,6 @@ if release.endswith('-SNAPSHOT'):
     tags.add('draft')
 
 rst_prolog = f"""
-.. danger::
-
-    The Adventure docs are currently a **work in progress** and supplement the `Javadocs <https://jd.advntr.dev>`_.
-    Some areas may have limited coverage or may not be entirely up to date.
-    Feel free to join our `Discord <https://discord.gg/MMfhJ8F>`_ if you have any questions.
-
 .. |fabric_version| replace:: {platform_fabric_version}
 """
 
