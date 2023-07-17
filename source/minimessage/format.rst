@@ -138,11 +138,15 @@ Arguments
    * ``_action_``, the type of click event, one of `this list <https://jd.advntr.dev/api/latest/net/kyori/adventure/text/event/ClickEvent.Action.html#enum.constant.summary>`_
    * ``_value_``, the argument for that particular event, refer to `the minecraft wiki <https://minecraft.gamepedia.com/Raw_JSON_text_format>`_
 Examples
-   * :mm:`<click:run_command:/say hello>Click</click> to say hello`
+   * :mm:`<click:run_command:/seed>Click</click> to show the world seed!`
    * :mm:`Click <click:copy_to_clipboard:Haha you suck> this </click>to copy your score!`
 
 .. image:: /minimessage/images/click_1.png
-   :alt: The result of parsing ``<click:run_command:/say hello>Click</click> to say hello``, shown in-game in the Minecraft client's chat window
+   :alt: The result of parsing ``<click:run_command:/seed>Click</click> to show the world seed!``, shown in-game in the Minecraft client's chat window
+
+.. warning::
+   Since the introduction of chat signatures in 1.19.1, the client no longer executes commands that require signed arguments
+   like the ``/say`` or ``/tell`` command to prevent the server from sending signed messages on the clients behalf.
 
 Hover
 *****
