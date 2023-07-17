@@ -142,7 +142,7 @@ Examples
    * :mm:`Click <click:copy_to_clipboard:Haha you suck> this </click>to copy your score!`
 
 .. image:: /minimessage/images/click_1.png
-   :alt: The result of parsing ``<click:run_command:/seedo>Click</click> to show the world seed!``, shown in-game in the Minecraft client's chat window
+   :alt: The result of parsing ``<click:run_command:/seed>Click</click> to show the world seed!``, shown in-game in the Minecraft client's chat window
 
 .. warning::
    Since the introduction of chat signatures in 1.19.1, the client no longer executes commands that require signed arguments
