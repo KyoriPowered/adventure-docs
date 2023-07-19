@@ -117,8 +117,6 @@ In strict mode, reset tags are forbidden.
 
 Tag
    :mm:`<reset>`
-Aliases
-   ``r``
 Arguments
    none
 Examples
