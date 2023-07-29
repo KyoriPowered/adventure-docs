@@ -7,7 +7,7 @@
   color: var(--color-brand-content);
 }
 
-// make sure the button doesn't cover the content
+/* make sure the button doesn't cover the content */
 .highlight pre {
   padding-right: 2rem;
 }
