@@ -36,7 +36,7 @@ jobs:
         name: "docs-html"
         path: "build/html"
     - name: "artifact / repackage"
-      uses: "actions/upload-pages-artifact@v1"
+      uses: "actions/upload-pages-artifact@v2"
       with:
         path: "build/html"
     - name: "deploy / pages"
