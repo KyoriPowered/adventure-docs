@@ -46,6 +46,33 @@ The parsed placeholder will insert the replacement before parsing the string. Th
 
 This will insert and parse the text.
 
+Insert a style
+--------------
+
+When you want to create your own styling tag you can use the styling placeholder.
+
+.. code:: java
+
+  MiniMessage.miniMessage().deserialize("<my-style>Hello :)</my-style> How are you?",
+      Placeholder.styling("my-style", ClickEvent.suggestCommand("/say hello"), NamedTextColor.RED, TextDecoration.BOLD));
+  // will apply a click even, a red text color and bold decoration to the text
+
+This will insert the style ith a click event and a red text. Styling placeholders can be used for any style, e.g. colors, text decoration and events.
+
+Create your own styling tags:
+
+.. code:: java
+
+  Placeholder.styling("fancy", TextColor.color(150, 200, 150)); // will replace the color between "<fancy>" and "</fancy>"
+  Placeholder.sytling("myhover", HoverEvent.showText(Component.text("test"))); // will display your custom text as hover
+  Placeholder.styling("mycmd", ClickEvent.runCommand("/mycmd is cool")); // will create a clickable text which will run your specified command.
+
+.. tip::
+
+  Styling placeholders can be used to sanitize input from players in click events. Instead of using a parsed placeholder the string can be used directly.
+  Instead of
+
+
 Formatters
 ^^^^^^^^^^
 
@@ -109,20 +136,21 @@ This will accept a ChoiceFormat pattern.
 This will format your input based on the provided ChoiceFormat. In this case it will be ``I met many developers!``
 
 
-Custom placeholders
-^^^^^^^^^^^^^^^^^^^
+Complex placeholders
+^^^^^^^^^^^^^^^^^^^^
 
-You can simply create your own placeholders. Take a look at the Formatter and Placeholder class from MiniMessage.
+You can simply create your own placeholders. Take a look at the Formatter and Placeholder class from MiniMessage for examples.
 
 Examples
 --------
 
-Create your own styling tags:
+Create a custom tag which creates a clickable
 
 .. code:: java
+  TagResolver.resolver("click-by-version", (args, context) -> {
+    final String version = args.popOr("version expected").value();
+    return Tag.styling(ClickEvent.openUrl("https://jd.advntr.dev/api/ " + version + "/"));
+  });
+  // creates a tag to get javadocs of adventure by the version: <click-by-version:'4.14.0'>
 
-  TagResolver.resolver("fancy", Tag.styling(TextColor.color(150, 200, 150))); // will replace the color between "<fancy>" and "</fancy>"
-  TagResolver.resolver("myhover", Tag.styling(HoverEvent.showText(Component.text("test")))); // will display your custom text as hover
-  TagResolver.resolver("mycmd", Tag.styling(ClickEvent.runCommand("/mycmd is cool"))); // will create a clickable text which will run your specified command.
-
-You can use those tags instead of using the parsed placeholder.
+You can create your own complex placeholders with multiple arguments and their own logic.
