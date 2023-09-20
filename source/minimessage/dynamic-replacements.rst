@@ -70,7 +70,6 @@ Create your own styling tags:
 .. tip::
 
   Styling placeholders can be used to sanitize input from players in click events. Instead of using a parsed placeholder the string can be used directly.
-  Instead of
 
 
 Formatters
@@ -147,6 +146,7 @@ Examples
 Create a custom tag which creates a clickable
 
 .. code:: java
+
   TagResolver.resolver("click-by-version", (args, context) -> {
     final String version = args.popOr("version expected").value();
     return Tag.styling(ClickEvent.openUrl("https://jd.advntr.dev/api/ " + version + "/"));
