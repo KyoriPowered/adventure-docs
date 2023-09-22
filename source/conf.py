@@ -32,7 +32,7 @@ api_version = '4.14.0'
 
 # The latest versions of adventure-platform builds
 platform_version = '4.3.0'
-platform_fabric_version = '5.9.0'
+platform_fabric_version = '5.10.0'
 
 # The latest version of the ansi library
 ansi_version = '1.0.3'
