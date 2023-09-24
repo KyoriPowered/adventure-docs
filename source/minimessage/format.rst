@@ -20,7 +20,7 @@ the opening quote character can be escaped (``'`` or ``"``). In either place, th
 In locations where escaping is not supported, the literal escape character will be passed through. In locations where escaping *is* supported but a literal escape character is desired, the escape character can itself be escaped to produce a ``\``.
 
 The default tags try to represent components in a manner compatible with Vanilla, but simplifying some elements. It might be helpful to
-use `the minecraft wiki <https://minecraft.gamepedia.com/Raw_JSON_text_format>`_ as a reference for the Vanilla component system, especially
+use `the minecraft wiki <https://minecraft.wiki/w/Raw_JSON_text_format>`_ as a reference for the Vanilla component system, especially
 for things like the actions and values of click and hover events.
 
 The `MiniMessage Web Viewer <https://webui.advntr.dev>`_ allows testing MiniMessage text locally, without having to spin up a Minecraft instance.
