@@ -50,7 +50,7 @@
 				"ExecutableBookProject.myst-highlight",
 				"valentjn.vscode-ltex",
 				"EditorConfig.EditorConfig",
-				"bungcip.better-toml",
+        "tamasfe.even-better-toml",
 				"GitHub.vscode-pull-request-github"
 			]
 		}
