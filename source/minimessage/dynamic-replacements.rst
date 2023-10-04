@@ -108,6 +108,27 @@ This will accept a ChoiceFormat pattern.
 
 This will format your input based on the provided ChoiceFormat. In this case it will be ``I met many developers!``
 
+Insert a list
+-------------
+
+To insert a list of components, you can use the list formatter.
+
+This tag resolver will join components together with a separator.
+
+.. code:: java
+
+  MiniMessage.miniMessage().deserialize("Let's play <moves:, >!", Formatter.joining(Component.text("rock"), Component.text("paper"), Component.text("scissors")));
+
+This will format your list of components by joining them together with your designated separator. In this case, it will be ``Let's play rock, paper, scissors!``.
+
+If you want to use a different separator between the last two components, you can add another argument for the last separator.
+
+.. code:: java
+
+  MiniMessage.miniMessage().deserialize("Please meet <names:, : and >.", Formatter.joining(Component.text("John"), Component.text("Emma"), Component.text("Alex")));
+
+This will result in ``Please meet John, Emma and Alex``.
+
 
 Custom placeholders
 ^^^^^^^^^^^^^^^^^^^
