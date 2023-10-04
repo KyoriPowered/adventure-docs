@@ -143,7 +143,7 @@ You can simply create your own placeholders. Take a look at the Formatter and Pl
 Examples
 --------
 
-Create a custom tag which creates a clickable
+Create a custom tag which makes its contents clickable:
 
 .. code:: java
 
