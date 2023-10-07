@@ -46,6 +46,7 @@ Cloud               A general-purpose Java command dispatcher & framework       
 Core                The Core allows you to register (mini)messages to a central database  `JuliGamesCore <https://github.com/JuliGames/JuliGamesCore>`_
                     in multiple languages and access them via a 
                     very intuitive "key" and "locale" query.
+Creative            A resource-pack library for Minecraft: Java Edition                   `Creative <https://github.com/unnamed/creative>`_
 Inventory Framework An inventory framework for managing GUIs                              `Inventory Framework <https://github.com/stefvanschie/IF>`_
 LiteCommands        A annotation based command framework for Velocity, Bukkit, BungeeCord `LiteCommands <https://github.com/Rollczi/LiteCommands>`_
 MiniPlaceholders    MiniMessage Component-based Placeholders for PaperMC, Krypton and     `MiniPlaceholders <https://github.com/MiniPlaceholders/MiniPlaceholders>`_
