@@ -37,6 +37,7 @@ There are many community-supported libraries that extend the capabilities of Adv
    title
    book
    tablist
+   resource-pack-request
    minimessage/index
 
    platform/index
