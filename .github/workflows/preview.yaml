@@ -36,7 +36,7 @@ jobs:
         path: "build/html"
     - name: "generate data blob"
       id: "data"
-      uses: "actions/github-script@v6"
+      uses: "actions/github-script@v7"
       with:
         script: |
           let fs = require("fs/promises");
@@ -68,7 +68,7 @@ jobs:
         force: true
     - name: "notify"
       if: "${{ steps.publish.outputs.deployment-status == 'success' }}"
-      uses: "actions/github-script@v6"
+      uses: "actions/github-script@v7"
       env:
         PR: "${{ fromJSON(steps.data.outputs.result).pr }}"
         COMMIT: "${{ github.event.workflow_run.head_sha }}"
