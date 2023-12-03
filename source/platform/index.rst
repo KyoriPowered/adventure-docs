@@ -24,7 +24,7 @@ allow you to obtain ``Audience`` instances from native user types.
 .. note::
   **Why is adventure-platform not sending any messages or not working correctly?**
 
-  Firstly, please ensure you are on the latest stable version. This can be found on `Maven Central <https://search.maven.org/search?q=g:net.kyori%20AND%20a:adventure-platform*>`_.
+  Firstly, please ensure you are on the latest stable version. This can be found on `Maven Central <https://central.sonatype.com/search?q=g%3Anet.kyori+adventure-platform*>`_.
 
   Next, make sure that the feature you are using exists on the client version that is receiving the action. For example, hex color codes won't work on clients older than 1.16, so hex colors will be down-sampled.
 
