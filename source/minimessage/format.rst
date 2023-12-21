@@ -134,7 +134,7 @@ Tag
    :mm:`<click:_action_:_value_>`
 Arguments
    * ``_action_``, the type of click event, one of `this list <https://jd.advntr.dev/api/latest/net/kyori/adventure/text/event/ClickEvent.Action.html#enum.constant.summary>`_
-   * ``_value_``, the argument for that particular event, refer to `the minecraft wiki <https://minecraft.gamepedia.com/Raw_JSON_text_format>`_
+   * ``_value_``, the argument for that particular event, refer to `the minecraft wiki <https://minecraft.wiki/w/Raw_JSON_text_format>`_
 Examples
    * :mm:`<click:run_command:/seed>Click</click> to show the world seed!`
    * :mm:`Click <click:copy_to_clipboard:Haha you suck> this </click>to copy your score!`

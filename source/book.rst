@@ -31,6 +31,6 @@ Books in adventure are not necessarily connected to an interactable book item in
 As of the current release such a connection needs to be implemented outside of adventure.
 
 Any component that surpasses the game limit for text per page will be truncated client side, the same applies
-to the amount of components (pages). Further reading about these limits can be done at the `Minecraft Wiki <https://minecraft.gamepedia.com/Book_and_Quill#Writing>`_
+to the amount of components (pages). Further reading about these limits can be done at the `Minecraft Wiki <https://minecraft.wiki/w/Book_and_Quill#Writing>`_
 
 
