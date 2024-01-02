@@ -64,7 +64,7 @@ Create your own styling tags:
 .. code:: java
 
   Placeholder.styling("fancy", TextColor.color(150, 200, 150)); // will replace the color between "<fancy>" and "</fancy>"
-  Placeholder.sytling("myhover", HoverEvent.showText(Component.text("test"))); // will display your custom text as hover
+  Placeholder.styling("myhover", HoverEvent.showText(Component.text("test"))); // will display your custom text as hover
   Placeholder.styling("mycmd", ClickEvent.runCommand("/mycmd is cool")); // will create a clickable text which will run your specified command.
 
 .. tip::
