@@ -167,9 +167,11 @@ To get started with Adventure, set up an audience provider like this:
      private FabricServerAudiences adventure;
 
      public FabricServerAudiences adventure() {
-       if(this.adventure == null) {
+       FabricServerAudiences ret = this.adventure;
+       if(ret == null) {
          throw new IllegalStateException("Tried to access Adventure without a running server!");
        }
+       return ret;
      }
 
      @Override
@@ -178,8 +180,8 @@ To get started with Adventure, set up an audience provider like this:
        // This will ensure any platform data is cleared between game instances
        // This is important on the integrated server, where multiple server instances
        // can exist for one mod initialization.
-       ServerLifecycleEvents.SERVER_STARTING.register(server -> this.platform = FabricServerAudiences.of(server));
-       ServerLifecycleEvents.SERVER_STOPPED.register(server -> this.platform = null);
+       ServerLifecycleEvents.SERVER_STARTING.register(server -> this.adventure = FabricServerAudiences.of(server));
+       ServerLifecycleEvents.SERVER_STOPPED.register(server -> this.adventure = null);
      }
    }
 
