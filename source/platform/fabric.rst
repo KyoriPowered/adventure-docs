@@ -164,7 +164,7 @@ To get started with Adventure, set up an audience provider like this:
 .. code:: java
 
    public class MyMod implements ModInitializer {
-     private FabricServerAudiences adventure;
+     private volatile FabricServerAudiences adventure;
 
      public FabricServerAudiences adventure() {
        FabricServerAudiences ret = this.adventure;
