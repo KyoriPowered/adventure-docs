@@ -62,6 +62,7 @@ if 'GITHUB_REF' in os.environ:
 """
     else:
         html_baseurl = "https://docs.advntr.dev/"
+        ogp_site_url = html_baseurl
 
 # -- General configuration ---------------------------------------------------
 
@@ -79,6 +80,7 @@ extensions = [
   'sphinx_reredirects',
   'sphinx_github_role',
   'sphinx_copybutton',
+  'sphinxext.opengraph',
   'minimessage_hl',
   'myst_parser',
   'adventure_docs_extensions'
@@ -156,3 +158,10 @@ github_default_org_project = ('KyoriPowered', 'adventure')
 spelling_word_list_filename='../.config/spelling_wordlist.txt'
 spelling_show_suggestions=True
 spelling_suggestion_limit=5
+
+# sphinxext-opengraph
+
+ogp_social_cards = {
+    "image": "_static/logo-notext.png",
+    "line_color": "#7767c9"
+}

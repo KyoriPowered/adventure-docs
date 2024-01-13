@@ -17,6 +17,8 @@ pygments = "*"
 sphinx-github-role = { git = "https://github.com/astrojuanlu/sphinx-github-role.git", ref = "main", editable = true }
 myst-parser = "*"
 sphinxcontrib-spelling = "*"
+sphinxext-opengraph = "*"
+matplotlib = "*"
 
 [dev-packages]
 
