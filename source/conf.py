@@ -60,9 +60,11 @@ if 'GITHUB_REF' in os.environ:
 
     Please consult the pull request to view any discussion and existing reviews.
 """
+        html_baseurl = f"https://kyoripowered.github.io/adventure-docs-previews/pull/{pr_number}/"
     else:
         html_baseurl = "https://docs.advntr.dev/"
-        ogp_site_url = html_baseurl
+
+    ogp_site_url = html_baseurl
 
 # -- General configuration ---------------------------------------------------
 
