@@ -18,7 +18,6 @@ sphinx-github-role = { git = "https://github.com/astrojuanlu/sphinx-github-role.
 myst-parser = "*"
 sphinxcontrib-spelling = "*"
 sphinxext-opengraph = "*"
-matplotlib = "*"
 
 [dev-packages]
 
