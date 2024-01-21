@@ -48,3 +48,10 @@ strikethrough
 superset
 tristate
 unparsed
+renderer
+durations
+populator
+integrations
+formatter
+resolvers
+unclosed
