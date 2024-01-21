@@ -163,7 +163,7 @@ spelling_suggestion_limit=5
 
 # sphinxext-opengraph
 
+ogp_image = "_static/logo-notext.png"
 ogp_social_cards = {
-    "image": "_static/logo-notext.png",
-    "line_color": "#7767c9"
+    "enable": False
 }
