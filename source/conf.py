@@ -60,8 +60,11 @@ if 'GITHUB_REF' in os.environ:
 
     Please consult the pull request to view any discussion and existing reviews.
 """
+        html_baseurl = f"https://kyoripowered.github.io/adventure-docs-previews/pull/{pr_number}/"
     else:
         html_baseurl = "https://docs.advntr.dev/"
+
+    ogp_site_url = html_baseurl
 
 # -- General configuration ---------------------------------------------------
 
@@ -79,6 +82,7 @@ extensions = [
   'sphinx_reredirects',
   'sphinx_github_role',
   'sphinx_copybutton',
+  'sphinxext.opengraph',
   'minimessage_hl',
   'myst_parser',
   'adventure_docs_extensions'
@@ -156,3 +160,10 @@ github_default_org_project = ('KyoriPowered', 'adventure')
 spelling_word_list_filename='../.config/spelling_wordlist.txt'
 spelling_show_suggestions=True
 spelling_suggestion_limit=5
+
+# sphinxext-opengraph
+
+ogp_image = "_static/logo-notext.png"
+ogp_social_cards = {
+    "enable": False
+}
