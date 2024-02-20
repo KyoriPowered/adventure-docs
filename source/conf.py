@@ -22,7 +22,7 @@ import sys
 from pathlib import Path
 
 project = 'Adventure'
-copyright = '2020-2023 KyoriPowered'
+copyright = '2020-2024 KyoriPowered'
 author = 'KyoriPowered'
 
 # The short X.Y versions
