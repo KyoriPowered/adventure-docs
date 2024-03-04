@@ -31,7 +31,7 @@ Playing a Sound
 
   The client can play multiple sounds at once, but as of version 1.16 is limited to 8 sounds playing at once.
 
-  Due to :mojira:`MC-138832`, the volume and pitch of sounds played with an emitter may be ignored.
+  In 1.15.2-1.16.5, due to :mojira:`MC-138832`, the volume and pitch of sounds played with an emitter are ignored.
 
   As documented in :mojira:`MC-146721`, any stereo sounds will not play at a specific position or following an entity, therefore, the location or emitter parameters will be ignored.
 
