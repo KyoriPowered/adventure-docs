@@ -35,7 +35,7 @@ platform_version = '4.3.4'
 platform_mod_version = '6.1.0'
 
 # The latest version of the ansi library
-ansi_version = '1.1.0'
+ansi_version = '1.1.1'
 
 dependency_versions = {'api': api_version, 'platform': platform_version, 'platform_mod': platform_mod_version, 'ansi': ansi_version}
 
