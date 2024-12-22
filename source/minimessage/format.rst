@@ -372,3 +372,16 @@ Arguments:
    * ``interpret``, the literal text ``interpret`` if the result should be parsed as component JSON
 Examples
    * :mm:`Your health is <nbt:entity:'@s':Health/>`
+
+Pride
+*****
+
+*(since v4.18.0)* Colors the text inside the tags with a gradient corresponding to a pride flag.
+
+Tag
+   :mm:`<pride[:flag]>`
+Arguments
+   * ``flag`` the flag to use, may be one of pride, progress, trans, bi, pan, nb, lesbian, ace, agender, demisexual, genderqueer, genderfluid, intersex, aro, baker, philly, queer, gay, bigender or demigender.
+Examples
+   * :mm:`Happy <pride>pride month</pride>!`
+   * :mm:`Kyori supports <pride:trans>trans rights</pride>!`

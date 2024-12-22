@@ -55,3 +55,12 @@ integrations
 formatter
 resolvers
 unclosed
+nb
+agender
+demisexual
+genderqueer
+genderfluid
+aro
+philly
+bigender
+demigender
