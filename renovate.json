@@ -3,14 +3,19 @@
   "extends": [
     "local>KyoriPowered/.github:renovate-config"
   ],
-  "python": {
-    "groupName": "python dependencies"
-  },
   "lockFileMaintenance": {
     "enabled": true,
     "schedule": [
       "after 5pm on the 2nd day of the month"
     ],
     "groupName": "python dependencies"
-  }
+  },
+  "packageRules": [
+    {
+      "matchCategories": [
+        "python"
+      ],
+      "groupName": "python dependencies"
+    }
+  ]
 }
