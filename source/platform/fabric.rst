@@ -66,7 +66,7 @@ First, add the repository:
         :substitutions:
 
          dependencies {
-            modImplementation include("net.kyori:adventure-platform-fabric:|mod_version|") // for Minecraft 1.21.2-1.21.3
+            modImplementation include("net.kyori:adventure-platform-fabric:|mod_version|") // for Minecraft 1.21.2-1.21.4
          }
 
 
@@ -77,7 +77,7 @@ First, add the repository:
         :substitutions:
 
          dependencies {
-            modImplementation(include("net.kyori:adventure-platform-fabric:|modversion|")!!) // for Minecraft 1.21.2-1.21.3
+            modImplementation(include("net.kyori:adventure-platform-fabric:|modversion|")!!) // for Minecraft 1.21.2-1.21.4
          }
 
 The Fabric platform requires *fabric-api-base* in order to provide the locale change event, *fabric-command-api-v2* for the callback click event, and can optionally use Colonel_ (or *fabric-networking-api-v1*) to allow the ``Component`` and ``Key`` argument types to be used on clients without the mod installed. There are no other dependencies.
