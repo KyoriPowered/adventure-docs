@@ -22,7 +22,7 @@ import sys
 from pathlib import Path
 
 project = 'Adventure'
-copyright = '2020-2024 KyoriPowered'
+copyright = '2020-2025 KyoriPowered'
 author = 'KyoriPowered'
 
 # The short X.Y versions
@@ -49,6 +49,7 @@ rst_prolog = f"""
 .. |mod_version| replace:: {platform_mod_version}
 """
 
+html_baseurl = "https://docs.advntr.dev/"
 if 'GITHUB_REF' in os.environ:
     ref = os.environ['GITHUB_REF']
     if ref.startswith("refs/pull/"):
@@ -61,10 +62,8 @@ if 'GITHUB_REF' in os.environ:
     Please consult the pull request to view any discussion and existing reviews.
 """
         html_baseurl = f"https://kyoripowered.github.io/adventure-docs-previews/pull/{pr_number}/"
-    else:
-        html_baseurl = "https://docs.advntr.dev/"
 
-    ogp_site_url = html_baseurl
+ogp_site_url = html_baseurl
 
 gettext_compact = False
 locale_dirs = [ '../locale/']
@@ -85,6 +84,7 @@ extensions = [
   'sphinx_reredirects',
   'sphinx_github_role',
   'sphinx_copybutton',
+  'sphinx_sitemap',
   'sphinxext.opengraph',
   'minimessage_hl',
   'myst_parser',
@@ -99,6 +99,8 @@ templates_path = ['_templates']
 # This pattern also affects html_static_path and html_extra_path.
 exclude_patterns = ['_ext']
 
+# A list of paths that contain extra files not directly related to the documentation, such as robots.txt or .htaccess
+html_extra_path = ["robots.txt"]
 
 # General style
 
@@ -170,3 +172,6 @@ ogp_image = "_static/logo-notext.png"
 ogp_social_cards = {
     "enable": False
 }
+
+# sphinx-sitemap
+sitemap_url_scheme = "{link}"
