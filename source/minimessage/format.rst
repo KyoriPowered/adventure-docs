@@ -82,6 +82,31 @@ Examples
 .. image:: /minimessage/images/color_verbose_2.png
    :alt: The result of parsing ``<color:#FF5555>This is a <color:#55FF55>test!``, shown in-game in the Minecraft client's chat window
 
+Shadow Color
+************
+
+Color the shadow of the next parts
+
+Tag
+   * :mm:`<shadow:_colorNameOrHex_:[alpha_as_float]>`
+   * :mm:`<!shadow>` as an alias to disable the shadow (equalivent to :mm:`<shadow:#00000000>`)
+Arguments
+   * ``_colorNameOrHex_``, a named color or hex color string with the format ``#RRGGBB`` or ``#RRGGBBAA``
+   * ``[alpha_as_float]``, a float value between 0 and 1, representing the alpha value of the shadow. Optional, defaults to 0.25. Has no effect if an alpha value is already provided in the hex color string.
+Examples
+   * :mm:`<shadow:yellow>Hello <shadow:aqua:0.5>World</shadow>!`
+   * :mm:`<shadow:#FF5555>This is a <shadow:#55FF55>test!`
+   * :mm:`<shadow:#000000FF><b>Thicc`
+
+.. image:: /minimessage/images/shadow_1.png
+   :alt: The result of parsing ``<shadow:yellow>Hello <shadow:aqua:0.5>World</shadow>!``, shown in-game in the Minecraft client's chat window
+
+.. image:: /minimessage/images/shadow_2.png
+   :alt: The result of parsing ``<shadow:#FF5555>This is a <shadow:#55FF55>test!``, shown in-game in the Minecraft client's chat window
+
+.. image:: /minimessage/images/shadow_3.png
+   :alt: The result of parsing ``<shadow:#000000FF><b>Thicc``, shown in-game in the Minecraft client's chat window
+
 Decoration
 ***********
 
