@@ -13,6 +13,7 @@ sphinx-substitution-extensions = "*"
 sphinx-github-changelog = "*"
 sphinx-copybutton = "*"
 sphinx-reredirects = "*"
+sphinx-sitemap = "*"
 pygments = "*"
 sphinx-github-role = { git = "https://github.com/astrojuanlu/sphinx-github-role.git", ref = "main", editable = true }
 myst-parser = "*"
