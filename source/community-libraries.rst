@@ -28,7 +28,7 @@ adventure-binary-serializer Serializer for converting to packed bytes           
 EnhancedLegacyText          Alternative input format that is legacy compatible  `Vankka/EnhancedLegacyText <https://github.com/Vankka/EnhancedLegacyText>`_
                             with new features
 MCDiscordReserializer       Serializers for going between Minecraft & Discord   `Vankka/MCDiscordReserializer <https://github.com/Vankka/MCDiscordReserializer>`_
-:spelling:ignore:`Minedown` A markdown-style format for representing components `Phoenix616/MineDown <https://github.com/Phoenix616/MineDown/tree/kyori-adventure>`_
+:spelling:ignore:`Minedown` A markdown-style format for representing components `Phoenix616/MineDown <https://github.com/Phoenix616/MineDown>`_
 =========================== =================================================== ====================================================================================================
 
 Libraries that use Adventure
