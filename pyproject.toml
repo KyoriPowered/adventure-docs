@@ -1,0 +1,34 @@
+[project]
+name = "adventure-docs"
+readme = "README.md"
+license = "CC-BY-SA 4.0"
+requires-python = ">=3.12"
+dependencies = [
+  "sphinx",
+  "sphinx-autobuild",
+  "furo",
+  "sphinx-design",
+  "rstcheck",
+  "sphinx-substitution-extensions",
+  "sphinx-github-changelog",
+  "sphinx-copybutton",
+  "sphinx-reredirects",
+  "pygments",
+  "sphinx-github-role @ git+https://github.com/astrojuanlu/sphinx-github-role.git@main",
+  "myst-parser",
+  "sphinxcontrib-spelling",
+  "sphinxext-opengraph",
+  "sphinx-sitemap (>=2.6.0,<3.0.0)"
+]
+
+[tool.poetry]
+package-mode = false
+
+[[tool.poetry.source]]
+name = "kyori"
+url = "https://repo.kyori.net/repository/pip-internal/simple"
+priority = "primary"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"

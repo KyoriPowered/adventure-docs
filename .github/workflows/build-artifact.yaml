@@ -4,28 +4,21 @@ on:
  workflow_call:
 
 env:
-  PYTHON_VERSION: "3.11"
+  PYTHON_VERSION: "3.13"
 
 jobs:
   build-docs:
     runs-on: "ubuntu-latest"
     steps:
-    - uses: "actions/checkout@v4"
-    - name: "setup python ${{ env.PYTHON_VERSION }}"
-      uses: "actions/setup-python@v5"
+    - uses: "KyoriPowered/.github/.github/actions/setup-python-env@trunk"
       with:
-        python-version: "${{ env.PYTHON_VERSION }}"
-        cache: "pipenv"
-    - name: "setup python / install pipenv"
-      run: "pip install pipenv"
-    - name: "setup python / dependencies"
-      run: "pipenv install"
+        runtime_version: "${{ env.PYTHON_VERSION }}"
+        activate_venv: true
     - uses: "ammaraskar/sphinx-problem-matcher@master"
     - name: "build docs"
       env:
         SPHINX_GITHUB_CHANGELOG_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      run: |
-        pipenv run make html
+      run: "make html"
     - name: "store output"
       uses: "actions/upload-artifact@v4"
       with:

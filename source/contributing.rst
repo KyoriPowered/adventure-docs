@@ -20,7 +20,7 @@ Sphinx is a Python tool, so the steps to build this documentation will be famili
     For those wishing to make a simple contribution quickly, we provide a GitHub Codespaces configuration file for this repository
     allowing for quick setup with VS Code as an editor.
 
-Make sure `Git <https://git-scm.com>`_ and `Python <https://www.python.org>`_ 3.7 or newer are installed.
+Make sure `Git <https://git-scm.com>`_ and `Python <https://www.python.org>`_ 3.12 or newer are installed.
 These instructions assume you are working from a terminal, either on Windows or Linux.
 
 .. tab-set::
@@ -28,21 +28,21 @@ These instructions assume you are working from a terminal, either on Windows or 
     .. tab-item:: Linux/macOS (POSIX)
 
         1. Clone the repository from `GitHub <https://github.com/KyoriPowered/adventure-docs/>`_ and switch into the directory
-        2. Install pipenv (if not present): ``$ apt install pipenv``
-        3. Install the dependencies: ``pipenv install``
-        4. Build the documentation: ``pipenv run make livehtml``
+        2. Install poetry (if not present): ``$ apt install poetry``
+        3. Install the dependencies: ``poetry install``
+        4. Build the documentation: ``poetry run make livehtml``
         5. Open a browser to ``https://localhost:8000`` to view the just-built site. Pages will auto-refresh when changes are made.
 
     .. tab-item:: Windows (PowerShell)
 
         1. Clone the repository from `GitHub <https://github.com/KyoriPowered/adventure-docs/>`_ and switch into the directory
-        2. Install pipenv (if not present): ``pip install pipenv```
-        3. Install the dependencies: ``pipenv install``
-        4. Build the documentation: ``pipenv run ./make livehtml``
+        2. Install pipenv (if not present): ``pip install poetry```
+        3. Install the dependencies: ``poetry install``
+        4. Build the documentation: ``poetry run ./make livehtml``
         5. Open a browser to ``https://localhost:8000`` to view the just-built site. Pages will auto-refresh when changes are made.
 
 
-Any text editor will work for editing the documentation, but we've had the best experience with Visual Studio Code or vim, each of which have mature reST plugins.
+Any text editor will work for editing the documentation, but we've had the best experience with Visual Studio Code or (neo)vim, each of which have mature reST plugins.
 A typical development environment has a text editor and web browser side-by-side, with the web browser viewing the locally served test site.
 
 Once you've written changes, they can be submitted for inclusion in the docs with a GitHub Pull Request.
@@ -51,7 +51,7 @@ Style
 -----
 
 The Adventure documentation is written in English. We attempt to mostly follow American spellings, though that can often be inconsistent. There is a basic spellchecker
-that will be run on PRs, or which can be run locally with the ``pipenv run make spelling`` command. We also recommend using the LanguageTool VS Code extension for in-editor suggestions.
+that will be run on PRs, or which can be run locally with the ``poetry run make spelling`` command. We also recommend using the LanguageTool VS Code extension for in-editor suggestions.
 For technical language that should always be accepted, custom words can be added in the :file:`.config/spelling_wordlist.txt` file. For one-off exceptions (such as project names),
 use the :samp:`:spelling:ignore:\`{word}\``
 

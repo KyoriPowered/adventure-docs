@@ -7,7 +7,7 @@ on:
   pull_request:
 
 env:
-  PYTHON_VERSION: "3.11"
+  PYTHON_VERSION: "3.13"
 
 jobs:
   check-spelling:
@@ -15,20 +15,14 @@ jobs:
     if: "${{ github.event_name != 'pull_request' || github.repository != github.event.pull_request.head.repo.full_name }}"
     runs-on: "ubuntu-latest"
     steps:
-    - uses: "actions/checkout@v4"
-    - name: "setup python ${{ env.PYTHON_VERSION }}"
-      uses: "actions/setup-python@v5"
+    - name: "setup python"
+      uses: "KyoriPowered/.github/.github/actions/setup-python-env@trunk"
       with:
-        python-version: "${{ env.PYTHON_VERSION }}"
-        cache: "pipenv"
-    - name: "setup python / install pipenv"
-      run: "pip install pipenv"
-    - name: "setup python / dependencies"
-      run: "pipenv install"
+        runtime_version: "${{ env.PYTHON_VERSION }}"
+        activate_venv: true
     - name: "setup python / spelling problem matcher"
       run: |
         echo "::add-matcher::.github/sphinx-spelling-matcher.json"
     - name: "run spellcheck"
-      run: |
-        pipenv run make spelling
+      run: "make spelling"
 
