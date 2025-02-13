@@ -86,7 +86,6 @@ extensions = [
   'sphinx_copybutton',
   'sphinx_sitemap',
   'sphinxext.opengraph',
-  'minimessage_hl',
   'myst_parser',
   'adventure_docs_extensions'
 ]
