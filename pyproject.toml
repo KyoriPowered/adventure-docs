@@ -18,7 +18,8 @@ dependencies = [
   "myst-parser",
   "sphinxcontrib-spelling",
   "sphinxext-opengraph",
-  "sphinx-sitemap (>=2.6.0,<3.0.0)"
+  "sphinx-sitemap (>=2.6.0,<3.0.0)",
+  "pygments-minimessage (>=1.0.0,<2.0.0)"
 ]
 
 [tool.poetry]
