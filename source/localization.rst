@@ -96,10 +96,9 @@ Below is an example of how one might implement a custom ``Translator``.
 Using a ``TranslationStore``
 -------------------------------
 
-A ``TranslationStore`` is a store of ``Translator`` instances.
-It can provide a simpler way creating a ``Translator`` without having to implement the logic for determining translations yourself.
-You can create a translation registry and then add or remove translations at will.
-This allows you to retain the same functionality as a ``Translator`` without the overhead of writing your own logic for determining the translations.
+A ``TranslationStore`` is a store of translations.
+It provides a simpler way creating a ``Translator`` without having to implement the logic for determining and storing translations yourself.
+You can create a translation store and then add or remove translations at will, even after registering it to the global translator.
 
 Adventure provides two translation stores, one for message format translating and one for component translating.
 An example of how to use a translation store is below.
@@ -108,13 +107,13 @@ An example of how to use a translation store is below.
 
   // As above, every translator needs an identifying name!
   // Could also use TranslationStore#component(Key) to work with components instead.
-  final TranslationStore myRegistry = TranslationStore.messageFormat(Key.key("mynamespace:mykey"));
+  final TranslationStore myStore = TranslationStore.messageFormat(Key.key("mynamespace:mykey"));
 
   // You can add translations one-by-one, or in bulk. Consult the Javadocs for a full list of methods.
-  myRegistry.register("mytranslation.key", Locale.US, new MessageFormat("Hello %s!", Locale.US));
+  myStore.register("mytranslation.key", Locale.US, new MessageFormat("Hello %s!", Locale.US));
 
   // You can then register this to the global translator so the translations are available there!
-  GlobalTranslator.translator().addSource(myRegistry);
+  GlobalTranslator.translator().addSource(myStore);
 
 There are additional methods on the message format translation store to bulk register from `resource bundles <https://docs.oracle.com/javase/8/docs/api/java/util/ResourceBundle.html>`_.
 You may also want to use Adventure's ``UTF8ResourceBundleControl`` utility class to create your bundle.
