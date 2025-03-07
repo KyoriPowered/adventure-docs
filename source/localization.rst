@@ -11,7 +11,7 @@ Using Minecraft's localization
 To send text to a player that will be translated in the language they have selected in their client settings, use a translatable component.
 For example, :java:`Component.translatable("block.minecraft.diamond_block")` will render as "Block of Diamond" (or translated to another language) when viewed by the client.
 Some translation keys have arguments which are inserted into the translated content.
-For example, :java:`Component.translatable("block.minecraft.player_head.named", Component.text("Kezz101"))` will render as "Kezz101's Head".
+For example, :java:`Component.translatable("block.minecraft.player_head.named", Component.text("Mark"))` will render as "Mark's Head".
 Translatable components can have styling, hover/click events and children components just like any other component type.
 
 Resource pack language files
@@ -47,9 +47,9 @@ A ``Translator`` is a simple interface that provides two ways of translating con
 The first ``translate`` method provides the translation key and locale as an argument and expects a nullable ``MessageFormat`` in return.
 This system is comparable to Minecraft's built-in localization system, using the standard Java `message format <https://docs.oracle.com/javase/8/docs/api/java/text/MessageFormat.html>`_ for arguments.
 
-If the first ``translate`` method returns ``null`, the second method which provides the translatable component and locale as an argument can be used.
+If the first ``translate`` method returns ``null``, the second method which provides the translatable component and locale as an argument can be used.
 This method allows for much richer customization of the translation process as you can return an entire component.
-This means you can, for example, customize the colour and styling of the translated component, rather than relying solely on strings for the message format system.
+This means you can, for example, customize the color and styling of the translated component, rather than relying solely on strings for the message format system.
 
 .. warning::
 
@@ -119,7 +119,7 @@ There are additional methods on the message format translation store to bulk reg
 You may also want to use Adventure's ``UTF8ResourceBundleControl`` utility class to create your bundle.
 
 Using MiniMessage for translations
--------------------------------
+----------------------------------
 
 Adventure also provides a translator that can use MiniMessage strings, with automatic support for placeholders and arguments.
 For more information, see :ref:`minimessage-translator`.

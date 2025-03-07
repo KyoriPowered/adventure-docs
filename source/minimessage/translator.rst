@@ -3,7 +3,7 @@
 MiniMessage Translator
 ======================
 
-.. info::
+.. note::
 
   For more information about both Minecraft and Adventure's localization systems, see :ref:`localization`.
 
