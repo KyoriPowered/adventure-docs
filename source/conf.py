@@ -22,7 +22,7 @@ import sys
 from pathlib import Path
 
 project = 'Adventure'
-copyright = '2020-2025 KyoriPowered'
+copyright = '2020-2025 KyoriPowered. Not official Minecraft software. Not approved by or associated with Mojang or Microsoft.'
 author = 'KyoriPowered'
 
 # The short X.Y versions
