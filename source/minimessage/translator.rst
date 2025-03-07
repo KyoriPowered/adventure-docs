@@ -41,6 +41,14 @@ For an example of how to create your own ``MiniMessageTranslator``, see the belo
     }
   }
 
+MiniMessage translation store
+-----------------------------
+
+In order to make managing a ``MiniMessageTranslator`` easier, we also provide a ``TranslationStore`` implementation using MiniMessage strings.
+For documentation on how to use translation stores, see :ref:`localization`.
+
+Note that the ``MiniMessageTranslationStore`` contains the same methods as the message format translation store for populating a translation store using resource bundles.
+
 Using a MiniMessage translator
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 

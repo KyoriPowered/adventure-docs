@@ -93,21 +93,22 @@ Below is an example of how one might implement a custom ``Translator``.
     }
   }
 
-Using a ``TranslationRegistry``
+Using a ``TranslationStore``
 -------------------------------
 
-A ``TranslationRegistry`` is a collection of ``Translator`` instances.
+A ``TranslationStore`` is a store of ``Translator`` instances.
 It can provide a simpler way creating a ``Translator`` without having to implement the logic for determining translations yourself.
 You can create a translation registry and then add or remove translations at will.
 This allows you to retain the same functionality as a ``Translator`` without the overhead of writing your own logic for determining the translations.
 
-There are also methods on ``TranslationRegistry`` to bulk register from `resource bundles <https://docs.oracle.com/javase/8/docs/api/java/util/ResourceBundle.html>`_.
-You may also want to use Adventure's ``UTF8ResourceBundleControl`` utility class to create your bundle.
+Adventure provides two translation stores, one for message format translating and one for component translating.
+An example of how to use a translation store is below.
 
 .. code:: java
 
-  // As above, every translator needs an identifying key!
-  final TranslationRegistry myRegistry = TranslationRegistry.create(Key.key("mynamespace:mykey"));
+  // As above, every translator needs an identifying name!
+  // Could also use TranslationStore#component(Key) to work with components instead.
+  final TranslationStore myRegistry = TranslationStore.messageFormat(Key.key("mynamespace:mykey"));
 
   // You can add translations one-by-one, or in bulk. Consult the Javadocs for a full list of methods.
   myRegistry.register("mytranslation.key", Locale.US, new MessageFormat("Hello %s!", Locale.US));
@@ -115,7 +116,10 @@ You may also want to use Adventure's ``UTF8ResourceBundleControl`` utility class
   // You can then register this to the global translator so the translations are available there!
   GlobalTranslator.translator().addSource(myRegistry);
 
-Using ``MiniMessageTranslator``
+There are additional methods on the message format translation store to bulk register from `resource bundles <https://docs.oracle.com/javase/8/docs/api/java/util/ResourceBundle.html>`_.
+You may also want to use Adventure's ``UTF8ResourceBundleControl`` utility class to create your bundle.
+
+Using MiniMessage for translations
 -------------------------------
 
 Adventure also provides a translator that can use MiniMessage strings, with automatic support for placeholders and arguments.
