@@ -17,11 +17,6 @@ Getting Started
 
 MiniMessage exposes a simple API via the ``MiniMessage`` class.
 
-.. note::
-
-   Previously, a Markdown mode was available. This has been temporarily removed due to some issues
-   with the new 4.10.0 parser backend, but there are plans to re-add it once time permits.
-
 A standard instance of the serializer is available through the :java:`miniMessage()` method. This uses the default set of tags and is not in strict mode.
 
 Additional customization of MiniMessage is possible via the Builder_.
