@@ -16,3 +16,4 @@ If you're looking to write messages with MiniMessage, take a look at the :ref:`m
     format
     api
     dynamic-replacements
+    translator

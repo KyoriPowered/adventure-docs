@@ -89,7 +89,7 @@ Color the shadow of the next parts
 
 Tag
    * :mm:`<shadow:_colorNameOrHex_:[alpha_as_float]>`
-   * :mm:`<!shadow>` as an alias to disable the shadow (equalivent to :mm:`<shadow:#00000000>`)
+   * :mm:`<!shadow>` as an alias to disable the shadow (equivalent to :mm:`<shadow:#00000000>`)
 Arguments
    * ``_colorNameOrHex_``, a named color or hex color string with the format ``#RRGGBB`` or ``#RRGGBBAA``
    * ``[alpha_as_float]``, a float value between 0 and 1, representing the alpha value of the shadow. Optional, defaults to 0.25. Has no effect if an alpha value is already provided in the hex color string.
