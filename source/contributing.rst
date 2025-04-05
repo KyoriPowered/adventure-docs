@@ -42,7 +42,7 @@ These instructions assume you are working from a terminal, either on Windows or 
         5. Open a browser to ``https://localhost:8000`` to view the just-built site. Pages will auto-refresh when changes are made.
 
 
-Any text editor will work for editing the documentation, but we've had the best experience with Visual Studio Code or (neo)vim, each of which have mature reST plugins.
+Any text editor will work for editing the documentation, but we've had the best experience with Visual Studio Code or :spelling:ignore:`(neo)vim`, each of which have mature reST plugins.
 A typical development environment has a text editor and web browser side-by-side, with the web browser viewing the locally served test site.
 
 Once you've written changes, they can be submitted for inclusion in the docs with a GitHub Pull Request.

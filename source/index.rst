@@ -39,6 +39,7 @@ There are many community-supported libraries that extend the capabilities of Adv
    tablist
    resource-pack
    minimessage/index
+   localization
 
    platform/index
 

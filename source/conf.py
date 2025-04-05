@@ -22,13 +22,13 @@ import sys
 from pathlib import Path
 
 project = 'Adventure'
-copyright = '2020-2025 KyoriPowered'
+copyright = '2020-2025 KyoriPowered. Not official Minecraft software. Not approved by or associated with Mojang or Microsoft.'
 author = 'KyoriPowered'
 
 # The short X.Y versions
 
 # The latest version of the Adventure api
-api_version = '4.19.0'
+api_version = '4.20.0'
 
 # The latest versions of adventure-platform builds
 platform_version = '4.3.4'
