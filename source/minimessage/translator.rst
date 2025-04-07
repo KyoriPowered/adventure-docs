@@ -19,7 +19,7 @@ For an example of how to create your own ``MiniMessageTranslator``, see the belo
 
 .. code:: java
 
-  public class MyMiniMessageTranslator extends MiniMessageTranslator() {
+  public class MyMiniMessageTranslator extends MiniMessageTranslator {
 
     public MyMiniMessageTranslator() {
       // By default, the standard MiniMessage instance will be used.
