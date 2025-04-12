@@ -257,10 +257,11 @@ Rainbow
 Rainbow-colored text?!
 
 Tag
-   :mm:`<rainbow:[!][phase]>`
+   :mm:`<rainbow:[!][phase]:[saturation]>`
 Arguments
    * phase, optional
    * ``!``, literal value which reverses the rainbow, optional
+   * saturation, optional
 Examples
    * :mm:`<yellow>Woo: <rainbow>||||||||||||||||||||||||</rainbow>!`
    * :mm:`<yellow>Woo: <rainbow:!>||||||||||||||||||||||||</rainbow>!`
@@ -269,6 +270,12 @@ Examples
 
 .. image:: /minimessage/images/rainbow_1.png
    :alt: The result of parsing all four examples in series, shown in-game in the Minecraft client's chat window
+
+   * :mm:`<yellow>Woo: <rainbow:0:0.65>||||||||||||||||||||||||</rainbow>!`
+   * :mm:`<yellow>Woo: <rainbow::0.65>||||||||||||||||||||||||</rainbow>!`
+
+.. image:: /minimessage/images/rainbow_2.png
+    :alt: The result of parsing two examples with lower saturation, shown in-game in the Minecraft client's chat window
 
 Gradient
 ********
