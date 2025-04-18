@@ -237,7 +237,7 @@ Examples
    :alt: The result of parsing ``<lang:commands.drop.success.single:'<red>1':'<blue>Stone'>!``, shown in-game in the Minecraft client's chat window in English
 
 Fallback
-========
+++++++++
 
 .. note::
    
