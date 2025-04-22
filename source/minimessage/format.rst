@@ -271,11 +271,13 @@ Examples
 .. image:: /minimessage/images/rainbow_1.png
    :alt: The result of parsing all four examples in series, shown in-game in the Minecraft client's chat window
 
-   * :mm:`<yellow>Woo: <rainbow:0:0.65>||||||||||||||||||||||||</rainbow>!`
-   * :mm:`<yellow>Woo: <rainbow::0.65>||||||||||||||||||||||||</rainbow>!`
+Saturation examples
+   * :mm:`<yellow>Woo: <rainbow:0:1.0>||||||||||||||||||||||||</rainbow>!`
+   * :mm:`<yellow>Woo: <rainbow::0.6>||||||||||||||||||||||||</rainbow>!`
+   * :mm:`<yellow>Woo: <rainbow::0.3>||||||||||||||||||||||||</rainbow>!`
 
 .. image:: /minimessage/images/rainbow_2.png
-    :alt: The result of parsing two examples with lower saturation, shown in-game in the Minecraft client's chat window
+    :alt: The result of parsing a rainbow text with 1.0 saturation and two examples with lower saturation, shown in-game in the Minecraft client's chat window
 
 Gradient
 ********
