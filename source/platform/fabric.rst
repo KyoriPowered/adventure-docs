@@ -66,7 +66,7 @@ First, add the repository:
         :substitutions:
 
          dependencies {
-            modImplementation include("net.kyori:adventure-platform-fabric:|mod_version|") // for Minecraft 1.21.2-1.21.4
+            modImplementation include("net.kyori:adventure-platform-fabric:|mod_version|") // for Minecraft 1.21.5
          }
 
 
@@ -77,7 +77,7 @@ First, add the repository:
         :substitutions:
 
          dependencies {
-            modImplementation(include("net.kyori:adventure-platform-fabric:|modversion|")!!) // for Minecraft 1.21.2-1.21.4
+            modImplementation(include("net.kyori:adventure-platform-fabric:|modversion|")!!) // for Minecraft 1.21.5
          }
 
 The Fabric platform requires *fabric-api-base* in order to provide the locale change event, *fabric-command-api-v2* for the callback click event, and can optionally use Colonel_ (or *fabric-networking-api-v1*) to allow the ``Component`` and ``Key`` argument types to be used on clients without the mod installed. There are no other dependencies.
@@ -165,7 +165,7 @@ For more complex use cases, :java:`FabricServerAudiences` or :java:`FabricClient
 Server
 ------
 
-The logical-server side of the Fabric platform can be accessed any time a server is available, through a ``FabricServerAudiences`` instance. By default, translatable components will be rendered with the global translator, but a custom renderer can be passed when initializing the platform.
+The logical-server side of the Fabric platform can be accessed any time a server is available, through a ``MinecraftServerAudiences`` instance. By default, translatable components will be rendered with the global translator, but a custom renderer can be passed when initializing the platform.
 
 All ``AudienceProvider`` interface methods are supported, except for the ``permission`` method. This will become supported as soon as Fabric gets a suitable permissions API.
 
@@ -174,11 +174,11 @@ To get started with Adventure, set up an audience provider like this:
 .. code:: java
 
    public class MyMod implements ModInitializer {
-     private volatile FabricServerAudiences adventure;
+     private volatile MinecraftServerAudiences adventure;
 
-     public FabricServerAudiences adventure() {
-       FabricServerAudiences ret = this.adventure;
-       if(ret == null) {
+     public MinecraftServerAudiences adventure() {
+       MinecraftServerAudiences ret = this.adventure;
+       if (ret == null) {
          throw new IllegalStateException("Tried to access Adventure without a running server!");
        }
        return ret;
@@ -190,7 +190,7 @@ To get started with Adventure, set up an audience provider like this:
        // This will ensure any platform data is cleared between game instances
        // This is important on the integrated server, where multiple server instances
        // can exist for one mod initialization.
-       ServerLifecycleEvents.SERVER_STARTING.register(server -> this.adventure = FabricServerAudiences.of(server));
+       ServerLifecycleEvents.SERVER_STARTING.register(server -> this.adventure = MinecraftServerAudiences.of(server));
        ServerLifecycleEvents.SERVER_STOPPED.register(server -> this.adventure = null);
      }
    }
@@ -235,13 +235,13 @@ Client
 
 Special for the Fabric platform, purely client-side operations are supported. The setup is less involved than it is for the server, since the client is a singleton, and there is only one subject that can be acted on: the client's player.
 
-This means that for most users the ``FabricClientAudiences`` object can be treated as a singleton. The only exception is users using a custom renderer. This makes using Adventure audiences fairly simple, as this code example shows:
+This means that for most users the ``MinecraftClientAudiences`` object can be treated as a singleton. The only exception is users using a custom renderer. This makes using Adventure audiences fairly simple, as this code example shows:
 
 .. code:: java
 
    void doThing() {
      // Get the audience
-     final Audience client = FabricClientAudiences.of().audience();
+     final Audience client = MinecraftClientAudiences.of().audience();
 
      // Do something. This will only work when the player is ingame.
      client.sendMessage(Component.text("meow", NamedTextColor.DARK_PURPLE));

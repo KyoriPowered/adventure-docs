@@ -58,7 +58,7 @@ First, add the repository:
         :substitutions:
 
          dependencies {
-            implementation jarJar("net.kyori:adventure-platform-neoforge:|mod_version|") // for Minecraft 1.21.2-1.21.4
+            implementation jarJar("net.kyori:adventure-platform-neoforge:|mod_version|") // for Minecraft 1.21.5
          }
 
 
@@ -69,7 +69,7 @@ First, add the repository:
         :substitutions:
 
          dependencies {
-            implementation(jarJar("net.kyori:adventure-platform-neoforge:|mod_version|")!!) // for Minecraft 1.21.2-1.21.4
+            implementation(jarJar("net.kyori:adventure-platform-neoforge:|mod_version|")!!) // for Minecraft 1.21.5
          }
 
 
