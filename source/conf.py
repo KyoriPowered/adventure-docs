@@ -28,11 +28,11 @@ author = 'KyoriPowered'
 # The short X.Y versions
 
 # The latest version of the Adventure api
-api_version = '4.22.0'
+api_version = '4.24.0'
 
 # The latest versions of adventure-platform builds
-platform_version = '4.4.0'
-platform_mod_version = '6.4.0'
+platform_version = '4.4.1'
+platform_mod_version = '6.5.1'
 
 # The latest version of the ansi library
 ansi_version = '1.1.1'
