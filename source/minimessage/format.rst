@@ -262,7 +262,7 @@ Insertion
 Allow insertion of text into chat via shift click
 
 Tag
-   :mm:`<insertion:_text_>`
+   :mm:`<insert:_text_>`
 Arguments
    * ``_text_``, the text to insert
 Examples
