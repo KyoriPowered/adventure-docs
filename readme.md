@@ -1,6 +1,10 @@
 # adventure-docs
 
-Source for [the documentation](https://docs.advntr.dev/) of adventure.
+> [!WARNING]
+> This repository is now archived.
+> The Adventure documentation has been migrated to be included in the [PaperMC documentation site](https://github.com/PaperMC/docs/).
+
+Old source for [the documentation](https://docs.advntr.dev/) of adventure.
 
 ## Usage
 
